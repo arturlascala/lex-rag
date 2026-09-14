@@ -1,0 +1,422 @@
+[
+ {
+  "slug": "paf_70235_1972",
+  "urn_lex": "urn:lex:br:federal:decreto:1972-03-06;70235",
+  "tipo": "decreto",
+  "numero": "70235",
+  "data": "1972-03-06",
+  "epigrafe": "Decreto nº 70.235, de 6 de março de 1972 (Processo administrativo fiscal)",
+  "ementa": "Dispõe sobre o processo administrativo fiscal.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/d70235compilado.htm"
+ },
+ {
+  "slug": "etica_1171_1994",
+  "urn_lex": "urn:lex:br:federal:decreto:1994-06-22;1171",
+  "tipo": "decreto",
+  "numero": "1171",
+  "data": "1994-06-22",
+  "epigrafe": "Decreto nº 1.171, de 22 de junho de 1994 (Código de Ética do servidor)",
+  "ementa": "Aprova o Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/d1171.htm"
+ },
+ {
+  "slug": "jornada_1590_1995",
+  "urn_lex": "urn:lex:br:federal:decreto:1995-08-10;1590",
+  "tipo": "decreto",
+  "numero": "1590",
+  "data": "1995-08-10",
+  "epigrafe": "Decreto nº 1.590, de 10 de agosto de 1995 (Jornada de trabalho dos servidores)",
+  "ementa": "Dispõe sobre a jornada de trabalho dos servidores da administração pública federal direta, das autarquias e das fundações públicas federais.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/d1590.htm"
+ },
+ {
+  "slug": "sndc_2181_1997",
+  "urn_lex": "urn:lex:br:federal:decreto:1997-03-20;2181",
+  "tipo": "decreto",
+  "numero": "2181",
+  "data": "1997-03-20",
+  "epigrafe": "Decreto nº 2.181, de 20 de março de 1997 (SNDC)",
+  "ementa": "Dispõe sobre a organização do Sistema Nacional de Defesa do Consumidor - SNDC e estabelece as normas gerais de aplicação das sanções administrativas previstas na Lei nº 8.078, de 11 de setembro de 1990.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/d2181.htm"
+ },
+ {
+  "slug": "estruturaaneel_2335_1997",
+  "urn_lex": "urn:lex:br:federal:decreto:1997-10-06;2335",
+  "tipo": "decreto",
+  "numero": "2335",
+  "data": "1997-10-06",
+  "epigrafe": "Decreto nº 2.335, de 6 de outubro de 1997 (Constituição da ANEEL)",
+  "ementa": "Constitui a Agência Nacional de Energia Elétrica - ANEEL, autarquia sob regime especial, e aprova sua estrutura regimental.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/d2335.htm"
+ },
+ {
+  "slug": "rps_3048_1999",
+  "urn_lex": "urn:lex:br:federal:decreto:1999-05-06;3048",
+  "tipo": "decreto",
+  "numero": "3048",
+  "data": "1999-05-06",
+  "epigrafe": "Decreto nº 3.048, de 6 de maio de 1999 (RPS)",
+  "ementa": "Aprova o Regulamento da Previdência Social.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/d3048compilado.htm"
+ },
+ {
+  "slug": "integracaopcd_3298_1999",
+  "urn_lex": "urn:lex:br:federal:decreto:1999-12-20;3298",
+  "tipo": "decreto",
+  "numero": "3298",
+  "data": "1999-12-20",
+  "epigrafe": "Decreto nº 3.298, de 20 de dezembro de 1999 (Política Nacional para Integração da Pessoa Portadora de Deficiência)",
+  "ementa": "Regulamenta a Lei nº 7.853, de 24 de outubro de 1989, dispõe sobre a Política Nacional para a Integração da Pessoa Portadora de Deficiência e consolida as normas de proteção.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/d3298.htm"
+ },
+ {
+  "slug": "regitr_4382_2002",
+  "urn_lex": "urn:lex:br:federal:decreto:2002-09-19;4382",
+  "tipo": "decreto",
+  "numero": "4382",
+  "data": "2002-09-19",
+  "epigrafe": "Decreto nº 4.382, de 19 de setembro de 2002 (Regulamento do ITR)",
+  "ementa": "Regulamenta a tributação, fiscalização, arrecadação e administração do Imposto sobre a Propriedade Territorial Rural - ITR.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/2002/d4382.htm"
+ },
+ {
+  "slug": "comercializacaoenergia_5163_2004",
+  "urn_lex": "urn:lex:br:federal:decreto:2004-07-30;5163",
+  "tipo": "decreto",
+  "numero": "5163",
+  "data": "2004-07-30",
+  "epigrafe": "Decreto nº 5.163, de 30 de julho de 2004 (Comercialização de energia elétrica)",
+  "ementa": "Regulamenta a comercialização de energia elétrica e o processo de outorga de concessões e de autorizações de geração de energia elétrica.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/decreto/d5163compilado.htm"
+ },
+ {
+  "slug": "regacessibilidade_5296_2004",
+  "urn_lex": "urn:lex:br:federal:decreto:2004-12-02;5296",
+  "tipo": "decreto",
+  "numero": "5296",
+  "data": "2004-12-02",
+  "epigrafe": "Decreto nº 5.296, de 2 de dezembro de 2004 (Regulamento da acessibilidade)",
+  "ementa": "Regulamenta as Leis nº 10.048, de 8 de novembro de 2000, que dá prioridade de atendimento às pessoas que especifica, e nº 10.098, de 19 de dezembro de 2000, que estabelece normas gerais e critérios básicos para a promoção da acessibilidade das pessoas com deficiência ou com mobilidade reduzida.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/decreto/d5296.htm"
+ },
+ {
+  "slug": "bpc_6214_2007",
+  "urn_lex": "urn:lex:br:federal:decreto:2007-09-26;6214",
+  "tipo": "decreto",
+  "numero": "6214",
+  "data": "2007-09-26",
+  "epigrafe": "Decreto nº 6.214, de 26 de setembro de 2007 (BPC)",
+  "ementa": "Regulamenta o benefício de prestação continuada da assistência social devido à pessoa com deficiência e ao idoso de que tratam a Lei nº 8.742, de 7 de dezembro de 1993, e a Lei nº 10.741, de 1º de outubro de 2003.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/decreto/d6214compilado.htm"
+ },
+ {
+  "slug": "regiof_6306_2007",
+  "urn_lex": "urn:lex:br:federal:decreto:2007-12-14;6306",
+  "tipo": "decreto",
+  "numero": "6306",
+  "data": "2007-12-14",
+  "epigrafe": "Decreto nº 6.306, de 14 de dezembro de 2007 (Regulamento do IOF)",
+  "ementa": "Regulamenta o Imposto sobre Operações de Crédito, Câmbio e Seguro, ou relativas a Títulos ou Valores Mobiliários - IOF.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/decreto/d6306compilado.htm"
+ },
+ {
+  "slug": "infracoesambientais_6514_2008",
+  "urn_lex": "urn:lex:br:federal:decreto:2008-07-22;6514",
+  "tipo": "decreto",
+  "numero": "6514",
+  "data": "2008-07-22",
+  "epigrafe": "Decreto nº 6.514, de 22 de julho de 2008 (Infrações ambientais)",
+  "ementa": "Dispõe sobre as infrações e sanções administrativas ao meio ambiente e estabelece o processo administrativo federal para apuração destas infrações.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/decreto/d6514compilado.htm"
+ },
+ {
+  "slug": "regaduaneiro_6759_2009",
+  "urn_lex": "urn:lex:br:federal:decreto:2009-02-05;6759",
+  "tipo": "decreto",
+  "numero": "6759",
+  "data": "2009-02-05",
+  "epigrafe": "Decreto nº 6.759, de 5 de fevereiro de 2009 (Regulamento Aduaneiro)",
+  "ementa": "Regulamenta a administração das atividades aduaneiras, e a fiscalização, o controle e a tributação das operações de comércio exterior.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/decreto/d6759.htm"
+ },
+ {
+  "slug": "ripi_7212_2010",
+  "urn_lex": "urn:lex:br:federal:decreto:2010-06-15;7212",
+  "tipo": "decreto",
+  "numero": "7212",
+  "data": "2010-06-15",
+  "epigrafe": "Decreto nº 7.212, de 15 de junho de 2010 (RIPI)",
+  "ementa": "Regulamenta a cobrança, fiscalização, arrecadação e administração do Imposto sobre Produtos Industrializados - IPI.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/decreto/d7212.htm"
+ },
+ {
+  "slug": "regsus_7508_2011",
+  "urn_lex": "urn:lex:br:federal:decreto:2011-06-28;7508",
+  "tipo": "decreto",
+  "numero": "7508",
+  "data": "2011-06-28",
+  "epigrafe": "Decreto nº 7.508, de 28 de junho de 2011 (Regulamento da Lei Orgânica da Saúde)",
+  "ementa": "Regulamenta a Lei nº 8.080, de 19 de setembro de 1990, para dispor sobre a organização do Sistema Único de Saúde - SUS, o planejamento da saúde, a assistência à saúde e a articulação interfederativa.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/decreto/d7508.htm"
+ },
+ {
+  "slug": "reglai_7724_2012",
+  "urn_lex": "urn:lex:br:federal:decreto:2012-05-16;7724",
+  "tipo": "decreto",
+  "numero": "7724",
+  "data": "2012-05-16",
+  "epigrafe": "Decreto nº 7.724, de 16 de maio de 2012 (Regulamento da LAI)",
+  "ementa": "Regulamenta a Lei nº 12.527, de 18 de novembro de 2011, que dispõe sobre o acesso a informações previsto no inciso XXXIII do caput do art. 5º, no inciso II do § 3º do art. 37 e no § 2º do art. 216 da Constituição.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/decreto/d7724.htm"
+ },
+ {
+  "slug": "srp_7892_2013",
+  "urn_lex": "urn:lex:br:federal:decreto:2013-01-23;7892",
+  "tipo": "decreto",
+  "numero": "7892",
+  "data": "2013-01-23",
+  "epigrafe": "Decreto nº 7.892, de 23 de janeiro de 2013 (SRP da Lei 8.666)",
+  "ementa": "Regulamenta o Sistema de Registro de Preços previsto no art. 15 da Lei nº 8.666, de 21 de junho de 1993.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/decreto/d7892.htm"
+ },
+ {
+  "slug": "comercioeletronico_7962_2013",
+  "urn_lex": "urn:lex:br:federal:decreto:2013-03-15;7962",
+  "tipo": "decreto",
+  "numero": "7962",
+  "data": "2013-03-15",
+  "epigrafe": "Decreto nº 7.962, de 15 de março de 2013 (Comércio eletrônico)",
+  "ementa": "Regulamenta a Lei nº 8.078, de 11 de setembro de 1990, para dispor sobre a contratação no comércio eletrônico.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/decreto/d7962.htm"
+ },
+ {
+  "slug": "regantidumping_8058_2013",
+  "urn_lex": "urn:lex:br:federal:decreto:2013-07-26;8058",
+  "tipo": "decreto",
+  "numero": "8058",
+  "data": "2013-07-26",
+  "epigrafe": "Decreto nº 8.058, de 26 de julho de 2013 (Regulamento antidumping)",
+  "ementa": "Regulamenta os procedimentos administrativos relativos à investigação e à aplicação de medidas antidumping.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/decreto/d8058.htm"
+ },
+ {
+  "slug": "esocial_8373_2014",
+  "urn_lex": "urn:lex:br:federal:decreto:2014-12-11;8373",
+  "tipo": "decreto",
+  "numero": "8373",
+  "data": "2014-12-11",
+  "epigrafe": "Decreto nº 8.373, de 11 de dezembro de 2014 (eSocial)",
+  "ementa": "Institui o Sistema de Escrituração Digital das Obrigações Fiscais, Previdenciárias e Trabalhistas - eSocial.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/decreto/d8373.htm"
+ },
+ {
+  "slug": "meepp_8538_2015",
+  "urn_lex": "urn:lex:br:federal:decreto:2015-10-06;8538",
+  "tipo": "decreto",
+  "numero": "8538",
+  "data": "2015-10-06",
+  "epigrafe": "Decreto nº 8.538, de 6 de outubro de 2015 (ME e EPP nas contratações)",
+  "ementa": "Regulamenta o tratamento favorecido, diferenciado e simplificado para as microempresas, empresas de pequeno porte, agricultores familiares, produtores rurais pessoa física, microempreendedores individuais e sociedades cooperativas de consumo nas contratações públicas.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/decreto/d8538.htm"
+ },
+ {
+  "slug": "regosc_8726_2016",
+  "urn_lex": "urn:lex:br:federal:decreto:2016-04-27;8726",
+  "tipo": "decreto",
+  "numero": "8726",
+  "data": "2016-04-27",
+  "epigrafe": "Decreto nº 8.726, de 27 de abril de 2016 (Regulamento do MROSC)",
+  "ementa": "Regulamenta a Lei nº 13.019, de 31 de julho de 2014, para dispor sobre regras e procedimentos do regime jurídico das parcerias celebradas entre a administração pública federal e as organizações da sociedade civil.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/d8726.htm"
+ },
+ {
+  "slug": "regmigracao_9199_2017",
+  "urn_lex": "urn:lex:br:federal:decreto:2017-11-20;9199",
+  "tipo": "decreto",
+  "numero": "9199",
+  "data": "2017-11-20",
+  "epigrafe": "Decreto nº 9.199, de 20 de novembro de 2017 (Regulamento da Lei de Migração)",
+  "ementa": "Regulamenta a Lei nº 13.445, de 24 de maio de 2017, que institui a Lei de Migração.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9199.htm"
+ },
+ {
+  "slug": "governanca_9203_2017",
+  "urn_lex": "urn:lex:br:federal:decreto:2017-11-22;9203",
+  "tipo": "decreto",
+  "numero": "9203",
+  "data": "2017-11-22",
+  "epigrafe": "Decreto nº 9.203, de 22 de novembro de 2017 (Governança pública)",
+  "ementa": "Dispõe sobre a política de governança da administração pública federal direta, autárquica e fundacional.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9203.htm"
+ },
+ {
+  "slug": "execucaoindireta_9507_2018",
+  "urn_lex": "urn:lex:br:federal:decreto:2018-09-21;9507",
+  "tipo": "decreto",
+  "numero": "9507",
+  "data": "2018-09-21",
+  "epigrafe": "Decreto nº 9.507, de 21 de setembro de 2018 (Execução indireta de serviços)",
+  "ementa": "Dispõe sobre a execução indireta, mediante contratação, de serviços da administração pública federal direta, autárquica e fundacional e das empresas públicas e das sociedades de economia mista controladas pela União.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9507.htm"
+ },
+ {
+  "slug": "rir_9580_2018",
+  "urn_lex": "urn:lex:br:federal:decreto:2018-11-22;9580",
+  "tipo": "decreto",
+  "numero": "9580",
+  "data": "2018-11-22",
+  "epigrafe": "Decreto nº 9.580, de 22 de novembro de 2018 (RIR)",
+  "ementa": "Regulamenta a tributação, a fiscalização, a arrecadação e a administração do Imposto sobre a Renda e Proventos de Qualquer Natureza.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9580.htm"
+ },
+ {
+  "slug": "pndp_9991_2019",
+  "urn_lex": "urn:lex:br:federal:decreto:2019-08-28;9991",
+  "tipo": "decreto",
+  "numero": "9991",
+  "data": "2019-08-28",
+  "epigrafe": "Decreto nº 9.991, de 28 de agosto de 2019 (PNDP)",
+  "ementa": "Dispõe sobre a Política Nacional de Desenvolvimento de Pessoas da administração pública federal direta, autárquica e fundacional, e regulamenta dispositivos da Lei nº 8.112, de 11 de dezembro de 1990, quanto a licenças e afastamentos para ações de desenvolvimento.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/decreto/d9991.htm"
+ },
+ {
+  "slug": "pregaoeletronico_10024_2019",
+  "urn_lex": "urn:lex:br:federal:decreto:2019-09-20;10024",
+  "tipo": "decreto",
+  "numero": "10024",
+  "data": "2019-09-20",
+  "epigrafe": "Decreto nº 10.024, de 20 de setembro de 2019 (Pregão eletrônico)",
+  "ementa": "Regulamenta a licitação, na modalidade pregão, na forma eletrônica, para a aquisição de bens e a contratação de serviços comuns, incluídos os serviços comuns de engenharia, e dispõe sobre o uso da dispensa eletrônica.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/decreto/d10024.htm"
+ },
+ {
+  "slug": "convencoesoit_10088_2019",
+  "urn_lex": "urn:lex:br:federal:decreto:2019-11-05;10088",
+  "tipo": "decreto",
+  "numero": "10088",
+  "data": "2019-11-05",
+  "epigrafe": "Decreto nº 10.088, de 5 de novembro de 2019 (Convenções da OIT)",
+  "ementa": "Consolida atos normativos editados pelo Poder Executivo Federal que dispõem sobre a promulgação de convenções e recomendações da Organização Internacional do Trabalho - OIT ratificadas pela República Federativa do Brasil.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/decreto/d10088.htm"
+ },
+ {
+  "slug": "consoltrabalhista_10854_2021",
+  "urn_lex": "urn:lex:br:federal:decreto:2021-11-10;10854",
+  "tipo": "decreto",
+  "numero": "10854",
+  "data": "2021-11-10",
+  "epigrafe": "Decreto nº 10.854, de 10 de novembro de 2021 (Consolidação trabalhista infralegal)",
+  "ementa": "Regulamenta disposições relativas à legislação trabalhista e institui o Programa Permanente de Consolidação, Simplificação e Desburocratização de Normas Trabalhistas Infralegais e o Prêmio Nacional Trabalhista.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/decreto/d10854.htm"
+ },
+ {
+  "slug": "pca_10947_2022",
+  "urn_lex": "urn:lex:br:federal:decreto:2022-01-25;10947",
+  "tipo": "decreto",
+  "numero": "10947",
+  "data": "2022-01-25",
+  "epigrafe": "Decreto nº 10.947, de 25 de janeiro de 2022 (Plano de contratações anual)",
+  "ementa": "Regulamenta o inciso VII do caput do art. 12 da Lei nº 14.133, de 1º de abril de 2021, para dispor sobre o plano de contratações anual e instituir o Sistema de Planejamento e Gerenciamento de Contratações.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/decreto/d10947.htm"
+ },
+ {
+  "slug": "sac_11034_2022",
+  "urn_lex": "urn:lex:br:federal:decreto:2022-04-05;11034",
+  "tipo": "decreto",
+  "numero": "11034",
+  "data": "2022-04-05",
+  "epigrafe": "Decreto nº 11.034, de 5 de abril de 2022 (SAC)",
+  "ementa": "Regulamenta a Lei nº 8.078, de 11 de setembro de 1990 - Código de Defesa do Consumidor, para estabelecer diretrizes e normas sobre o Serviço de Atendimento ao Consumidor.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/decreto/d11034.htm"
+ },
+ {
+  "slug": "reganticorrupcao_11129_2022",
+  "urn_lex": "urn:lex:br:federal:decreto:2022-07-11;11129",
+  "tipo": "decreto",
+  "numero": "11129",
+  "data": "2022-07-11",
+  "epigrafe": "Decreto nº 11.129, de 11 de julho de 2022 (Regulamento da Lei Anticorrupção)",
+  "ementa": "Regulamenta a Lei nº 12.846, de 1º de agosto de 2013, que dispõe sobre a responsabilização administrativa e civil de pessoas jurídicas pela prática de atos contra a administração pública, nacional ou estrangeira.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/decreto/d11129.htm"
+ },
+ {
+  "slug": "gestaocontratos_11246_2022",
+  "urn_lex": "urn:lex:br:federal:decreto:2022-10-27;11246",
+  "tipo": "decreto",
+  "numero": "11246",
+  "data": "2022-10-27",
+  "epigrafe": "Decreto nº 11.246, de 27 de outubro de 2022 (Agente de contratação e fiscais de contrato)",
+  "ementa": "Regulamenta o disposto no § 3º do art. 8º da Lei nº 14.133, de 1º de abril de 2021, para dispor sobre as regras para a atuação do agente de contratação e da equipe de apoio, o funcionamento da comissão de contratação e a atuação dos gestores e fiscais de contratos.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/decreto/d11246.htm"
+ },
+ {
+  "slug": "equidadecontratacoes_11430_2023",
+  "urn_lex": "urn:lex:br:federal:decreto:2023-03-08;11430",
+  "tipo": "decreto",
+  "numero": "11430",
+  "data": "2023-03-08",
+  "epigrafe": "Decreto nº 11.430, de 8 de março de 2023 (Mulheres vítimas de violência nas contratações)",
+  "ementa": "Regulamenta a Lei nº 14.133, de 1º de abril de 2021, para dispor sobre a exigência, em contratações públicas, de percentual mínimo de mão de obra constituída por mulheres vítimas de violência doméstica e sobre ações de equidade entre mulheres e homens como critério de desempate em licitações.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/decreto/d11430.htm"
+ },
+ {
+  "slug": "srp_11462_2023",
+  "urn_lex": "urn:lex:br:federal:decreto:2023-03-31;11462",
+  "tipo": "decreto",
+  "numero": "11462",
+  "data": "2023-03-31",
+  "epigrafe": "Decreto nº 11.462, de 31 de março de 2023 (Sistema de registro de preços)",
+  "ementa": "Regulamenta os art. 82 a art. 86 da Lei nº 14.133, de 1º de abril de 2021, para dispor sobre o sistema de registro de preços para a contratação de bens e serviços, inclusive obras e serviços de engenharia, no âmbito da Administração Pública federal direta, autárquica e fundacional.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/decreto/d11462.htm"
+ },
+ {
+  "slug": "regdesarmamento_11615_2023",
+  "urn_lex": "urn:lex:br:federal:decreto:2023-07-21;11615",
+  "tipo": "decreto",
+  "numero": "11615",
+  "data": "2023-07-21",
+  "epigrafe": "Decreto nº 11.615, de 21 de julho de 2023 (Regulamento do Estatuto do Desarmamento)",
+  "ementa": "Regulamenta a Lei nº 10.826, de 22 de dezembro de 2003, para estabelecer regras e procedimentos relativos à aquisição, ao registro, à posse, ao porte, ao cadastro e à comercialização nacional de armas de fogo, munições e acessórios.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/decreto/d11615.htm"
+ },
+ {
+  "slug": "credenciamento_11878_2024",
+  "urn_lex": "urn:lex:br:federal:decreto:2024-01-09;11878",
+  "tipo": "decreto",
+  "numero": "11878",
+  "data": "2024-01-09",
+  "epigrafe": "Decreto nº 11.878, de 9 de janeiro de 2024 (Credenciamento)",
+  "ementa": "Regulamenta o art. 79 da Lei nº 14.133, de 1º de abril de 2021, para dispor sobre o procedimento auxiliar de credenciamento para a contratação de bens e serviços.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/decreto/d11878.htm"
+ },
+ {
+  "slug": "margempreferencia_11890_2024",
+  "urn_lex": "urn:lex:br:federal:decreto:2024-01-22;11890",
+  "tipo": "decreto",
+  "numero": "11890",
+  "data": "2024-01-22",
+  "epigrafe": "Decreto nº 11.890, de 22 de janeiro de 2024 (Margem de preferência)",
+  "ementa": "Regulamenta o art. 26 da Lei nº 14.133, de 1º de abril de 2021, para dispor sobre a aplicação da margem de preferência e institui a Comissão Interministerial de Contratações Públicas para o Desenvolvimento Sustentável.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/decreto/d11890.htm"
+ },
+ {
+  "slug": "florestaspublicas_12046_2024",
+  "urn_lex": "urn:lex:br:federal:decreto:2024-06-05;12046",
+  "tipo": "decreto",
+  "numero": "12046",
+  "data": "2024-06-05",
+  "epigrafe": "Decreto nº 12.046, de 5 de junho de 2024 (Gestão de florestas públicas)",
+  "ementa": "Regulamenta, em âmbito federal, a Lei nº 11.284, de 2 de março de 2006, que dispõe sobre a gestão de florestas públicas para a produção sustentável.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/decreto/d12046.htm"
+ },
+ {
+  "slug": "bolsafamilia_12064_2024",
+  "urn_lex": "urn:lex:br:federal:decreto:2024-06-17;12064",
+  "tipo": "decreto",
+  "numero": "12064",
+  "data": "2024-06-17",
+  "epigrafe": "Decreto nº 12.064, de 17 de junho de 2024 (Regulamento do Bolsa Família)",
+  "ementa": "Regulamenta o Programa Bolsa Família, instituído pela Lei nº 14.601, de 19 de junho de 2023.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/decreto/d12064.htm"
+ }
+]

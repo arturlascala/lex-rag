@@ -1,0 +1,40 @@
+# venv
+.venv/
+venv/
+
+# python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# data (corpus, Qdrant, raw HTML, SQLite state)
+data/
+!data/.gitkeep
+
+# logs
+*.log
+
+# env
+.env
+.env.local
+
+# IDE / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Claude Code (config pessoal da máquina)
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+.mcp.json
+.mcp.json.bak
+
+# snapshots do corpus (vão para Release, não para o git)
+dist/
+
+# uv
+uv.lock.local
