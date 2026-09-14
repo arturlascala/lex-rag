@@ -91,7 +91,9 @@ def texto_apenso_sem_recorte(html: str) -> int:
     cauda = text[fecho.end():]
     anexo = html_parser._ANEXO_MARK.search(cauda)
     apenso = len(html_parser._ART_MARK.findall(cauda[:anexo.start()] if anexo else cauda))
-    return apenso if apenso > corpo else 0
+    # Corpo sem artigo numerado ("Artigo único. Fica aprovado o regulamento...",
+    # Dec. 21.981/1932) não colide com nada: o apenso já é dono de ``art_N``.
+    return apenso if corpo and apenso > corpo else 0
 
 
 def main() -> int:

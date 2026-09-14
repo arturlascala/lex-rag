@@ -1,10 +1,16 @@
 # Plano de implementação — lex-rag
 
-> Estado em 2026-08-31, **após o 10º lote (regimentos internos)**.
-> Corpus de **761 documentos** e **39.393 pontos**: 696 normas do Planalto (35
-> curadas + 235 LCs + 388 ordinárias + 42 decretos, 38.566 pontos), **63
-> enunciados de Súmula Vinculante do STF** (63 pontos) e os **2 regimentos
-> internos** do Senado e da Câmara (764 pontos).
+> Estado em 2026-09-14, **após os lotes 11 a 20 da onda de expansão**
+> ([PLANO_EXPANSAO_CORPUS.md](PLANO_EXPANSAO_CORPUS.md)). Corpus de **958
+> documentos** e **48.314 pontos**: 893 normas do Planalto (38 curadas, com o
+> ADCT em documento próprio + 235 LCs + 541 ordinárias + 84 decretos, entre
+> eles 19 tratados promulgados), **63 enunciados de Súmula Vinculante** e os
+> **2 regimentos internos**. Pendentes da onda: lote 21 (resoluções do Senado
+> e do Congresso — fonte HTML a resolver), lote 22 (súmulas STJ/STF, opcional)
+> e a Release do snapshot.
+>
+> Estado anterior, em 2026-08-31, após o 10º lote: 761 documentos / 39.393
+> pontos (696 normas do Planalto, 63 SVs, 2 regimentos).
 >
 > São **três caminhos de ingestão**: o do Planalto (descoberta, download, parse
 > de HTML em Windows-1252); o local de primeira classe, estreado no lote 7 para
@@ -37,7 +43,9 @@
 > após o 7º lote (súmulas vinculantes, que estreou o segundo caminho de
 > ingestão, 2026-08-14); 736 / 37.456 após o 8º lote (regimes de incentivo
 > setorial, 2026-08-18); 759 / 38.629 após o 9º lote (direito econômico,
-> 2026-08-21).
+> 2026-08-21); 762 / 41.552 após o 11º lote (ADCT + anexos, reindexação do
+> cache, 2026-09-14); 856 / 44.631 após os lotes 13-15 (bug nº 11, 2026-09-14);
+> 958 / 48.314 após os lotes 16, 17, 19 e 20 (tratados, 2026-09-14).
 
 ---
 
@@ -902,7 +910,9 @@ Planalto numa madrugada regride o índice sem ninguém perceber.
   devolve o art. 23 da Lei 11.076 e o art. 1º da Lei 8.929 **já com a redação
   da Lei 13.986/2020 e da Lei 14.421/2022** — a página `l8929.htm` do Planalto
   é ela própria consolidada.
-- **Achado colateral, para o backlog:** o campo de contexto (`parent_label`)
+- **Achado colateral, para o backlog** (agravado no lote 20: o art. 67 do
+  Estatuto de Roma vem sob uma "Parte IX" cujo rótulo é o § 2º de outro artigo):
+  o campo de contexto (`parent_label`)
   contamina-se com corpo de artigo quando o HTML quebra o cabeçalho de seção
   — o art. 67 do Decreto 8.058 aparece sob um "Capítulo X" cujo rótulo é um
   parágrafo inteiro. **Não é do lote**: medindo contexto que começa em
@@ -1060,6 +1070,163 @@ Planalto numa madrugada regride o índice sem ninguém perceber.
   recorte (RIR, RPS, BPC) e os 2 do DL 5.452 saem do índice. O art. 4º do RIR
   ("Fica revogado o Decreto nº 3.000") não é o que se consulta num Regulamento
   de 1.049 artigos.
+
+- [x] **13º lote — direito público de base, 24 normas** *(executado em
+  2026-09-14)*: 762 → **786 documentos**. Organização administrativa (DL
+  200/1967, emprego público 9.962, carreiras do Judiciário 11.416, PGF 10.480,
+  honorários da advocacia pública 13.327), patrimônio e desapropriação (DL
+  3.365/1941, Lei 4.132, DL 9.760/1946, Lei 9.636, DL 2.398/1987, Lei 13.240),
+  processo contra a Fazenda (8.437, 9.494, 9.873, organização da JF 5.010,
+  representação interventiva 12.562), segurança e defesa (serviço militar
+  4.375, Sisbin/ABIN 9.883, LO das PMs e Bombeiros 14.751, Força Nacional
+  11.473), urbano e cartórios (Estatuto da Metrópole 13.089, licitação de
+  publicidade 12.232, desburocratização 13.726, notários 8.935). **24/24
+  validadas**, datas e ementas da API do LexML com o `name` batendo, epígrafe
+  conferida na página. A Lei 14.751 é a LO das **Polícias Militares**, não da
+  PF, como o plano da onda supunha — entrou com o apelido certo.
+- **Diretório novo de URL**: o DL 2.398/1987 só existe em
+  `decreto-lei/1965-1988/`, que `variantes_url` não conhecia (o DL 200 e o DL
+  288 estão em `decreto-lei/`). A faixa 1965-1988 passou a gerar os dois
+  diretórios, com regressão em `test_planalto_urls.py`.
+- **🐛 Bug nº 11, achado pela verificação do lote — e ele era do corpus
+  inteiro.** `Art. 1º-A` saía como `art_1__1` com o texto "A. Estão
+  dispensadas...": o Planalto grafa `Art. 1<sup>o</sup>-A`, o achatamento vira
+  `Art. 1 o -A` (espaço antes do hífen) e o sufixo só era aceito colado. A Lei
+  9.494 apontou (8 `__N` em 12 artigos: os arts. 1º-A a 1º-F, que são o que se
+  consulta nela) e a medição no cache achou **148 artigos em 58 normas**, 139
+  deles com `__N`: LCP 123 arts. 3º-A/3º-B, CTB art. 7º-A, LCP 116 art. 8º-A,
+  Lei 8.666 art. 5º-A, Fies (12), seguro-desemprego (9)... Fix: espaço opcional
+  **antes** do hífen, nunca depois — "Art. 100 - A ação penal" e "Art. 312 -
+  Apropriar-se" continuam caput, e o teste trava os dois. Medido no corpus:
+  `__N` 537 → 409, **133 paths com sufixo novos, zero suspeitos** (nenhum
+  começa em minúscula). Restam 24 casos que são erro da fonte: `Art. 6ºA.` sem
+  hífen (Lei 8.080), `Art. 359-M-A` com sufixo duplo (CP), letras espaçadas por
+  `<span>` (LCP 123 art. 18-C) — ficam como a fonte publica.
+  **Heurística de detecção (reproduzível):** artigo cujo texto casa
+  `^[A-Z]\s?[.\-–]\s` — uma letra maiúscula seguida de ponto ou hífen.
+- **Os demais suspeitos do lote** (36 no total) eram, um a um, ruído
+  catalogado: duas redações do mesmo artigo (Lei 5.010 art. 75, Lei 9.636 art.
+  16, DL 200 arts. 20/31/54 — este último com cabeçalhos de ministérios
+  colados), caput minúsculo por erro da fonte (DL 9.760 art. 65 "poderão ser
+  alienadas", Lei 4.375 art. 50 "incorrerá na multa") e anexo com duas
+  redações (Lei 11.416, `anexo_i__1`).
+- **Carga:** como o fix exigiu bump (`pipeline_version` 0.5.1) e as 24 já
+  estavam em cache pelo `--baixar`, a carga foi uma só `reindexar_do_cache`
+  com o daemon parado, em vez de `POST /update`.
+
+- [x] **14º lote — direito privado, família e penal especial, 31 normas** e
+  **15º lote — trabalho, profissões regulamentadas e previdência, 39 normas**
+  *(executados em 2026-09-14)*: 786 → **856 documentos**. No 14: Lei das
+  Contravenções (DL 3.688), tombamento (DL 25/1937), alienação fiduciária (DL
+  911), cédula hipotecária (DL 70), títulos de crédito rural (DL 167), alimentos
+  (DL 986), bem de família (8.009), cheque (7.357), ação de alimentos (5.478),
+  paternidade (8.560), divórcio (6.515), alimentos gravídicos, alienação
+  parental, distrato (13.786), marco das garantias (14.711), SAF (14.193),
+  prisão temporária (7.960), tráfico de pessoas (13.344), escuta protegida
+  (13.431), primeira infância (13.257), bullying, violência sexual (12.845),
+  "Não é Não" (14.786), violência política de gênero (14.192), PcD (7.853,
+  8.899), Libras (10.436), refúgio (9.474), terras indígenas (14.701), cotas em
+  concursos (15.142/2025) e transporte de eleitores (6.091). No 15: 13º salário
+  (4.090 e 4.749), vale-transporte, PAT, discriminação no trabalho (9.029),
+  motorista (13.103), avulso (12.023), cooperativas de trabalho (12.690),
+  Estatuto da Segurança Privada (14.967/2024), RPPS da União (10.887),
+  aposentadoria especial do cooperado (10.666), revisão de benefícios (13.846)
+  e **27 leis de profissão** (medicina, enfermagem, engenharia, arquitetura,
+  contabilidade, farmácia, psicologia, serviço social, educação física,
+  nutrição, veterinária, odontologia, corretores de imóveis e de seguros,
+  taxista, artistas, radialista, jornalista, médicos, petroleiros, bombeiro
+  civil, guia de turismo, administrador, economista, fisioterapia,
+  biologia/biomedicina, radiologia). A Lei 14.434 (piso da enfermagem) ficou
+  de fora por só alterar a 7.498, que entra compilada.
+- **Três padrões de URL novos**, todos com regressão em `test_planalto_urls.py`:
+  o DL 70/1966 só existe em `del0070-66.htm` (número repetido em anos
+  distintos ganha o ano como sufixo); seis leis de profissão (4.119, 8.234,
+  3.999, 5.811, 1.411, 6.684) moram nos subdiretórios por faixa `leis/1950-1969/`,
+  `1970-1979/`, `1989_1994/` (este com sublinhado), que `variantes_url` passou a
+  gerar depois de `leis/`; e o DL 25/1937 caiu na armadilha do sufixo da API do
+  LexML na forma curta (resolvido com a data completa).
+- **Guarda de referência estendido (lote 15):** "art. 1º **desta** Lei" e
+  "art. 3º **neste** Decreto" abriam falso dispositivo (Leis 4.749 e 7.394, com
+  o path canônico do art. 1º ameaçado). O `_REFERENCIA` do bug nº 9 passou a
+  cobrir os demonstrativos; medido no corpus, mexe em 4 normas (as duas do
+  lote, o Código de Mineração e a OIT) sem perder path canônico.
+  `pipeline_version` 0.5.2.
+- **Suspeitos** (44 no 14 + 15, todos inspecionados): promulgação de partes
+  vetadas (Lei 14.701, 24 `__N`), duas redações (DL 70 art. 31, Lei 5.478 arts.
+  16/18, Lei 6.091 art. 17), e erro da fonte — a Lei do Cheque grafa literalmente
+  "Art . 52 portador", sem o "O". Nenhum bug novo.
+- **Carga:** uma `reindexar_do_cache` só, com os lotes 13-15 e o parser 0.5.2:
+  **44.631 pontos em 856 normas**, zero falhas.
+
+- [x] **16º lote — tributário e financeiro, 22 normas; 17º lote — saúde,
+  educação, ambiente, energia, agrário e comunicação, 38 normas; 19º lote —
+  decretos de técnica normativa e governança, 23; 20º lote — tratados
+  internacionais promulgados, 19** *(executados em 2026-09-14)*: 856 → **958
+  documentos**.
+- **16:** CSLL (7.689), lucro real (DL 1.598), Ufir/IR (8.383 — fecha o buraco
+  medido no lote 8, em que o `art_72` da Rota 2030 era o art. 72 da 8.383
+  citado), IRPJ pós-IFRS (12.973), parcelamento/RTT (11.941), compensação de
+  prejuízos (9.065), IOF (8.894), Cide-Combustíveis, PIS/Cofins agro (10.925),
+  ZPE, Padis, perdimento (DL 1.455), encargo legal (DL 1.025), PRR (13.606),
+  desoneração da folha (14.973/2024), autorregularização (14.740), Carf
+  (14.689), Perse, transparência tributária (12.741), CFEM (8.001), CMED
+  (10.742) e parcelamento dos entes/registro de ativos (12.810). Ficaram de
+  fora as que só alteram outra lei (13.476, 13.540, 13.259) e o Desenrola.
+- **17:** transplantes (9.434), propaganda de fumo (9.294), comércio
+  farmacêutico (5.991), sangue (10.205), vigilância epidemiológica/PNI (6.259),
+  Institutos Federais (11.892), piso do magistério (11.738), PNAE, salário-
+  educação (9.766), PNATE, psicologia nas escolas, royalties para educação
+  (12.858), fauna (5.197), Ibama, ICMBio, informação ambiental (10.650),
+  zoneamento industrial, cetáceos, Bolsa Verde, **mercado de carbono
+  (15.042/2024)**, Combustível do Futuro (14.993), *offshore* (15.097/2025),
+  Eletrobras (14.182), EPE, renovação das concessões (12.783), terras a
+  estrangeiros (5.709), Terra Legal (11.952), crédito rural (4.829, 8.427),
+  cultivares, orgânicos, armazenagem, rádio comunitária, EBC, direito de
+  resposta e apostas (14.790). **Achado de mérito na inspeção:** o art. 19 da
+  Lei 10.696 (PAA) está revogado — o PAA vigente é a **Lei 14.628/2023**, que
+  entrou no lugar, e a 10.696 ficou com o apelido de repactuação de dívidas.
+- **19:** elaboração de atos normativos (9.191), LINDB (9.830), AIR (10.411),
+  nepotismo (7.203), SEI (8.539), consórcios (6.017), estatais (8.945),
+  orçamento de obras (7.983), demarcação indígena (1.775), quilombolas (4.887),
+  povos tradicionais (6.040), Libras (5.626), revisão de atos (10.139),
+  colegiados (9.759), dados abertos (8.777), processo fiscal (7.574),
+  digitalização (10.278), arquivos (4.073), informação classificada (7.845),
+  simplificação (9.094), desfazimento de bens (9.373 — no lugar do 99.658,
+  revogado), diárias (5.992) e leiloeiros (21.981/1932). A regra "texto apenso
+  sem recorte" apitou no Dec. 21.981 e o caso mostrou o refinamento: corpo com
+  "Artigo único" (sem número) não colide com o Regulamento apenso, e a regra
+  passou a exigir corpo com artigo numerado.
+- **20 — a espécie que o lote 11 destravou:** Pacto de São José, PIDCP,
+  PIDESC, tortura, criança, CEDAW, Belém do Pará, discriminação racial, os
+  **três de status constitucional** (PcD, Marraqueche, racismo), Estatuto de
+  Roma, Palermo, Mérida, Haia (sequestro de crianças), apostila, Viena
+  (tratados), Assunção (Mercosul) e Paris. **O gate próprio do lote pegou na
+  primeira passada:** metade entrou com 2-3 dispositivos, nenhum da Convenção
+  — o Planalto serve o tratado **colado ao fecho, sem cabeçalho `ANEXO`**
+  ("Este texto não substitui o publicado... CONVENÇÃO CONTRA A TORTURA...
+  Artigo 1"), e o marcador por extenso só valia em escopo de anexo. Fix: depois
+  do fecho, o primeiro "Artigo N" abre um **anexo implícito** (`anexo_art_N`);
+  "Art." não é afetado, então a promulgação de partes vetadas segue como
+  antes. Segundo achado, também dos tratados: a **referência corrida por
+  extenso** ("em conformidade com o Artigo 8º", "no Artigo 4(1)") abria falso
+  dispositivo — 35 em 60 no Marraqueche; o que a denuncia é o que vem antes
+  (artigo definido ou preposição), e o guarda `_REF_ARTIGO_ANTES` a descarta.
+  Resultado: os 19 tratados com 22 a 128 artigos cada, `__N` só na Convenção
+  sobre PcD (Convenção + Protocolo Facultativo numerados do 1) — e a OIT caiu
+  de 1.651 para 1.618 dispositivos (33 referências que eram falsos artigos).
+  `pipeline_version` 0.5.3. Ficaram de fora a Lei Uniforme de Genebra (Dec.
+  57.663) e a CDB (Dec. 2.519): a página traz só o decreto e o texto do tratado
+  está em arquivo à parte.
+- **Mais três padrões de URL** (`test_planalto_urls.py`): decretos de 1995-1998
+  em `decreto/{ano}/` (Dec. 1.973/1996), decretos anteriores a 1970 em
+  `decreto/1950-1969/` e com extensão **`.html`** (Dec. 65.810/1969 — o portal
+  responde 300 ao `.htm`), e decretos anteriores a 1950 em `decreto/1930-1949/`
+  (Dec. 21.981/1932).
+- **`reindexar_do_cache.py --novos` e `--slug`** (novos): indexam só as normas
+  ausentes do `state` ou as nomeadas, sem recriar a coleção, reusando
+  `reindex_norma` do pipeline (apaga + reinsere + registra) — a lógica deixou de
+  estar duplicada no script. É o que o `POST /update` faria para o lote, menos
+  o download do corpus inteiro para conferir hash.
 
 ### 6. Operação
 

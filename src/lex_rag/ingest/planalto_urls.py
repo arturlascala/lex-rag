@@ -32,6 +32,14 @@ _BUCKETS = {2004: 2006, 2007: 2010, 2011: 2014, 2015: 2018, 2019: 2022, 2023: 20
 
 _SUFIXOS = ("compilado", "compilada", "consol", "cons", "")
 
+# Subdiretórios por faixa de ano das leis anteriores a 1995 (ver variantes_url).
+_FAIXAS_LEIS = (
+    (1950, 1969, "leis/1950-1969/"),
+    (1970, 1979, "leis/1970-1979/"),
+    (1980, 1988, "leis/1980-1988/"),
+    (1989, 1994, "leis/1989_1994/"),
+)
+
 
 def numero_pontuado(numero: str) -> str:
     """``"10973"`` → ``"10.973"`` (o Planalto usa as duas grafias na URL)."""
@@ -57,16 +65,22 @@ def _dirs_decreto(ano: int) -> list[str]:
     ``decreto/`` (Dec. 3.298/1999); 1990-1994 entre ``decreto/1990-1994/``
     (Dec. 592/1992) e ``decreto/`` (Dec. 678/1992); antes disso o consolidado
     fica em ``decreto/`` (Dec. 70.235/1972 → ``d70235compilado.htm``) ou em
-    ``decreto/antigos/`` (Dec. 20.910/1932).
+    ``decreto/antigos/`` (Dec. 20.910/1932, Dec. 57.663/1966) — e, antes de
+    1950, também em ``decreto/1930-1949/`` (Dec. 21.981/1932).
     """
     if ano >= 2004:
         ini = next(i for i in _BUCKETS if i <= ano <= _BUCKETS[i])
         return [f"_ato{ini}-{_BUCKETS[ini]}/{ano}/decreto/"]
-    if ano >= 1999:
+    if ano >= 1995:  # 1995-1998 segue a convenção de 1999-2003 (Dec. 1.973/1996)
         return [f"decreto/{ano}/", "decreto/"]
     if ano >= 1990:
         return ["decreto/", "decreto/1990-1994/"]
-    return ["decreto/", "decreto/antigos/"]
+    if ano >= 1950:
+        # Dec. 65.810/1969 só existe em ``decreto/1950-1969/``, e com extensão
+        # ``.html`` (ver ``variantes_url``).
+        return ["decreto/", "decreto/antigos/", "decreto/1950-1969/"]
+    # Dec. 21.981/1932 (leiloeiros) só existe em ``decreto/1930-1949/``.
+    return ["decreto/", "decreto/antigos/", "decreto/1930-1949/"]
 
 
 def _stems(prefixo: str, numero: str) -> list[str]:
@@ -80,7 +94,14 @@ def _stems(prefixo: str, numero: str) -> list[str]:
 def variantes_url(especie: str, numero: str, ano: int) -> list[str]:
     """URLs candidatas no Planalto, do texto consolidado para o texto simples."""
     if especie == "decreto.lei":
-        dirs, stems = ["decreto-lei/"], _stems("del", numero)
+        # Os decretos-lei de 1965 a 1988 se dividem entre ``decreto-lei/`` (DL
+        # 200/1967, DL 288/1967) e ``decreto-lei/1965-1988/`` (DL 2.398/1987,
+        # que só existe no segundo).
+        dirs = ["decreto-lei/"] + (["decreto-lei/1965-1988/"] if 1965 <= ano <= 1988 else [])
+        # Número repetido em anos distintos ganha o ano como sufixo: o DL
+        # 70/1966 só existe em ``del0070-66.htm`` (há outro DL 70, de 1937).
+        stems = _stems("del", numero)
+        stems += [f"{st}-{ano % 100:02d}" for st in stems]
     elif especie == "decreto":
         # O portal responde 301 de qualquer grafia maiúscula para o arquivo em
         # minúsculas, então só as minúsculas entram na lista — a variante
@@ -89,17 +110,26 @@ def variantes_url(especie: str, numero: str, ano: int) -> list[str]:
     else:
         stems = list(dict.fromkeys([*_stems("l", numero), f"l{numero_pontuado(numero)}"]))
         if ano <= 1998:
-            dirs = ["leis/"]
+            # Além de ``leis/``, o portal guarda parte das leis antigas em
+            # subdiretório por faixa (Lei 4.119/1962 em ``leis/1950-1969/``,
+            # Lei 5.811/1972 em ``1970-1979/``, Lei 8.234/1991 em ``1989_1994/``
+            # — este com sublinhado). A faixa 1980-1988 existe no portal mas as
+            # leis sondadas dela (7.357, 7.418) estão em ``leis/``.
+            dirs = ["leis/"] + [f for ini, fim, f in _FAIXAS_LEIS if ini <= ano <= fim]
         elif ano <= 2003:  # 1999-2003 se espalham por três diretórios
             dirs = [f"leis/{ano}/", f"leis/leis_{ano}/", "leis/"]
         else:
             ini = next(i for i in _BUCKETS if i <= ano <= _BUCKETS[i])
             dirs = [f"_ato{ini}-{_BUCKETS[ini]}/{ano}/lei/"]
+    # Os decretos anteriores a 1970 têm páginas com extensão ``.html`` (o
+    # portal responde 300 ao ``.htm``); nas demais espécies só ``.htm`` existe.
+    extensoes = (".htm", ".html") if especie == "decreto" and ano < 1970 else (".htm",)
     return [
-        BASE + d + stem + suf + ".htm"
+        BASE + d + stem + suf + ext
         for d in dirs
         for suf in _SUFIXOS
         for stem in stems
+        for ext in extensoes
     ]
 
 

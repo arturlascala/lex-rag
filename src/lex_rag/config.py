@@ -49,7 +49,11 @@ class Settings(BaseSettings):
     # 0.4.0: decode cp1252 (aspas e travessões vinham como controle C1)
     # 0.5.0: anexo como dispositivo próprio (anexo_*), ADCT separado da CF,
     #        texto apenso (CLT, RIR, RPS, BPC) dono de art_N via recorte
-    pipeline_version: str = "0.5.0"
+    # 0.5.1: sufixo de artigo com ordinal em <sup> ("Art. 1 o -A") — bug nº 11
+    # 0.5.2: guarda de referência cobre "art. 1º desta Lei" (lote 15)
+    # 0.5.3: anexo implícito depois do fecho ("Artigo N" sem cabeçalho ANEXO) e
+    #        guarda de referência por extenso ("no Artigo 4") — lote 20
+    pipeline_version: str = "0.5.3"
 
     log_level: str = "INFO"
 

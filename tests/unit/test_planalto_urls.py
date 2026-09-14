@@ -11,6 +11,7 @@ from __future__ import annotations
 from datetime import date
 
 from lex_rag.ingest.planalto_urls import (
+    BASE,
     conferir_data,
     epigrafe,
     numero_pontuado,
@@ -37,6 +38,29 @@ def test_diretorios_por_ano():
     assert all("_ato2004-2006/2004/lei/" in u for u in variantes_url("lei", "10973", 2004))
     # decreto-lei tem diretório próprio
     assert all("decreto-lei/del4657" in u for u in variantes_url("decreto.lei", "4657", 1942))
+    # e, entre 1965 e 1988, também o subdiretório da faixa (DL 2.398/1987 só está lá)
+    urls_1987 = variantes_url("decreto.lei", "2398", 1987)
+    assert any(u.endswith("decreto-lei/1965-1988/del2398.htm") for u in urls_1987)
+    assert urls_1987.index(BASE + "decreto-lei/del2398compilado.htm") < urls_1987.index(
+        BASE + "decreto-lei/1965-1988/del2398compilado.htm"
+    )
+    # leis antigas também moram em subdiretório por faixa de ano, depois de leis/
+    urls_1962 = variantes_url("lei", "4119", 1962)
+    assert BASE + "leis/1950-1969/l4119.htm" in urls_1962
+    assert urls_1962.index(BASE + "leis/l4119.htm") < urls_1962.index(
+        BASE + "leis/1950-1969/l4119.htm"
+    )
+    assert BASE + "leis/1989_1994/l8234.htm" in variantes_url("lei", "8234", 1991)
+    assert not any("1950-1969" in u for u in variantes_url("lei", "9029", 1995))
+    # decretos de 1995-1998 têm diretório do ano; os anteriores a 1970 também .html
+    assert BASE + "decreto/1996/d1973.htm" in variantes_url("decreto", "1973", 1996)
+    assert BASE + "decreto/1950-1969/d65810.html" in variantes_url("decreto", "65810", 1969)
+    assert not any(u.endswith(".html") for u in variantes_url("decreto", "9580", 2018))
+    # decretos anteriores a 1950 têm um terceiro diretório
+    assert BASE + "decreto/1930-1949/d21981.htm" in variantes_url("decreto", "21981", 1932)
+    assert not any("1930-1949" in u for u in variantes_url("decreto", "57663", 1966))
+    # número repetido em anos distintos: o DL 70/1966 só existe em del0070-66.htm
+    assert BASE + "decreto-lei/del0070-66.htm" in variantes_url("decreto.lei", "70", 1966)
 
 
 def test_numero_com_e_sem_ponto():

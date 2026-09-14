@@ -328,6 +328,16 @@ def test_referencia_a_artigo_nao_abre_dispositivo():
     assert [x.path for x in conj] == ["art_34"]
     assert conj[0].texto.endswith("quanto à toxicidade")
 
+    # Pronome demonstrativo (lote 15): "art. 1º desta Lei" abria falso art. 1º.
+    dem = parse_dispositivos(
+        "<p>Art. 1º O adiantamento será pago entre fevereiro e novembro.</p>"
+        "<p>Art. 2º Na hipótese do Art. 1º desta Lei, o empregador poderá compensar o "
+        "adiantamento; aplica-se o art. 3º deste Decreto e o disposto no art. 4º nesta "
+        "Lei.</p>"
+    )
+    assert [x.path for x in dem] == ["art_1", "art_2"]
+    assert dem[1].texto.endswith("nesta Lei")
+
 
 def test_fecho_encerra_o_texto_articulado():
     """Depois do fecho vêm assinaturas e anexos — não são texto do artigo (lote 6)."""
@@ -497,4 +507,47 @@ def test_cf_fixture_recorte_separa_adct_do_corpo():
     assert "precatório" in adct["art_97"].texto.lower()  # regime especial de pagamento
     assert adct["art_1"].texto.startswith("O Presidente da República, o Presidente do Supremo")
     assert "art_250" in corpo and "art_250" not in adct
+
+
+def test_sufixo_com_ordinal_em_sup_nao_se_perde():
+    """Bug nº 11 (lote 13): "Art. 1<sup>o</sup>-A" achatado vira "Art. 1 o -A"."""
+    d = parse_dispositivos(
+        "<p>Art. 1<sup>o</sup> Aplica-se à tutela antecipada o disposto nesta Lei.</p>"
+        "<p>Art. 1<sup>o</sup>-A. Estão dispensadas de depósito prévio as pessoas "
+        "jurídicas de direito público.</p>"
+        "<p>Art. 1<sup>o</sup>-F. Nas condenações impostas à Fazenda Pública incidirão "
+        "juros de mora.</p>"
+        "<p>Art. 100 - A ação penal é pública.</p>"
+        "<p>Art. 312 - Apropriar-se o funcionário público de dinheiro.</p>"
+    )
+    assert [x.path for x in d] == ["art_1", "art_1_A", "art_1_F", "art_100", "art_312"]
+    ds = {x.path: x for x in d}
+    assert ds["art_1_A"].texto.startswith("Estão dispensadas")
+    assert ds["art_1_A"].label == "Art. 1º-A"
+    assert ds["art_100"].texto.startswith("A ação penal")  # letra solta não é sufixo
+
+
+def test_tratado_colado_ao_fecho_abre_anexo_implicito():
+    """Metade dos decretos de promulgação serve a Convenção sem cabeçalho ANEXO."""
+    d = parse_dispositivos(
+        "<p>Art. 1º A Convenção apensa por cópia ao presente Decreto será executada.</p>"
+        "<p>Art. 2º Este Decreto entra em vigor na data de sua publicação.</p>"
+        "<p>Brasília, 15 de fevereiro de 1991; 170º da Independência e 103º da "
+        "República.</p><p>FERNANDO COLLOR</p>"
+        "<p>Este texto não substitui o publicado no D.O.U. de 18.2.1991</p>"
+        "<p>CONVENÇÃO CONTRA A TORTURA</p><p>PARTE I</p>"
+        "<p>Artigo 1º 1. Para os fins da presente Convenção, o termo tortura designa "
+        "qualquer ato pelo qual dores são infligidas.</p>"
+        "<p>Artigo 2º 1. Cada Estado Parte tomará medidas eficazes, em conformidade com o "
+        "Artigo 8º e com o disposto no Artigo 4(1) para todos os direitos.</p>"
+    )
+    paths = [x.path for x in d]
+    assert paths == ["art_1", "art_2", "anexo_art_1", "anexo_art_2"]
+    ds = {x.path: x for x in d}
+    assert ds["anexo_art_1"].texto.startswith("1. Para os fins")
+    assert ds["anexo_art_2"].texto.endswith("para todos os direitos")  # referências coladas
+    assert ds["anexo_art_1"].parent_label == "ANEXO"  # o anexo implícito não tem título
+    # sem fecho, "Artigo" por extenso segue sendo referência, não marcador
+    sem = parse_dispositivos("<p>Art. 1º Vale o Artigo 5 da Convenção.</p>")
+    assert [x.path for x in sem] == ["art_1"]
 

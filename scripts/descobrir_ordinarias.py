@@ -1373,6 +1373,572 @@ CANDIDATAS: list[tuple[str, str, str, date, str, str]] = [
     ("pronampe_13999_2020", "lei", "13999", date(2020, 5, 18), "Pronampe",
      "Institui o Programa Nacional de Apoio às Microempresas e Empresas de Pequeno Porte "
      "(Pronampe), para o desenvolvimento e o fortalecimento dos pequenos negócios."),
+
+    # =================================================================
+    # Lote 13 (onda de expansão) — direito público de base. Datas e ementas
+    # da API de metadados do LexML, conferidas contra o número pedido.
+    # =================================================================
+    # ------------------------------------ organização administrativa
+    ("dl200_1967", "decreto.lei", "200", date(1967, 2, 25),
+     "Organização da Administração Federal",
+     "Dispõe sobre a organização da Administração Federal, estabelece diretrizes para "
+     "a Reforma Administrativa."),
+    ("empregopublico_9962_2000", "lei", "9962", date(2000, 2, 22), "Emprego público",
+     "Disciplina o regime de emprego público do pessoal da Administração federal direta, "
+     "autárquica e fundacional."),
+    ("carreirasjudiciario_11416_2006", "lei", "11416", date(2006, 12, 15),
+     "Carreiras do Poder Judiciário da União",
+     "Dispõe sobre as Carreiras dos Servidores do Poder Judiciário da União."),
+    ("pgf_10480_2002", "lei", "10480", date(2002, 7, 2), "Procuradoria-Geral Federal",
+     "Dispõe sobre o Quadro de Pessoal da Advocacia-Geral da União e cria a "
+     "Procuradoria-Geral Federal."),
+    ("honorariosadvpublica_13327_2016", "lei", "13327", date(2016, 7, 29),
+     "Honorários da advocacia pública",
+     "Altera a remuneração de servidores públicos; dispõe sobre os honorários advocatícios "
+     "de sucumbência das causas em que forem parte a União, suas autarquias e fundações "
+     "(arts. 27 a 36); reestrutura cargos e carreiras."),
+    # ------------------------------------ patrimônio e desapropriação
+    ("desapropriacao_3365_1941", "decreto.lei", "3365", date(1941, 6, 21),
+     "Desapropriação por utilidade pública",
+     "Dispõe sobre desapropriações por utilidade pública."),
+    ("desapropriacaosocial_4132_1962", "lei", "4132", date(1962, 9, 10),
+     "Desapropriação por interesse social",
+     "Define os casos de desapropriação por interesse social e dispõe sobre sua aplicação."),
+    ("imoveisuniao_9760_1946", "decreto.lei", "9760", date(1946, 9, 5),
+     "Bens imóveis da União",
+     "Dispõe sobre os bens imóveis da União."),
+    ("gestaoimoveisuniao_9636_1998", "lei", "9636", date(1998, 5, 15),
+     "Regularização e alienação de imóveis da União",
+     "Dispõe sobre a regularização, administração, aforamento e alienação de bens imóveis "
+     "de domínio da União."),
+    ("forolaudemio_2398_1987", "decreto.lei", "2398", date(1987, 12, 21),
+     "Foros, laudêmios e taxas de ocupação",
+     "Dispõe sobre foros, laudêmios e taxas de ocupação relativas a imóveis de "
+     "propriedade da União."),
+    ("alienacaoimoveisuniao_13240_2015", "lei", "13240", date(2015, 12, 30),
+     "Administração e alienação de imóveis da União",
+     "Dispõe sobre a administração, a alienação, a transferência de gestão de imóveis da "
+     "União e seu uso para a constituição de fundos."),
+    # ------------------------------------ processo contra a Fazenda
+    ("cautelarespoderpublico_8437_1992", "lei", "8437", date(1992, 6, 30),
+     "Medidas cautelares contra o Poder Público",
+     "Dispõe sobre a concessão de medidas cautelares contra atos do Poder Público."),
+    ("tutelafazenda_9494_1997", "lei", "9494", date(1997, 9, 10),
+     "Tutela antecipada contra a Fazenda Pública",
+     "Disciplina a aplicação da tutela antecipada contra a Fazenda Pública."),
+    ("prescricaoadm_9873_1999", "lei", "9873", date(1999, 11, 23),
+     "Prescrição da ação punitiva da Administração",
+     "Estabelece prazo de prescrição para o exercício de ação punitiva pela Administração "
+     "Pública Federal, direta e indireta."),
+    ("justicafederal_5010_1966", "lei", "5010", date(1966, 5, 30),
+     "Organização da Justiça Federal",
+     "Organiza a Justiça Federal de primeira instância."),
+    ("representacaointerventiva_12562_2011", "lei", "12562", date(2011, 12, 23),
+     "Representação interventiva",
+     "Regulamenta o inciso III do art. 36 da Constituição Federal, para dispor sobre o "
+     "processo e julgamento da representação interventiva perante o Supremo Tribunal "
+     "Federal."),
+    # ------------------------------------ segurança e defesa
+    ("servicomilitar_4375_1964", "lei", "4375", date(1964, 8, 17), "Lei do Serviço Militar",
+     "Lei do Serviço Militar."),
+    ("abin_9883_1999", "lei", "9883", date(1999, 12, 7), "Sisbin e ABIN",
+     "Institui o Sistema Brasileiro de Inteligência, cria a Agência Brasileira de "
+     "Inteligência - ABIN."),
+    ("lopmbombeiros_14751_2023", "lei", "14751", date(2023, 12, 12),
+     "Lei Orgânica das Polícias Militares e Bombeiros",
+     "Institui a Lei Orgânica Nacional das Polícias Militares e dos Corpos de Bombeiros "
+     "Militares dos Estados, do Distrito Federal e dos Territórios."),
+    ("forcanacional_11473_2007", "lei", "11473", date(2007, 5, 10),
+     "Força Nacional de Segurança Pública",
+     "Dispõe sobre cooperação federativa no âmbito da segurança pública."),
+    # ------------------------------------ urbano, comunicação e cartórios
+    ("metropole_13089_2015", "lei", "13089", date(2015, 1, 12), "Estatuto da Metrópole",
+     "Institui o Estatuto da Metrópole."),
+    ("publicidade_12232_2010", "lei", "12232", date(2010, 4, 29),
+     "Licitação de serviços de publicidade",
+     "Dispõe sobre as normas gerais para licitação e contratação pela administração "
+     "pública de serviços de publicidade prestados por intermédio de agências de "
+     "propaganda."),
+    ("desburocratizacao_13726_2018", "lei", "13726", date(2018, 10, 8),
+     "Desburocratização",
+     "Racionaliza atos e procedimentos administrativos dos Poderes da União, dos Estados, "
+     "do Distrito Federal e dos Municípios e institui o Selo de Desburocratização e "
+     "Simplificação."),
+    ("notarios_8935_1994", "lei", "8935", date(1994, 11, 18),
+     "Serviços notariais e de registro",
+     "Regulamenta o art. 236 da Constituição Federal, dispondo sobre serviços notariais "
+     "e de registro."),
+
+    # =================================================================
+    # Lote 14 (onda de expansão) — direito privado, família e penal especial.
+    # =================================================================
+    # ------------------------------------ decretos-lei de base
+    ("contravencoes_3688_1941", "decreto.lei", "3688", date(1941, 10, 3),
+     "Lei das Contravenções Penais", "Lei das Contravenções Penais."),
+    ("tombamento_25_1937", "decreto.lei", "25", date(1937, 11, 30), "Tombamento",
+     "Organiza a proteção do patrimônio histórico e artístico nacional."),
+    ("alienacaofiduciaria_911_1969", "decreto.lei", "911", date(1969, 10, 1),
+     "Alienação fiduciária de bens móveis",
+     "Altera a redação do art. 66 da Lei nº 4.728, de 14 de julho de 1965, e estabelece "
+     "normas de processo sobre alienação fiduciária."),
+    ("cedulahipotecaria_70_1966", "decreto.lei", "70", date(1966, 11, 21),
+     "Cédula hipotecária e execução extrajudicial",
+     "Autoriza o funcionamento de associações de poupança e empréstimo e institui a "
+     "cédula hipotecária."),
+    ("creditorural_167_1967", "decreto.lei", "167", date(1967, 2, 14),
+     "Títulos de crédito rural", "Dispõe sobre títulos de crédito rural."),
+    ("alimentos_986_1969", "decreto.lei", "986", date(1969, 10, 21),
+     "Normas básicas sobre alimentos", "Institui normas básicas sobre alimentos."),
+    # ------------------------------------ civil, família e imobiliário
+    ("bemdefamilia_8009_1990", "lei", "8009", date(1990, 3, 29), "Bem de família",
+     "Dispõe sobre a impenhorabilidade do bem de família."),
+    ("cheque_7357_1985", "lei", "7357", date(1985, 9, 2), "Lei do Cheque",
+     "Dispõe sobre o cheque."),
+    ("acaoalimentos_5478_1968", "lei", "5478", date(1968, 7, 25), "Ação de alimentos",
+     "Dispõe sobre ação de alimentos."),
+    ("paternidade_8560_1992", "lei", "8560", date(1992, 12, 29),
+     "Investigação de paternidade",
+     "Regula a investigação de paternidade dos filhos havidos fora do casamento."),
+    ("divorcio_6515_1977", "lei", "6515", date(1977, 12, 26), "Lei do Divórcio",
+     "Regula os casos de dissolução da sociedade conjugal e do casamento, seus efeitos "
+     "e respectivos processos."),
+    ("alimentosgravidicos_11804_2008", "lei", "11804", date(2008, 11, 5),
+     "Alimentos gravídicos",
+     "Disciplina o direito a alimentos gravídicos e a forma como ele será exercido."),
+    ("alienacaoparental_12318_2010", "lei", "12318", date(2010, 8, 26),
+     "Alienação parental", "Dispõe sobre a alienação parental."),
+    ("distrato_13786_2018", "lei", "13786", date(2018, 12, 27),
+     "Distrato imobiliário",
+     "Disciplina a resolução do contrato por inadimplemento do adquirente de unidade "
+     "imobiliária em incorporação imobiliária e em parcelamento de solo urbano."),
+    ("marcogarantias_14711_2023", "lei", "14711", date(2023, 10, 30),
+     "Marco Legal das Garantias",
+     "Dispõe sobre o aprimoramento das regras de garantia, a execução extrajudicial de "
+     "créditos garantidos por hipoteca, a execução extrajudicial de garantia imobiliária "
+     "em concurso de credores e o procedimento de busca e apreensão extrajudicial de "
+     "bens móveis."),
+    ("saf_14193_2021", "lei", "14193", date(2021, 8, 6), "Sociedade Anônima do Futebol",
+     "Institui a Sociedade Anônima do Futebol e dispõe sobre normas de constituição, "
+     "governança, controle e transparência, meios de financiamento da atividade "
+     "futebolística e tratamento dos passivos das entidades de práticas desportivas."),
+    # ------------------------------------ penal e processo penal especial
+    ("prisaotemporaria_7960_1989", "lei", "7960", date(1989, 12, 21), "Prisão temporária",
+     "Dispõe sobre prisão temporária."),
+    ("traficopessoas_13344_2016", "lei", "13344", date(2016, 10, 6),
+     "Tráfico de pessoas",
+     "Dispõe sobre prevenção e repressão ao tráfico interno e internacional de pessoas "
+     "e sobre medidas de atenção às vítimas."),
+    ("escutaprotegida_13431_2017", "lei", "13431", date(2017, 4, 4),
+     "Criança vítima ou testemunha de violência",
+     "Estabelece o sistema de garantia de direitos da criança e do adolescente vítima "
+     "ou testemunha de violência."),
+    ("primeirainfancia_13257_2016", "lei", "13257", date(2016, 3, 8),
+     "Marco Legal da Primeira Infância",
+     "Dispõe sobre as políticas públicas para a primeira infância."),
+    ("bullying_13185_2015", "lei", "13185", date(2015, 11, 6), "Combate ao bullying",
+     "Institui o Programa de Combate à Intimidação Sistemática (Bullying)."),
+    ("violenciasexual_12845_2013", "lei", "12845", date(2013, 8, 1),
+     "Atendimento a vítimas de violência sexual",
+     "Dispõe sobre o atendimento obrigatório e integral de pessoas em situação de "
+     "violência sexual."),
+    ("naoenao_14786_2023", "lei", "14786", date(2023, 12, 28), "Protocolo Não é Não",
+     "Cria o protocolo 'Não é Não', para prevenção ao constrangimento e à violência "
+     "contra a mulher e para proteção à vítima."),
+    ("violenciapolitica_14192_2021", "lei", "14192", date(2021, 8, 4),
+     "Violência política contra a mulher",
+     "Estabelece normas para prevenir, reprimir e combater a violência política contra "
+     "a mulher."),
+    # ------------------------------------ direitos de grupos
+    ("apoiopcd_7853_1989", "lei", "7853", date(1989, 10, 24),
+     "Apoio às pessoas com deficiência",
+     "Dispõe sobre o apoio às pessoas portadoras de deficiência, sua integração social "
+     "e a tutela jurisdicional de interesses coletivos ou difusos dessas pessoas."),
+    ("passelivre_8899_1994", "lei", "8899", date(1994, 6, 29), "Passe livre interestadual",
+     "Concede passe livre às pessoas portadoras de deficiência no sistema de transporte "
+     "coletivo interestadual."),
+    ("libras_10436_2002", "lei", "10436", date(2002, 4, 24), "Libras",
+     "Dispõe sobre a Língua Brasileira de Sinais - Libras."),
+    ("refugiados_9474_1997", "lei", "9474", date(1997, 7, 22), "Estatuto dos Refugiados",
+     "Define mecanismos para a implementação do Estatuto dos Refugiados de 1951."),
+    ("terrasindigenas_14701_2023", "lei", "14701", date(2023, 10, 20),
+     "Demarcação de terras indígenas",
+     "Regulamenta o art. 231 da Constituição Federal, para dispor sobre o "
+     "reconhecimento, a demarcação, o uso e a gestão de terras indígenas."),
+    ("cotasconcursos_15142_2025", "lei", "15142", date(2025, 6, 3),
+     "Cotas raciais em concursos públicos",
+     "Reserva às pessoas pretas e pardas, indígenas e quilombolas o percentual de 30% "
+     "das vagas oferecidas nos concursos públicos para provimento de cargos efetivos e "
+     "empregos públicos no âmbito da administração pública federal."),
+    ("transporteeleitores_6091_1974", "lei", "6091", date(1974, 8, 15),
+     "Transporte de eleitores",
+     "Dispõe sobre o fornecimento gratuito de transporte, em dias de eleição, a "
+     "eleitores residentes nas zonas rurais."),
+
+    # =================================================================
+    # Lote 15 (onda de expansão) — trabalho, profissões regulamentadas e
+    # previdência. A Lei 14.434/2022 (piso da enfermagem) fica de fora: só
+    # altera a Lei 7.498, que entra compilada.
+    # =================================================================
+    # ------------------------------------ trabalho
+    ("decimoterceiro_4090_1962", "lei", "4090", date(1962, 7, 13), "13º salário",
+     "Institui a gratificação de Natal para os trabalhadores."),
+    ("decimoterceiropag_4749_1965", "lei", "4749", date(1965, 8, 12),
+     "Pagamento do 13º salário",
+     "Dispõe sobre o pagamento da gratificação prevista na Lei nº 4.090, de 13 de julho "
+     "de 1962."),
+    ("valetransporte_7418_1985", "lei", "7418", date(1985, 12, 16), "Vale-Transporte",
+     "Institui o Vale-Transporte."),
+    ("pat_6321_1976", "lei", "6321", date(1976, 4, 14),
+     "PAT — Programa de Alimentação do Trabalhador",
+     "Dispõe sobre a dedução, do lucro tributável para fins de imposto sobre a renda das "
+     "pessoas jurídicas, do dobro das despesas realizadas em programas de alimentação do "
+     "trabalhador."),
+    ("discriminacaotrabalho_9029_1995", "lei", "9029", date(1995, 4, 13),
+     "Práticas discriminatórias no trabalho",
+     "Proíbe a exigência de atestados de gravidez e esterilização, e outras práticas "
+     "discriminatórias, para efeitos admissionais ou de permanência da relação jurídica "
+     "de trabalho."),
+    ("motorista_13103_2015", "lei", "13103", date(2015, 3, 2), "Motorista profissional",
+     "Dispõe sobre o exercício da profissão de motorista."),
+    ("trabalhoavulso_12023_2009", "lei", "12023", date(2009, 8, 27), "Trabalho avulso",
+     "Dispõe sobre as atividades de movimentação de mercadorias em geral e sobre o "
+     "trabalho avulso."),
+    ("cooperativastrabalho_12690_2012", "lei", "12690", date(2012, 7, 19),
+     "Cooperativas de trabalho",
+     "Dispõe sobre a organização e o funcionamento das Cooperativas de Trabalho e "
+     "institui o Programa Nacional de Fomento às Cooperativas de Trabalho - PRONACOOP."),
+    ("segurancaprivada_14967_2024", "lei", "14967", date(2024, 9, 9),
+     "Estatuto da Segurança Privada",
+     "Institui o Estatuto da Segurança Privada e da Segurança das Instituições "
+     "Financeiras."),
+    # ------------------------------------ previdência
+    ("rppsuniao_10887_2004", "lei", "10887", date(2004, 6, 18),
+     "Contribuição e cálculo dos benefícios do RPPS",
+     "Dispõe sobre a aplicação de disposições da Emenda Constitucional nº 41, de 19 de "
+     "dezembro de 2003 (cálculo dos proventos e contribuição previdenciária do servidor)."),
+    ("aposentadoriaespecial_10666_2003", "lei", "10666", date(2003, 5, 8),
+     "Aposentadoria especial do cooperado e regras de custeio",
+     "Dispõe sobre a concessão da aposentadoria especial ao cooperado de cooperativa de "
+     "trabalho ou de produção."),
+    ("revisaobeneficios_13846_2019", "lei", "13846", date(2019, 6, 18),
+     "Revisão de benefícios previdenciários",
+     "Institui o Programa Especial para Análise de Benefícios com Indícios de "
+     "Irregularidade e o Programa de Revisão de Benefícios por Incapacidade."),
+    # ------------------------------------ profissões regulamentadas
+    ("medicina_12842_2013", "lei", "12842", date(2013, 7, 10), "Lei do Ato Médico",
+     "Dispõe sobre o exercício da Medicina."),
+    ("enfermagem_7498_1986", "lei", "7498", date(1986, 6, 25), "Exercício da enfermagem",
+     "Dispõe sobre a regulamentação do exercício da enfermagem."),
+    ("engenharia_5194_1966", "lei", "5194", date(1966, 12, 24),
+     "Profissões de Engenharia e Agronomia",
+     "Regula o exercício das profissões de Engenharia, Arquiteto e Engenheiro-Agrônomo."),
+    ("arquitetura_12378_2010", "lei", "12378", date(2010, 12, 31),
+     "Arquitetura e Urbanismo — CAU",
+     "Regulamenta o exercício da Arquitetura e Urbanismo; cria o Conselho de Arquitetura "
+     "e Urbanismo do Brasil - CAU/BR."),
+    ("contabilidade_9295_1946", "decreto.lei", "9295", date(1946, 5, 27),
+     "Profissão contábil — CFC",
+     "Cria o Conselho Federal de Contabilidade e define as atribuições do Contador e do "
+     "Guarda-livros."),
+    ("farmacia_13021_2014", "lei", "13021", date(2014, 8, 8), "Atividades farmacêuticas",
+     "Dispõe sobre o exercício e a fiscalização das atividades farmacêuticas."),
+    ("psicologia_4119_1962", "lei", "4119", date(1962, 8, 27), "Profissão de psicólogo",
+     "Dispõe sobre os cursos de formação em psicologia e regulamenta a profissão de "
+     "psicólogo."),
+    ("servicosocial_8662_1993", "lei", "8662", date(1993, 6, 7),
+     "Profissão de Assistente Social",
+     "Dispõe sobre a profissão de Assistente Social."),
+    ("educacaofisica_9696_1998", "lei", "9696", date(1998, 9, 1),
+     "Profissão de Educação Física",
+     "Dispõe sobre a regulamentação da Profissão de Educação Física e cria os "
+     "respectivos Conselho Federal e Conselhos Regionais de Educação Física."),
+    ("nutricao_8234_1991", "lei", "8234", date(1991, 9, 17), "Profissão de Nutricionista",
+     "Regulamenta a profissão de Nutricionista."),
+    ("veterinaria_5517_1968", "lei", "5517", date(1968, 10, 23),
+     "Profissão de médico-veterinário",
+     "Dispõe sobre o exercício da profissão de médico-veterinário e cria os Conselhos "
+     "Federal e Regionais de Medicina Veterinária."),
+    ("odontologia_5081_1966", "lei", "5081", date(1966, 8, 24), "Exercício da Odontologia",
+     "Regula o exercício da Odontologia."),
+    ("corretorimoveis_6530_1978", "lei", "6530", date(1978, 5, 12),
+     "Profissão de Corretor de Imóveis",
+     "Dá nova regulamentação à profissão de Corretor de Imóveis e disciplina o "
+     "funcionamento de seus órgãos de fiscalização."),
+    ("corretorseguros_4594_1964", "lei", "4594", date(1964, 12, 29),
+     "Profissão de corretor de seguros",
+     "Regula a profissão de corretor de seguros."),
+    ("taxista_12468_2011", "lei", "12468", date(2011, 8, 26), "Profissão de taxista",
+     "Regulamenta a profissão de taxista."),
+    ("artistas_6533_1978", "lei", "6533", date(1978, 5, 24),
+     "Profissões de Artista e Técnico em Espetáculos",
+     "Dispõe sobre a regulamentação das profissões de Artista e de Técnico em "
+     "Espetáculos de Diversões."),
+    ("radialista_6615_1978", "lei", "6615", date(1978, 12, 16), "Profissão de Radialista",
+     "Dispõe sobre a regulamentação da profissão de Radialista."),
+    ("jornalista_972_1969", "decreto.lei", "972", date(1969, 10, 17),
+     "Profissão de jornalista",
+     "Dispõe sobre o exercício da profissão de jornalista."),
+    ("jornadamedicos_3999_1961", "lei", "3999", date(1961, 12, 15),
+     "Salário-mínimo e jornada de médicos e cirurgiões-dentistas",
+     "Altera o salário-mínimo dos médicos e cirurgiões dentistas."),
+    ("petroleiros_5811_1972", "lei", "5811", date(1972, 10, 11),
+     "Regime de trabalho dos petroleiros",
+     "Dispõe sobre o regime de trabalho dos empregados nas atividades de exploração, "
+     "perfuração, produção e refinação de petróleo, industrialização do xisto, indústria "
+     "petroquímica e transporte de petróleo e seus derivados por meio de dutos."),
+    ("bombeirocivil_11901_2009", "lei", "11901", date(2009, 1, 12),
+     "Profissão de Bombeiro Civil",
+     "Dispõe sobre a profissão de Bombeiro Civil."),
+    ("guiaturismo_8623_1993", "lei", "8623", date(1993, 1, 28), "Profissão de Guia de Turismo",
+     "Dispõe sobre a profissão de Guia de Turismo."),
+    ("administracao_4769_1965", "lei", "4769", date(1965, 9, 9),
+     "Profissão de Administrador",
+     "Dispõe sobre o exercício da profissão de Técnico de Administração (Administrador)."),
+    ("economista_1411_1951", "lei", "1411", date(1951, 8, 13), "Profissão de Economista",
+     "Dispõe sobre a profissão de Economista."),
+    ("fisioterapia_938_1969", "decreto.lei", "938", date(1969, 10, 13),
+     "Profissões de fisioterapeuta e terapeuta ocupacional",
+     "Provê sobre as profissões de fisioterapeuta e terapeuta ocupacional."),
+    ("biologia_6684_1979", "lei", "6684", date(1979, 9, 3),
+     "Profissões de Biólogo e Biomédico",
+     "Regulamenta as profissões de Biólogo e Biomédico e cria o Conselho Federal e os "
+     "Conselhos Regionais de Biologia e Biomedicina."),
+    ("radiologia_7394_1985", "lei", "7394", date(1985, 10, 29),
+     "Profissão de Técnico em Radiologia",
+     "Regula o exercício da Profissão de Técnico em Radiologia."),
+
+    # =================================================================
+    # Lote 16 (onda de expansão) — tributário e financeiro estrutural. Ficam
+    # de fora as que só alteram outra lei (13.476, 13.540, 13.259) e o Desenrola
+    # (14.690, programa temporário).
+    # =================================================================
+    ("csll_7689_1988", "lei", "7689", date(1988, 12, 15), "CSLL",
+     "Institui contribuição social sobre o lucro das pessoas jurídicas."),
+    ("lucroreal_1598_1977", "decreto.lei", "1598", date(1977, 12, 26),
+     "Lucro real — IRPJ das pessoas jurídicas",
+     "Altera a legislação do imposto sobre a renda (apuração do lucro real, "
+     "escrituração e lucro da exploração)."),
+    ("ufir_8383_1991", "lei", "8383", date(1991, 12, 30), "UFIR e imposto de renda",
+     "Institui a Unidade Fiscal de Referência e altera a legislação do imposto de renda."),
+    ("irpjifrs_12973_2014", "lei", "12973", date(2014, 5, 13),
+     "IRPJ e CSLL após os padrões contábeis internacionais",
+     "Altera a legislação tributária federal relativa ao IRPJ, à CSLL, ao PIS/Pasep e à "
+     "Cofins, adequando-a aos padrões contábeis internacionais e extinguindo o Regime "
+     "Tributário de Transição."),
+    ("parcelamento_11941_2009", "lei", "11941", date(2009, 5, 27),
+     "Parcelamento de débitos e Regime Tributário de Transição",
+     "Altera a legislação tributária federal relativa ao parcelamento ordinário de "
+     "débitos tributários, concede remissão e institui regime tributário de transição."),
+    ("compensacaoprejuizos_9065_1995", "lei", "9065", date(1995, 6, 20),
+     "Compensação de prejuízos fiscais e juros Selic",
+     "Dá nova redação a dispositivos da Lei nº 8.981, de 20 de janeiro de 1995 (limite "
+     "de 30% na compensação de prejuízos e juros equivalentes à taxa Selic)."),
+    ("iof_8894_1994", "lei", "8894", date(1994, 6, 21), "IOF",
+     "Dispõe sobre o Imposto sobre Operações de Crédito, Câmbio e Seguro, ou relativas a "
+     "Títulos e Valores Mobiliários."),
+    ("cidecombustiveis_10336_2001", "lei", "10336", date(2001, 12, 19),
+     "Cide-Combustíveis",
+     "Institui Contribuição de Intervenção no Domínio Econômico incidente sobre a "
+     "importação e a comercialização de petróleo e seus derivados, gás natural e seus "
+     "derivados, e álcool etílico combustível (Cide)."),
+    ("piscofinsagro_10925_2004", "lei", "10925", date(2004, 7, 23),
+     "PIS/Cofins no agronegócio e na cesta básica",
+     "Reduz as alíquotas do PIS/Pasep e da Cofins incidentes na importação e na "
+     "comercialização do mercado interno de fertilizantes e defensivos agropecuários."),
+    ("zpe_11508_2007", "lei", "11508", date(2007, 7, 20),
+     "Zonas de Processamento de Exportação",
+     "Dispõe sobre o regime tributário, cambial e administrativo das Zonas de "
+     "Processamento de Exportação."),
+    ("padis_11484_2007", "lei", "11484", date(2007, 5, 31), "Padis e PATVD",
+     "Dispõe sobre os incentivos às indústrias de equipamentos para TV Digital e de "
+     "componentes eletrônicos semicondutores e sobre a proteção à propriedade "
+     "intelectual das topografias de circuitos integrados."),
+    ("perdimento_1455_1976", "decreto.lei", "1455", date(1976, 4, 7),
+     "Bagagem, entreposto aduaneiro e perdimento",
+     "Dispõe sobre bagagem de passageiro procedente do exterior, disciplina o regime de "
+     "entreposto aduaneiro e estabelece normas sobre mercadorias estrangeiras "
+     "apreendidas."),
+    ("encargolegal_1025_1969", "decreto.lei", "1025", date(1969, 10, 21),
+     "Encargo legal da Dívida Ativa da União",
+     "Declara extinta a participação de servidores públicos na cobrança da Dívida Ativa "
+     "da União (encargo legal de 20%)."),
+    ("prr_13606_2018", "lei", "13606", date(2018, 1, 9),
+     "Regularização Tributária Rural e averbação pré-executória",
+     "Institui o Programa de Regularização Tributária Rural (PRR) na Secretaria da "
+     "Receita Federal do Brasil e na Procuradoria-Geral da Fazenda Nacional."),
+    ("desoneracaofolha_14973_2024", "lei", "14973", date(2024, 9, 16),
+     "Transição da desoneração da folha",
+     "Estabelece regime de transição para a contribuição substitutiva prevista nos arts. "
+     "7º e 8º da Lei nº 12.546, de 14 de dezembro de 2011, e para o adicional sobre a "
+     "Cofins-Importação."),
+    ("autorregularizacao_14740_2023", "lei", "14740", date(2023, 11, 29),
+     "Autorregularização incentivada",
+     "Dispõe sobre a autorregularização incentivada de tributos administrados pela "
+     "Secretaria Especial da Receita Federal do Brasil."),
+    ("carf_14689_2023", "lei", "14689", date(2023, 9, 20),
+     "Voto de qualidade no Carf e conformidade tributária",
+     "Disciplina a proclamação de resultados de julgamentos na hipótese de empate na "
+     "votação no âmbito do Conselho Administrativo de Recursos Fiscais (Carf); dispõe "
+     "sobre a autorregularização de débitos e a conformidade tributária."),
+    ("perse_14148_2021", "lei", "14148", date(2021, 5, 3), "Perse",
+     "Dispõe sobre ações emergenciais e temporárias destinadas ao setor de eventos e "
+     "institui o Programa Emergencial de Retomada do Setor de Eventos (Perse)."),
+    ("transparenciatributaria_12741_2012", "lei", "12741", date(2012, 12, 8),
+     "Transparência tributária ao consumidor",
+     "Dispõe sobre as medidas de esclarecimento ao consumidor, de que trata o § 5º do "
+     "artigo 150 da Constituição Federal (informação dos tributos incidentes no preço)."),
+    ("cfem_8001_1990", "lei", "8001", date(1990, 3, 13),
+     "Distribuição da CFEM e da compensação hídrica",
+     "Define os percentuais da distribuição da compensação financeira de que trata a Lei "
+     "nº 7.990, de 28 de dezembro de 1989."),
+    ("cmed_10742_2003", "lei", "10742", date(2003, 10, 6), "CMED — regulação de medicamentos",
+     "Define normas de regulação para o setor farmacêutico e cria a Câmara de Regulação "
+     "do Mercado de Medicamentos - CMED."),
+    ("parcelamentoentes_12810_2013", "lei", "12810", date(2013, 5, 15),
+     "Parcelamento previdenciário dos entes e registro de ativos financeiros",
+     "Dispõe sobre o parcelamento de débitos com a Fazenda Nacional relativos às "
+     "contribuições previdenciárias de responsabilidade dos Estados, do Distrito Federal "
+     "e dos Municípios, e sobre o registro e o depósito centralizado de ativos "
+     "financeiros."),
+
+    # =================================================================
+    # Lote 17 (onda de expansão) — saúde, educação, ambiente, energia, agrário
+    # e comunicação. Ficam de fora as que só alteram (14.454, 9.131, 10.267).
+    # =================================================================
+    # ------------------------------------ saúde
+    ("transplantes_9434_1997", "lei", "9434", date(1997, 2, 4), "Lei de Transplantes",
+     "Dispõe sobre a remoção de órgãos, tecidos e partes do corpo humano para fins de "
+     "transplante e tratamento."),
+    ("propagandafumo_9294_1996", "lei", "9294", date(1996, 7, 15),
+     "Propaganda de fumo, bebidas e medicamentos",
+     "Dispõe sobre as restrições ao uso e à propaganda de produtos fumígeros, bebidas "
+     "alcoólicas, medicamentos, terapias e defensivos agrícolas."),
+    ("comerciofarmaceutico_5991_1973", "lei", "5991", date(1973, 12, 17),
+     "Comércio farmacêutico",
+     "Dispõe sobre o controle sanitário do comércio de drogas, medicamentos, insumos "
+     "farmacêuticos e correlatos."),
+    ("sangue_10205_2001", "lei", "10205", date(2001, 3, 21), "Política Nacional de Sangue",
+     "Regulamenta o § 4º do art. 199 da Constituição Federal, relativo à coleta, "
+     "processamento, estocagem, distribuição e aplicação do sangue, seus componentes e "
+     "derivados."),
+    ("vigilanciaepidemiologica_6259_1975", "lei", "6259", date(1975, 10, 30),
+     "Vigilância epidemiológica e PNI",
+     "Dispõe sobre a organização das ações de Vigilância Epidemiológica, sobre o "
+     "Programa Nacional de Imunizações e sobre a notificação compulsória de doenças."),
+    # ------------------------------------ educação
+    ("institutosfederais_11892_2008", "lei", "11892", date(2008, 12, 29),
+     "Rede Federal e Institutos Federais",
+     "Institui a Rede Federal de Educação Profissional, Científica e Tecnológica e cria "
+     "os Institutos Federais de Educação, Ciência e Tecnologia."),
+    ("pisomagisterio_11738_2008", "lei", "11738", date(2008, 7, 16),
+     "Piso salarial do magistério",
+     "Institui o piso salarial profissional nacional para os profissionais do magistério "
+     "público da educação básica."),
+    ("pnae_11947_2009", "lei", "11947", date(2009, 6, 16), "PNAE e PDDE",
+     "Dispõe sobre o atendimento da alimentação escolar e do Programa Dinheiro Direto na "
+     "Escola aos alunos da educação básica."),
+    ("salarioeducacao_9766_1998", "lei", "9766", date(1998, 12, 18), "Salário-educação",
+     "Altera a legislação que rege o salário-educação."),
+    ("pnate_10880_2004", "lei", "10880", date(2004, 6, 9), "PNATE",
+     "Institui o Programa Nacional de Apoio ao Transporte do Escolar - PNATE e o Programa "
+     "de Apoio aos Sistemas de Ensino para Atendimento à Educação de Jovens e Adultos."),
+    ("psicologiaescolas_13935_2019", "lei", "13935", date(2019, 12, 11),
+     "Psicologia e serviço social nas escolas",
+     "Dispõe sobre a prestação de serviços de psicologia e de serviço social nas redes "
+     "públicas de educação básica."),
+    ("royaltieseducacao_12858_2013", "lei", "12858", date(2013, 9, 9),
+     "Royalties do petróleo para educação e saúde",
+     "Dispõe sobre a destinação para as áreas de educação e saúde de parcela da "
+     "participação no resultado ou da compensação financeira pela exploração de petróleo "
+     "e gás natural."),
+    # ------------------------------------ ambiente
+    ("fauna_5197_1967", "lei", "5197", date(1967, 1, 3), "Proteção à fauna",
+     "Dispõe sobre a proteção à fauna."),
+    ("ibama_7735_1989", "lei", "7735", date(1989, 2, 22), "Ibama",
+     "Cria o Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis."),
+    ("icmbio_11516_2007", "lei", "11516", date(2007, 8, 28), "ICMBio",
+     "Dispõe sobre a criação do Instituto Chico Mendes de Conservação da Biodiversidade."),
+    ("infoambiental_10650_2003", "lei", "10650", date(2003, 4, 16),
+     "Acesso à informação ambiental",
+     "Dispõe sobre o acesso público aos dados e informações existentes nos órgãos e "
+     "entidades integrantes do Sisnama."),
+    ("zoneamentoindustrial_6803_1980", "lei", "6803", date(1980, 7, 2),
+     "Zoneamento industrial",
+     "Dispõe sobre as diretrizes básicas para o zoneamento industrial nas áreas críticas "
+     "de poluição."),
+    ("cetaceos_7643_1987", "lei", "7643", date(1987, 12, 18), "Proteção aos cetáceos",
+     "Proíbe a pesca de cetáceo nas águas jurisdicionais brasileiras."),
+    ("bolsaverde_12512_2011", "lei", "12512", date(2011, 10, 14),
+     "Bolsa Verde e Fomento Rural",
+     "Institui o Programa de Apoio à Conservação Ambiental e o Programa de Fomento às "
+     "Atividades Produtivas Rurais."),
+    # ------------------------------------ energia e clima
+    ("mercadocarbono_15042_2024", "lei", "15042", date(2024, 12, 11),
+     "Mercado de carbono — SBCE",
+     "Institui o Sistema Brasileiro de Comércio de Emissões de Gases de Efeito Estufa "
+     "(SBCE)."),
+    ("combustiveldofuturo_14993_2024", "lei", "14993", date(2024, 10, 8),
+     "Combustível do Futuro",
+     "Dispõe sobre a promoção da mobilidade sustentável de baixo carbono e a captura e a "
+     "estocagem geológica de dióxido de carbono; institui o ProBioQAV, o PNDBio e o "
+     "Programa Nacional de Descarbonização do Produtor e Importador de Gás Natural."),
+    ("offshore_15097_2025", "lei", "15097", date(2025, 1, 10),
+     "Energia offshore",
+     "Disciplina o aproveitamento de potencial energético offshore."),
+    ("eletrobras_14182_2021", "lei", "14182", date(2021, 7, 12),
+     "Desestatização da Eletrobras",
+     "Dispõe sobre a desestatização da empresa Centrais Elétricas Brasileiras S.A. "
+     "(Eletrobras)."),
+    ("epe_10847_2004", "lei", "10847", date(2004, 3, 15), "EPE",
+     "Autoriza a criação da Empresa de Pesquisa Energética - EPE."),
+    ("concessoeseletricas_12783_2013", "lei", "12783", date(2013, 1, 11),
+     "Renovação das concessões de energia elétrica",
+     "Dispõe sobre as concessões de geração, transmissão e distribuição de energia "
+     "elétrica, sobre a redução dos encargos setoriais e sobre a modicidade tarifária."),
+    # ------------------------------------ agrário
+    ("terrasestrangeiros_5709_1971", "lei", "5709", date(1971, 10, 7),
+     "Aquisição de imóvel rural por estrangeiro",
+     "Regula a aquisição de imóvel rural por estrangeiro residente no País ou pessoa "
+     "jurídica estrangeira autorizada a funcionar no Brasil."),
+    ("terralegal_11952_2009", "lei", "11952", date(2009, 6, 25),
+     "Regularização fundiária na Amazônia Legal",
+     "Dispõe sobre a regularização fundiária das ocupações incidentes em terras situadas "
+     "em áreas da União, no âmbito da Amazônia Legal."),
+    ("creditoruralinst_4829_1965", "lei", "4829", date(1965, 11, 5),
+     "Institucionalização do crédito rural",
+     "Institucionaliza o crédito rural."),
+    ("subvencaorural_8427_1992", "lei", "8427", date(1992, 5, 27),
+     "Subvenção econômica no crédito rural",
+     "Dispõe sobre a concessão de subvenção econômica nas operações de crédito rural."),
+    ("cultivares_9456_1997", "lei", "9456", date(1997, 4, 25), "Proteção de Cultivares",
+     "Institui a Lei de Proteção de Cultivares."),
+    ("organicos_10831_2003", "lei", "10831", date(2003, 12, 23), "Agricultura orgânica",
+     "Dispõe sobre a agricultura orgânica."),
+    ("armazenagem_9973_2000", "lei", "9973", date(2000, 5, 29),
+     "Armazenagem de produtos agropecuários",
+     "Dispõe sobre o sistema de armazenagem dos produtos agropecuários."),
+    ("dividasrurais_10696_2003", "lei", "10696", date(2003, 7, 2),
+     "Repactuação de dívidas rurais",
+     "Dispõe sobre a repactuação e o alongamento de dívidas oriundas de operações de "
+     "crédito rural (o art. 19, que instituía o PAA, foi revogado pela Lei nº 14.628, "
+     "de 2023)."),
+    ("paa_14628_2023", "lei", "14628", date(2023, 7, 20),
+     "PAA — Programa de Aquisição de Alimentos",
+     "Institui o Programa de Aquisição de Alimentos (PAA) e o Programa Cozinha "
+     "Solidária."),
+    # ------------------------------------ comunicação e apostas
+    ("radiocomunitaria_9612_1998", "lei", "9612", date(1998, 2, 19),
+     "Radiodifusão comunitária",
+     "Institui o Serviço de Radiodifusão Comunitária."),
+    ("ebc_11652_2008", "lei", "11652", date(2008, 4, 7), "Radiodifusão pública e EBC",
+     "Institui os princípios e objetivos dos serviços de radiodifusão pública e autoriza "
+     "o Poder Executivo a constituir a Empresa Brasil de Comunicação - EBC."),
+    ("direitoderesposta_13188_2015", "lei", "13188", date(2015, 11, 11),
+     "Direito de resposta",
+     "Dispõe sobre o direito de resposta ou retificação do ofendido em matéria "
+     "divulgada, publicada ou transmitida por veículo de comunicação social."),
+    ("apostas_14790_2023", "lei", "14790", date(2023, 12, 29), "Apostas de quota fixa",
+     "Dispõe sobre a modalidade lotérica denominada apostas de quota fixa."),
 ]
 
 # Espécie do URN → tipo do corpus (vocabulário próprio, que alimenta o filtro

@@ -13,30 +13,63 @@ o conteúdo no Planalto.
 
 Igual ao bootstrap, recria a coleção — **pare o daemon antes**, que ele segura o
 lock do Qdrant.
+
+``--novos`` é o outro uso: indexa **só** as normas ainda ausentes do
+``state.sqlite`` (um lote recém-descoberto, já baixado para o cache pelo
+``verificar_parser --novos --baixar``), sem recriar a coleção e sem rede. É o
+que o ``POST /update`` faria para elas, menos o download de todo o corpus para
+conferir hash — que é o preço do ``update`` quando o lote chega logo depois de
+uma reindexação. O ``point_id`` é determinístico, então indexar só as novas
+não toca nas demais. ``--slug`` faz o mesmo para normas nomeadas, já indexadas
+ou não (apaga os pontos antigos e reinsere) — é o caminho para reprocessar
+uma norma depois de um fix de parser que só a ela alcança. Também exigem o
+daemon parado.
 """
 
 from __future__ import annotations
 
+import argparse
 import sys
 import time
 
 from lex_rag.config import settings
-from lex_rag.index.chunker import build_chunks
 from lex_rag.index.collection_schema import ensure_collection
 from lex_rag.index.embedder import Embedder
-from lex_rag.index.qdrant_writer import upsert_chunks
 from lex_rag.ingest import raw_cache
-from lex_rag.ingest.html_parser import parse_norma
 from lex_rag.ingest.urn_mapper import REGISTRO
-from lex_rag.storage import raw_db, state
+from lex_rag.storage import state
+from lex_rag.update.pipeline import reindex_norma
 
 
 def main() -> int:
     from qdrant_client import QdrantClient
 
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--novos", action="store_true",
+                    help="só as normas ausentes do state.sqlite, sem recriar a coleção")
+    ap.add_argument("--slug", nargs="*",
+                    help="só estas normas (apaga e reinsere os pontos), sem recriar a coleção")
+    args = ap.parse_args()
+
     settings.ensure_dirs()
 
-    sem_cache = [slug for slug in REGISTRO if not raw_cache.get(slug)]
+    alvo = dict(REGISTRO)
+    parcial = args.novos or bool(args.slug)
+    if args.novos:
+        alvo = {s: m for s, m in REGISTRO.items() if state.get_indexed(m.urn_lex) is None}
+    if args.slug:
+        desconhecidos = [s for s in args.slug if s not in REGISTRO]
+        if desconhecidos:
+            print(f"[reindex] slug fora do catálogo: {', '.join(desconhecidos)}")
+            return 1
+        alvo = {s: REGISTRO[s] for s in args.slug} if not args.novos else {
+            **alvo, **{s: REGISTRO[s] for s in args.slug}
+        }
+    if not alvo:
+        print("[reindex] nenhuma norma nova no catálogo.")
+        return 0
+
+    sem_cache = [slug for slug in alvo if not raw_cache.get(slug)]
     if sem_cache:
         # Recriar a coleção sem ter o HTML de todas seria trocar o índice
         # completo por um índice furado — melhor parar antes de apagar.
@@ -46,34 +79,28 @@ def main() -> int:
 
     print(f"[reindex] Qdrant embedded em {settings.qdrant_path}")
     client = QdrantClient(path=str(settings.qdrant_path))
-    ensure_collection(client, settings.collection_name, recreate=True)
+    ensure_collection(client, settings.collection_name, recreate=not parcial)
 
     print("[reindex] carregando BGE-M3...")
     t0 = time.time()
     embedder = Embedder()
     print(f"[reindex] modelo carregado em {time.time() - t0:.1f}s (device={embedder.device})")
 
-    print(f"[reindex] reparseando e indexando {len(REGISTRO)} normas do cache...")
+    print(f"[reindex] reparseando e indexando {len(alvo)} normas do cache...")
     total = 0
     falhas: list[str] = []
-    for i, (slug, meta) in enumerate(REGISTRO.items(), 1):
+    for i, (slug, meta) in enumerate(alvo.items(), 1):
         try:
-            html = raw_cache.get(slug)
-            norma = parse_norma(meta, html)
-            chunks = build_chunks(norma)
-            dense, sparse = embedder.encode_passages([c.text for c in chunks])
-            n = upsert_chunks(client, settings.collection_name, chunks, dense, sparse)
-
-            h = raw_cache.content_hash(html)
-            raw_db.record(norma.urn_lex, slug, meta.url_canonica, h)
-            state.record(norma.urn_lex, h, len(norma.dispositivos))
+            # Mesmo caminho do ``update``: apaga os pontos da norma, reparseia,
+            # reinsere e registra hash + versão do pipeline.
+            n = reindex_norma(client, embedder, meta, raw_cache.get(slug))
             total += n
-            print(f"  [{i:3}/{len(REGISTRO)}] {slug:34} {n:5} chunks", flush=True)
+            print(f"  [{i:3}/{len(alvo)}] {slug:34} {n:5} chunks", flush=True)
         except Exception as exc:
             falhas.append(f"{slug} ({type(exc).__name__}: {exc})")
-            print(f"  [{i:3}/{len(REGISTRO)}] {slug:34} FALHOU: {exc}", flush=True)
+            print(f"  [{i:3}/{len(alvo)}] {slug:34} FALHOU: {exc}", flush=True)
 
-    print(f"\n[reindex] {total} pontos indexados em {len(REGISTRO) - len(falhas)} normas")
+    print(f"\n[reindex] {total} pontos indexados em {len(alvo) - len(falhas)} normas")
     if falhas:
         print(f"[reindex] falhas ({len(falhas)}): {'; '.join(falhas)}")
     return 1 if falhas else 0

@@ -54,14 +54,20 @@ _WS = re.compile(r"\s+")
 # (Lei 8.080, minúscula da própria fonte) perderia o artigo "o". O "o" solto
 # exige ainda não-letra em seguida, senão "Art. 12 os prazos" perderia o "o"
 # de "os"; o "O" maiúsculo que abre caput fica de fora por não estar na classe.
-# Sufixo de artigo só vale COLADO ("Art. 121-A.") e seguido de não-letra; o
-# traço espaçado dos códigos antigos ("Art. 312 - Apropriar-se...") separa o
-# caput e não pode virar sufixo. Exceção única no corpus: a LCP 95 grafa o
-# sufixo espaçado em "Art. 18 - A (VETADO)" — aceito apenas com "(VETADO" logo
-# depois, senão caputs como "Art. 100 - A ação penal..." virariam falso sufixo.
+# Sufixo de artigo vale com a letra COLADA ao hífen ("Art. 121-A.") e seguida
+# de não-letra; o traço espaçado dos códigos antigos ("Art. 312 - Apropriar-se
+# ...") separa o caput e não pode virar sufixo, e "Art. 100 - A ação penal"
+# tampouco (a letra não está colada ao hífen). Antes do hífen o espaço é
+# aceito, porque o ordinal em <sup> deixa um ao ser achatado: "Art. 1<sup>o
+# </sup>-A" vira "Art. 1 o -A." — e sem isso o sufixo se perdia e o artigo saía
+# como "art_1__1" com o texto "A. Estão dispensadas..." (bug nº 11, achado no
+# lote 13: 148 artigos em 58 normas, LCP 123 art. 3º-A, CTB art. 7º-A, Lei
+# 9.494 arts. 1º-A a 1º-F). Exceção única no corpus: a LCP 95 grafa o sufixo
+# espaçado dos dois lados em "Art. 18 - A (VETADO)" — aceito apenas com
+# "(VETADO" logo depois.
 _ART_MARK = re.compile(
     r"\bArt\s*\.?\s*(\d{1,3}(?:\.\d{3})*)(?:\s*\.?\s*[º°ª]|\s*o(?![A-Za-zÀ-ÿ]))?"
-    r"(?:-([A-Z])(?![A-Za-zÀ-ÿ])|\s+-\s+([A-Z])(?=\s*\(\s*VETADO))?"
+    r"(?:\s*-([A-Z])(?![A-Za-zÀ-ÿ])|\s+-\s+([A-Z])(?=\s*\(\s*VETADO))?"
 )
 
 # Caput que não carrega norma: o Planalto imprime a marca de veto e, logo
@@ -111,7 +117,9 @@ _ASPA_ABRE = re.compile(r"(?:[“«]|[:)]\s*\")\s*$")
 # com "e" — nos 662 HTMLs em cache ela mexe em 4 normas, e nas quatro remenda
 # artigo que vinha cortado no meio da citação (a Lei 6.360 servia o art. 35 como
 # "...deverão satisfazer aos requisitos dispostos no", sem o objeto).
-_REFERENCIA = re.compile(r"\s*(?:,|(?:d[aeo]s?|e|c/c|cumulado)\b)")
+# "art. 1º desta Lei" e "art. 3º neste Decreto" entram com o lote 15: as Leis
+# 4.749 e 7.394 abriam um falso art. 1º a cada referência interna.
+_REFERENCIA = re.compile(r"\s*(?:,|(?:d[aeo]s?|[dn]est[aeo]s?|e|c/c|cumulado)\b)")
 
 # Fecho da lei: "Brasília, 14 de agosto de 2018; 197º da Independência e 130º da
 # República." Encerra o texto articulado — depois dele vêm assinaturas, o "Este
@@ -167,6 +175,16 @@ _REF_ANEXO = re.compile(r"\b(?:n[oa]s?|d[oa]s?|a[oa]s?|nest[ea]|dest[ea]|conform
 _ARTIGO_MARK = re.compile(
     r"\b(?:Artigo|ARTIGO)\s+(?:(\d{1,3})(?:\s*\.?\s*[º°ª]|\s*o(?![A-Za-zÀ-ÿ]))?"
     r"|([IVXLCDM]{1,7})(?![A-Za-zÀ-ÿ]))"
+)
+# Nos tratados a referência corrida também é por extenso e com maiúscula ("em
+# conformidade com o Artigo 8º", "prevista no Artigo 9.2 da Convenção de
+# Berna") — o guarda do que vem DEPOIS do número não a pega ("Artigo 4(1) para
+# todos"). O que a denuncia é o que vem ANTES: artigo definido ou preposição em
+# minúscula; o cabeçalho de verdade vem depois de ponto final ou de "seguinte:".
+# Medido no Tratado de Marraqueche: 35 falsos dispositivos em 60.
+_REF_ARTIGO_ANTES = re.compile(
+    r"\b(?:[oa]s?|d[oa]s?|n[oa]s?|aos?|às?|pel[oa]s?|e|ou|d?este|d?esse|neste|nesse|com|"
+    r"conforme|vide|ver)\s+$"
 )
 _ROMANO = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
 
@@ -372,10 +390,24 @@ def parse_dispositivos(html: str) -> list[Dispositivo]:
         ultimo_anexo = m.end()
         markers.append((m.start(), m.end(), "anexo", (m.group(1),)))
     primeiro_anexo = min((mk[0] for mk in markers if mk[2] == "anexo"), default=None)
-    if primeiro_anexo is not None:
-        for m in _ARTIGO_MARK.finditer(text, primeiro_anexo):
+    # "Artigo N" vale a partir do primeiro cabeçalho de anexo — ou, havendo
+    # fecho, a partir dele: metade dos decretos de promulgação de tratado serve
+    # a Convenção colada ao fecho, sem cabeçalho ("Este texto não substitui o
+    # publicado... CONVENÇÃO CONTRA A TORTURA... Artigo 1"). Nesse caso o
+    # primeiro "Artigo N" abre um anexo **implícito** (``anexo_art_N``); o
+    # "Art." não é afetado, então a promulgação de partes vetadas, que repete
+    # artigos da própria lei depois do fecho, continua como antes.
+    inicio_artigo = inicio_anexos if fecho else primeiro_anexo
+    if inicio_artigo is not None:
+        implicito = False
+        for m in _ARTIGO_MARK.finditer(text, inicio_artigo):
             if _e_citacao_ou_referencia(m):
                 continue
+            if _REF_ARTIGO_ANTES.search(text[max(0, m.start() - 12):m.start()]):
+                continue  # "no Artigo 4(1)": referência corrida, não cabeçalho
+            if not implicito and (primeiro_anexo is None or m.start() < primeiro_anexo):
+                markers.append((m.start(), m.start(), "anexo", (None,)))
+                implicito = True
             num = m.group(1) or str(_romano_para_int(m.group(2)))
             markers.append((m.start(), m.end(), "art", (num, None)))
     markers.sort(key=lambda x: x[0])

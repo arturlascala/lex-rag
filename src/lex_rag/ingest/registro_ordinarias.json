@@ -1,5 +1,35 @@
 [
  {
+  "slug": "tombamento_25_1937",
+  "urn_lex": "urn:lex:br:federal:decreto.lei:1937-11-30;25",
+  "tipo": "lei",
+  "numero": "25",
+  "data": "1937-11-30",
+  "epigrafe": "Decreto-Lei nº 25, de 30 de novembro de 1937 (Tombamento)",
+  "ementa": "Organiza a proteção do patrimônio histórico e artístico nacional.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del0025.htm"
+ },
+ {
+  "slug": "desapropriacao_3365_1941",
+  "urn_lex": "urn:lex:br:federal:decreto.lei:1941-06-21;3365",
+  "tipo": "lei",
+  "numero": "3365",
+  "data": "1941-06-21",
+  "epigrafe": "Decreto-Lei nº 3.365, de 21 de junho de 1941 (Desapropriação por utilidade pública)",
+  "ementa": "Dispõe sobre desapropriações por utilidade pública.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3365compilado.htm"
+ },
+ {
+  "slug": "contravencoes_3688_1941",
+  "urn_lex": "urn:lex:br:federal:decreto.lei:1941-10-03;3688",
+  "tipo": "lei",
+  "numero": "3688",
+  "data": "1941-10-03",
+  "epigrafe": "Decreto-Lei nº 3.688, de 3 de outubro de 1941 (Lei das Contravenções Penais)",
+  "ementa": "Lei das Contravenções Penais.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3688.htm"
+ },
+ {
   "slug": "lindb_4657_1942",
   "urn_lex": "urn:lex:br:federal:decreto.lei:1942-09-04;4657",
   "tipo": "lei",
@@ -8,6 +38,26 @@
   "epigrafe": "Decreto-Lei nº 4.657, de 4 de setembro de 1942 (LINDB)",
   "ementa": "Lei de Introdução às Normas do Direito Brasileiro.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del4657compilado.htm"
+ },
+ {
+  "slug": "contabilidade_9295_1946",
+  "urn_lex": "urn:lex:br:federal:decreto.lei:1946-05-27;9295",
+  "tipo": "lei",
+  "numero": "9295",
+  "data": "1946-05-27",
+  "epigrafe": "Decreto-Lei nº 9.295, de 27 de maio de 1946 (Profissão contábil — CFC)",
+  "ementa": "Cria o Conselho Federal de Contabilidade e define as atribuições do Contador e do Guarda-livros.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del9295.htm"
+ },
+ {
+  "slug": "imoveisuniao_9760_1946",
+  "urn_lex": "urn:lex:br:federal:decreto.lei:1946-09-05;9760",
+  "tipo": "lei",
+  "numero": "9760",
+  "data": "1946-09-05",
+  "epigrafe": "Decreto-Lei nº 9.760, de 5 de setembro de 1946 (Bens imóveis da União)",
+  "ementa": "Dispõe sobre os bens imóveis da União.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del9760compilado.htm"
  },
  {
   "slug": "repousosemanal_605_1949",
@@ -50,6 +100,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l1079.htm"
  },
  {
+  "slug": "economista_1411_1951",
+  "urn_lex": "urn:lex:br:federal:lei:1951-08-13;1411",
+  "tipo": "lei",
+  "numero": "1411",
+  "data": "1951-08-13",
+  "epigrafe": "Lei nº 1.411, de 13 de agosto de 1951 (Profissão de Economista)",
+  "ementa": "Dispõe sobre a profissão de Economista.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/1950-1969/l1411.htm"
+ },
+ {
   "slug": "genocidio_2889_1956",
   "urn_lex": "urn:lex:br:federal:lei:1956-10-01;2889",
   "tipo": "lei",
@@ -58,6 +118,26 @@
   "epigrafe": "Lei nº 2.889, de 1º de outubro de 1956 (Crime de genocídio)",
   "ementa": "Define e pune o crime de genocídio.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l2889.htm"
+ },
+ {
+  "slug": "jornadamedicos_3999_1961",
+  "urn_lex": "urn:lex:br:federal:lei:1961-12-15;3999",
+  "tipo": "lei",
+  "numero": "3999",
+  "data": "1961-12-15",
+  "epigrafe": "Lei nº 3.999, de 15 de dezembro de 1961 (Salário-mínimo e jornada de médicos e cirurgiões-dentistas)",
+  "ementa": "Altera o salário-mínimo dos médicos e cirurgiões dentistas.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/1950-1969/l3999.htm"
+ },
+ {
+  "slug": "decimoterceiro_4090_1962",
+  "urn_lex": "urn:lex:br:federal:lei:1962-07-13;4090",
+  "tipo": "lei",
+  "numero": "4090",
+  "data": "1962-07-13",
+  "epigrafe": "Lei nº 4.090, de 13 de julho de 1962 (13º salário)",
+  "ementa": "Institui a gratificação de Natal para os trabalhadores.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l4090.htm"
  },
  {
   "slug": "cbt_4117_1962",
@@ -78,6 +158,36 @@
   "epigrafe": "Lei nº 4.118, de 27 de agosto de 1962 (Política Nacional de Energia Nuclear)",
   "ementa": "Dispõe sobre a política nacional de energia nuclear, cria a Comissão Nacional de Energia Nuclear.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l4118compilada.htm"
+ },
+ {
+  "slug": "psicologia_4119_1962",
+  "urn_lex": "urn:lex:br:federal:lei:1962-08-27;4119",
+  "tipo": "lei",
+  "numero": "4119",
+  "data": "1962-08-27",
+  "epigrafe": "Lei nº 4.119, de 27 de agosto de 1962 (Profissão de psicólogo)",
+  "ementa": "Dispõe sobre os cursos de formação em psicologia e regulamenta a profissão de psicólogo.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/1950-1969/l4119.htm"
+ },
+ {
+  "slug": "desapropriacaosocial_4132_1962",
+  "urn_lex": "urn:lex:br:federal:lei:1962-09-10;4132",
+  "tipo": "lei",
+  "numero": "4132",
+  "data": "1962-09-10",
+  "epigrafe": "Lei nº 4.132, de 10 de setembro de 1962 (Desapropriação por interesse social)",
+  "ementa": "Define os casos de desapropriação por interesse social e dispõe sobre sua aplicação.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l4132.htm"
+ },
+ {
+  "slug": "servicomilitar_4375_1964",
+  "urn_lex": "urn:lex:br:federal:lei:1964-08-17;4375",
+  "tipo": "lei",
+  "numero": "4375",
+  "data": "1964-08-17",
+  "epigrafe": "Lei nº 4.375, de 17 de agosto de 1964 (Lei do Serviço Militar)",
+  "ementa": "Lei do Serviço Militar.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l4375.htm"
  },
  {
   "slug": "sfh_4380_1964",
@@ -120,6 +230,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l4591compilado.htm"
  },
  {
+  "slug": "corretorseguros_4594_1964",
+  "urn_lex": "urn:lex:br:federal:lei:1964-12-29;4594",
+  "tipo": "lei",
+  "numero": "4594",
+  "data": "1964-12-29",
+  "epigrafe": "Lei nº 4.594, de 29 de dezembro de 1964 (Profissão de corretor de seguros)",
+  "ementa": "Regula a profissão de corretor de seguros.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l4594.htm"
+ },
+ {
   "slug": "sfn_4595_1964",
   "urn_lex": "urn:lex:br:federal:lei:1964-12-31;4595",
   "tipo": "lei",
@@ -150,6 +270,36 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l4728compilado.htm"
  },
  {
+  "slug": "decimoterceiropag_4749_1965",
+  "urn_lex": "urn:lex:br:federal:lei:1965-08-12;4749",
+  "tipo": "lei",
+  "numero": "4749",
+  "data": "1965-08-12",
+  "epigrafe": "Lei nº 4.749, de 12 de agosto de 1965 (Pagamento do 13º salário)",
+  "ementa": "Dispõe sobre o pagamento da gratificação prevista na Lei nº 4.090, de 13 de julho de 1962.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l4749.htm"
+ },
+ {
+  "slug": "administracao_4769_1965",
+  "urn_lex": "urn:lex:br:federal:lei:1965-09-09;4769",
+  "tipo": "lei",
+  "numero": "4769",
+  "data": "1965-09-09",
+  "epigrafe": "Lei nº 4.769, de 9 de setembro de 1965 (Profissão de Administrador)",
+  "ementa": "Dispõe sobre o exercício da profissão de Técnico de Administração (Administrador).",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l4769.htm"
+ },
+ {
+  "slug": "creditoruralinst_4829_1965",
+  "urn_lex": "urn:lex:br:federal:lei:1965-11-05;4829",
+  "tipo": "lei",
+  "numero": "4829",
+  "data": "1965-11-05",
+  "epigrafe": "Lei nº 4.829, de 5 de novembro de 1965 (Institucionalização do crédito rural)",
+  "ementa": "Institucionaliza o crédito rural.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l4829.htm"
+ },
+ {
   "slug": "repcomercial_4886_1965",
   "urn_lex": "urn:lex:br:federal:lei:1965-12-09;4886",
   "tipo": "lei",
@@ -158,6 +308,16 @@
   "epigrafe": "Lei nº 4.886, de 9 de dezembro de 1965 (Representação comercial)",
   "ementa": "Regula as atividades dos representantes comerciais autônomos.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l4886.htm"
+ },
+ {
+  "slug": "justicafederal_5010_1966",
+  "urn_lex": "urn:lex:br:federal:lei:1966-05-30;5010",
+  "tipo": "lei",
+  "numero": "5010",
+  "data": "1966-05-30",
+  "epigrafe": "Lei nº 5.010, de 30 de maio de 1966 (Organização da Justiça Federal)",
+  "ementa": "Organiza a Justiça Federal de primeira instância.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l5010compilado.htm"
  },
  {
   "slug": "fistel_5070_1966",
@@ -170,6 +330,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l5070.htm"
  },
  {
+  "slug": "odontologia_5081_1966",
+  "urn_lex": "urn:lex:br:federal:lei:1966-08-24;5081",
+  "tipo": "lei",
+  "numero": "5081",
+  "data": "1966-08-24",
+  "epigrafe": "Lei nº 5.081, de 24 de agosto de 1966 (Exercício da Odontologia)",
+  "ementa": "Regula o exercício da Odontologia.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l5081.htm"
+ },
+ {
   "slug": "aduaneiro_37_1966",
   "urn_lex": "urn:lex:br:federal:decreto.lei:1966-11-18;37",
   "tipo": "lei",
@@ -180,6 +350,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del0037compilado.htm"
  },
  {
+  "slug": "cedulahipotecaria_70_1966",
+  "urn_lex": "urn:lex:br:federal:decreto.lei:1966-11-21;70",
+  "tipo": "lei",
+  "numero": "70",
+  "data": "1966-11-21",
+  "epigrafe": "Decreto-Lei nº 70, de 21 de novembro de 1966 (Cédula hipotecária e execução extrajudicial)",
+  "ementa": "Autoriza o funcionamento de associações de poupança e empréstimo e institui a cédula hipotecária.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del0070-66.htm"
+ },
+ {
   "slug": "seguros_73_1966",
   "urn_lex": "urn:lex:br:federal:decreto.lei:1966-11-21;73",
   "tipo": "lei",
@@ -188,6 +368,46 @@
   "epigrafe": "Decreto-Lei nº 73, de 21 de novembro de 1966 (Sistema Nacional de Seguros)",
   "ementa": "Dispõe sobre o Sistema Nacional de Seguros Privados e regula as operações de seguros e resseguros.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del0073compilado.htm"
+ },
+ {
+  "slug": "engenharia_5194_1966",
+  "urn_lex": "urn:lex:br:federal:lei:1966-12-24;5194",
+  "tipo": "lei",
+  "numero": "5194",
+  "data": "1966-12-24",
+  "epigrafe": "Lei nº 5.194, de 24 de dezembro de 1966 (Profissões de Engenharia e Agronomia)",
+  "ementa": "Regula o exercício das profissões de Engenharia, Arquiteto e Engenheiro-Agrônomo.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l5194.htm"
+ },
+ {
+  "slug": "fauna_5197_1967",
+  "urn_lex": "urn:lex:br:federal:lei:1967-01-03;5197",
+  "tipo": "lei",
+  "numero": "5197",
+  "data": "1967-01-03",
+  "epigrafe": "Lei nº 5.197, de 3 de janeiro de 1967 (Proteção à fauna)",
+  "ementa": "Dispõe sobre a proteção à fauna.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l5197compilado.htm"
+ },
+ {
+  "slug": "creditorural_167_1967",
+  "urn_lex": "urn:lex:br:federal:decreto.lei:1967-02-14;167",
+  "tipo": "lei",
+  "numero": "167",
+  "data": "1967-02-14",
+  "epigrafe": "Decreto-Lei nº 167, de 14 de fevereiro de 1967 (Títulos de crédito rural)",
+  "ementa": "Dispõe sobre títulos de crédito rural.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del0167.htm"
+ },
+ {
+  "slug": "dl200_1967",
+  "urn_lex": "urn:lex:br:federal:decreto.lei:1967-02-25;200",
+  "tipo": "lei",
+  "numero": "200",
+  "data": "1967-02-25",
+  "epigrafe": "Decreto-Lei nº 200, de 25 de fevereiro de 1967 (Organização da Administração Federal)",
+  "ementa": "Dispõe sobre a organização da Administração Federal, estabelece diretrizes para a Reforma Administrativa.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del0200.htm"
  },
  {
   "slug": "codigomineracao_227_1967",
@@ -220,6 +440,26 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l5474compilado.htm"
  },
  {
+  "slug": "acaoalimentos_5478_1968",
+  "urn_lex": "urn:lex:br:federal:lei:1968-07-25;5478",
+  "tipo": "lei",
+  "numero": "5478",
+  "data": "1968-07-25",
+  "epigrafe": "Lei nº 5.478, de 25 de julho de 1968 (Ação de alimentos)",
+  "ementa": "Dispõe sobre ação de alimentos.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l5478.htm"
+ },
+ {
+  "slug": "veterinaria_5517_1968",
+  "urn_lex": "urn:lex:br:federal:lei:1968-10-23;5517",
+  "tipo": "lei",
+  "numero": "5517",
+  "data": "1968-10-23",
+  "epigrafe": "Lei nº 5.517, de 23 de outubro de 1968 (Profissão de médico-veterinário)",
+  "ementa": "Dispõe sobre o exercício da profissão de médico-veterinário e cria os Conselhos Federal e Regionais de Medicina Veterinária.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l5517compilada.htm"
+ },
+ {
   "slug": "fnde_5537_1968",
   "urn_lex": "urn:lex:br:federal:lei:1968-11-21;5537",
   "tipo": "lei",
@@ -238,6 +478,46 @@
   "epigrafe": "Decreto-Lei nº 719, de 31 de julho de 1969 (Criação do FNDCT)",
   "ementa": "Cria o Fundo Nacional de Desenvolvimento Científico e Tecnológico (FNDCT). Os arts. 2º e 3º foram revogados pela Lei nº 11.540, de 2007, que reorganizou o Fundo.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del0719.htm"
+ },
+ {
+  "slug": "alienacaofiduciaria_911_1969",
+  "urn_lex": "urn:lex:br:federal:decreto.lei:1969-10-01;911",
+  "tipo": "lei",
+  "numero": "911",
+  "data": "1969-10-01",
+  "epigrafe": "Decreto-Lei nº 911, de 1º de outubro de 1969 (Alienação fiduciária de bens móveis)",
+  "ementa": "Altera a redação do art. 66 da Lei nº 4.728, de 14 de julho de 1965, e estabelece normas de processo sobre alienação fiduciária.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/1965-1988/del0911compilado.htm"
+ },
+ {
+  "slug": "fisioterapia_938_1969",
+  "urn_lex": "urn:lex:br:federal:decreto.lei:1969-10-13;938",
+  "tipo": "lei",
+  "numero": "938",
+  "data": "1969-10-13",
+  "epigrafe": "Decreto-Lei nº 938, de 13 de outubro de 1969 (Profissões de fisioterapeuta e terapeuta ocupacional)",
+  "ementa": "Provê sobre as profissões de fisioterapeuta e terapeuta ocupacional.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/1965-1988/del0938.htm"
+ },
+ {
+  "slug": "jornalista_972_1969",
+  "urn_lex": "urn:lex:br:federal:decreto.lei:1969-10-17;972",
+  "tipo": "lei",
+  "numero": "972",
+  "data": "1969-10-17",
+  "epigrafe": "Decreto-Lei nº 972, de 17 de outubro de 1969 (Profissão de jornalista)",
+  "ementa": "Dispõe sobre o exercício da profissão de jornalista.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del0972.htm"
+ },
+ {
+  "slug": "alimentos_986_1969",
+  "urn_lex": "urn:lex:br:federal:decreto.lei:1969-10-21;986",
+  "tipo": "lei",
+  "numero": "986",
+  "data": "1969-10-21",
+  "epigrafe": "Decreto-Lei nº 986, de 21 de outubro de 1969 (Normas básicas sobre alimentos)",
+  "ementa": "Institui normas básicas sobre alimentos.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del0986.htm"
  },
  {
   "slug": "cpm_1001_1969",
@@ -260,6 +540,26 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1002compilado.htm"
  },
  {
+  "slug": "encargolegal_1025_1969",
+  "urn_lex": "urn:lex:br:federal:decreto.lei:1969-10-21;1025",
+  "tipo": "lei",
+  "numero": "1025",
+  "data": "1969-10-21",
+  "epigrafe": "Decreto-Lei nº 1.025, de 21 de outubro de 1969 (Encargo legal da Dívida Ativa da União)",
+  "ementa": "Declara extinta a participação de servidores públicos na cobrança da Dívida Ativa da União (encargo legal de 20%).",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1025.htm"
+ },
+ {
+  "slug": "terrasestrangeiros_5709_1971",
+  "urn_lex": "urn:lex:br:federal:lei:1971-10-07;5709",
+  "tipo": "lei",
+  "numero": "5709",
+  "data": "1971-10-07",
+  "epigrafe": "Lei nº 5.709, de 7 de outubro de 1971 (Aquisição de imóvel rural por estrangeiro)",
+  "ementa": "Regula a aquisição de imóvel rural por estrangeiro residente no País ou pessoa jurídica estrangeira autorizada a funcionar no Brasil.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l5709.htm"
+ },
+ {
   "slug": "cooperativas_5764_1971",
   "urn_lex": "urn:lex:br:federal:lei:1971-12-16;5764",
   "tipo": "lei",
@@ -270,6 +570,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l5764.htm"
  },
  {
+  "slug": "petroleiros_5811_1972",
+  "urn_lex": "urn:lex:br:federal:lei:1972-10-11;5811",
+  "tipo": "lei",
+  "numero": "5811",
+  "data": "1972-10-11",
+  "epigrafe": "Lei nº 5.811, de 11 de outubro de 1972 (Regime de trabalho dos petroleiros)",
+  "ementa": "Dispõe sobre o regime de trabalho dos empregados nas atividades de exploração, perfuração, produção e refinação de petróleo, industrialização do xisto, indústria petroquímica e transporte de petróleo e seus derivados por meio de dutos.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/1970-1979/l5811.htm"
+ },
+ {
   "slug": "trabalhorural_5889_1973",
   "urn_lex": "urn:lex:br:federal:lei:1973-06-08;5889",
   "tipo": "lei",
@@ -278,6 +588,16 @@
   "epigrafe": "Lei nº 5.889, de 8 de junho de 1973 (Trabalho rural)",
   "ementa": "Estatui normas reguladoras do trabalho rural.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l5889.htm"
+ },
+ {
+  "slug": "comerciofarmaceutico_5991_1973",
+  "urn_lex": "urn:lex:br:federal:lei:1973-12-17;5991",
+  "tipo": "lei",
+  "numero": "5991",
+  "data": "1973-12-17",
+  "epigrafe": "Lei nº 5.991, de 17 de dezembro de 1973 (Comércio farmacêutico)",
+  "ementa": "Dispõe sobre o controle sanitário do comércio de drogas, medicamentos, insumos farmacêuticos e correlatos.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l5991.htm"
  },
  {
   "slug": "estatutoindio_6001_1973",
@@ -320,6 +640,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l6024.htm"
  },
  {
+  "slug": "transporteeleitores_6091_1974",
+  "urn_lex": "urn:lex:br:federal:lei:1974-08-15;6091",
+  "tipo": "lei",
+  "numero": "6091",
+  "data": "1974-08-15",
+  "epigrafe": "Lei nº 6.091, de 15 de agosto de 1974 (Transporte de eleitores)",
+  "ementa": "Dispõe sobre o fornecimento gratuito de transporte, em dias de eleição, a eleitores residentes nas zonas rurais.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l6091.htm"
+ },
+ {
   "slug": "leasing_6099_1974",
   "urn_lex": "urn:lex:br:federal:lei:1974-09-12;6099",
   "tipo": "lei",
@@ -330,6 +660,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l6099.htm"
  },
  {
+  "slug": "vigilanciaepidemiologica_6259_1975",
+  "urn_lex": "urn:lex:br:federal:lei:1975-10-30;6259",
+  "tipo": "lei",
+  "numero": "6259",
+  "data": "1975-10-30",
+  "epigrafe": "Lei nº 6.259, de 30 de outubro de 1975 (Vigilância epidemiológica e PNI)",
+  "ementa": "Dispõe sobre a organização das ações de Vigilância Epidemiológica, sobre o Programa Nacional de Imunizações e sobre a notificação compulsória de doenças.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l6259.htm"
+ },
+ {
   "slug": "fundaf_1437_1975",
   "urn_lex": "urn:lex:br:federal:decreto.lei:1975-12-17;1437",
   "tipo": "lei",
@@ -338,6 +678,26 @@
   "epigrafe": "Decreto-Lei nº 1.437, de 17 de dezembro de 1975 (Fundaf — fundo da fiscalização aduaneira)",
   "ementa": "Dispõe sobre a base de cálculo do imposto sobre produtos industrializados relativo aos produtos de procedência estrangeira e institui, no art. 6º, o Fundo Especial de Desenvolvimento e Aperfeiçoamento das Atividades de Fiscalização (Fundaf).",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1437.htm"
+ },
+ {
+  "slug": "perdimento_1455_1976",
+  "urn_lex": "urn:lex:br:federal:decreto.lei:1976-04-07;1455",
+  "tipo": "lei",
+  "numero": "1455",
+  "data": "1976-04-07",
+  "epigrafe": "Decreto-Lei nº 1.455, de 7 de abril de 1976 (Bagagem, entreposto aduaneiro e perdimento)",
+  "ementa": "Dispõe sobre bagagem de passageiro procedente do exterior, disciplina o regime de entreposto aduaneiro e estabelece normas sobre mercadorias estrangeiras apreendidas.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1455compilado.htm"
+ },
+ {
+  "slug": "pat_6321_1976",
+  "urn_lex": "urn:lex:br:federal:lei:1976-04-14;6321",
+  "tipo": "lei",
+  "numero": "6321",
+  "data": "1976-04-14",
+  "epigrafe": "Lei nº 6.321, de 14 de abril de 1976 (PAT — Programa de Alimentação do Trabalhador)",
+  "ementa": "Dispõe sobre a dedução, do lucro tributável para fins de imposto sobre a renda das pessoas jurídicas, do dobro das despesas realizadas em programas de alimentação do trabalhador.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l6321.htm"
  },
  {
   "slug": "vigilanciasanitaria_6360_1976",
@@ -380,6 +740,56 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l6437compilado.htm"
  },
  {
+  "slug": "lucroreal_1598_1977",
+  "urn_lex": "urn:lex:br:federal:decreto.lei:1977-12-26;1598",
+  "tipo": "lei",
+  "numero": "1598",
+  "data": "1977-12-26",
+  "epigrafe": "Decreto-Lei nº 1.598, de 26 de dezembro de 1977 (Lucro real — IRPJ das pessoas jurídicas)",
+  "ementa": "Altera a legislação do imposto sobre a renda (apuração do lucro real, escrituração e lucro da exploração).",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1598compilado.htm"
+ },
+ {
+  "slug": "divorcio_6515_1977",
+  "urn_lex": "urn:lex:br:federal:lei:1977-12-26;6515",
+  "tipo": "lei",
+  "numero": "6515",
+  "data": "1977-12-26",
+  "epigrafe": "Lei nº 6.515, de 26 de dezembro de 1977 (Lei do Divórcio)",
+  "ementa": "Regula os casos de dissolução da sociedade conjugal e do casamento, seus efeitos e respectivos processos.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l6515.htm"
+ },
+ {
+  "slug": "corretorimoveis_6530_1978",
+  "urn_lex": "urn:lex:br:federal:lei:1978-05-12;6530",
+  "tipo": "lei",
+  "numero": "6530",
+  "data": "1978-05-12",
+  "epigrafe": "Lei nº 6.530, de 12 de maio de 1978 (Profissão de Corretor de Imóveis)",
+  "ementa": "Dá nova regulamentação à profissão de Corretor de Imóveis e disciplina o funcionamento de seus órgãos de fiscalização.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l6530.htm"
+ },
+ {
+  "slug": "artistas_6533_1978",
+  "urn_lex": "urn:lex:br:federal:lei:1978-05-24;6533",
+  "tipo": "lei",
+  "numero": "6533",
+  "data": "1978-05-24",
+  "epigrafe": "Lei nº 6.533, de 24 de maio de 1978 (Profissões de Artista e Técnico em Espetáculos)",
+  "ementa": "Dispõe sobre a regulamentação das profissões de Artista e de Técnico em Espetáculos de Diversões.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l6533.htm"
+ },
+ {
+  "slug": "radialista_6615_1978",
+  "urn_lex": "urn:lex:br:federal:lei:1978-12-16;6615",
+  "tipo": "lei",
+  "numero": "6615",
+  "data": "1978-12-16",
+  "epigrafe": "Lei nº 6.615, de 16 de dezembro de 1978 (Profissão de Radialista)",
+  "ementa": "Dispõe sobre a regulamentação da profissão de Radialista.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l6615.htm"
+ },
+ {
   "slug": "faixafronteira_6634_1979",
   "urn_lex": "urn:lex:br:federal:lei:1979-05-02;6634",
   "tipo": "lei",
@@ -388,6 +798,16 @@
   "epigrafe": "Lei nº 6.634, de 2 de maio de 1979 (Faixa de fronteira)",
   "ementa": "Dispõe sobre a Faixa de Fronteira.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l6634.htm"
+ },
+ {
+  "slug": "biologia_6684_1979",
+  "urn_lex": "urn:lex:br:federal:lei:1979-09-03;6684",
+  "tipo": "lei",
+  "numero": "6684",
+  "data": "1979-09-03",
+  "epigrafe": "Lei nº 6.684, de 3 de setembro de 1979 (Profissões de Biólogo e Biomédico)",
+  "ementa": "Regulamenta as profissões de Biólogo e Biomédico e cria o Conselho Federal e os Conselhos Regionais de Biologia e Biomedicina.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/1970-1979/l6684.htm"
  },
  {
   "slug": "leiferrari_6729_1979",
@@ -408,6 +828,16 @@
   "epigrafe": "Lei nº 6.766, de 19 de dezembro de 1979 (Parcelamento do solo urbano)",
   "ementa": "Dispõe sobre o parcelamento do solo urbano.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l6766compilado.htm"
+ },
+ {
+  "slug": "zoneamentoindustrial_6803_1980",
+  "urn_lex": "urn:lex:br:federal:lei:1980-07-02;6803",
+  "tipo": "lei",
+  "numero": "6803",
+  "data": "1980-07-02",
+  "epigrafe": "Lei nº 6.803, de 2 de julho de 1980 (Zoneamento industrial)",
+  "ementa": "Dispõe sobre as diretrizes básicas para o zoneamento industrial nas áreas críticas de poluição.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l6803.htm"
  },
  {
   "slug": "execfiscal_6830_1980",
@@ -490,6 +920,36 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l7347compilada.htm"
  },
  {
+  "slug": "cheque_7357_1985",
+  "urn_lex": "urn:lex:br:federal:lei:1985-09-02;7357",
+  "tipo": "lei",
+  "numero": "7357",
+  "data": "1985-09-02",
+  "epigrafe": "Lei nº 7.357, de 2 de setembro de 1985 (Lei do Cheque)",
+  "ementa": "Dispõe sobre o cheque.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l7357.htm"
+ },
+ {
+  "slug": "radiologia_7394_1985",
+  "urn_lex": "urn:lex:br:federal:lei:1985-10-29;7394",
+  "tipo": "lei",
+  "numero": "7394",
+  "data": "1985-10-29",
+  "epigrafe": "Lei nº 7.394, de 29 de outubro de 1985 (Profissão de Técnico em Radiologia)",
+  "ementa": "Regula o exercício da Profissão de Técnico em Radiologia.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l7394.htm"
+ },
+ {
+  "slug": "valetransporte_7418_1985",
+  "urn_lex": "urn:lex:br:federal:lei:1985-12-16;7418",
+  "tipo": "lei",
+  "numero": "7418",
+  "data": "1985-12-16",
+  "epigrafe": "Lei nº 7.418, de 16 de dezembro de 1985 (Vale-Transporte)",
+  "ementa": "Institui o Vale-Transporte.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l7418compilado.htm"
+ },
+ {
   "slug": "crimesfinanceiros_7492_1986",
   "urn_lex": "urn:lex:br:federal:lei:1986-06-16;7492",
   "tipo": "lei",
@@ -498,6 +958,16 @@
   "epigrafe": "Lei nº 7.492, de 16 de junho de 1986 (Crimes contra o SFN)",
   "ementa": "Define os crimes contra o sistema financeiro nacional.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l7492.htm"
+ },
+ {
+  "slug": "enfermagem_7498_1986",
+  "urn_lex": "urn:lex:br:federal:lei:1986-06-25;7498",
+  "tipo": "lei",
+  "numero": "7498",
+  "data": "1986-06-25",
+  "epigrafe": "Lei nº 7.498, de 25 de junho de 1986 (Exercício da enfermagem)",
+  "ementa": "Dispõe sobre a regulamentação do exercício da enfermagem.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l7498.htm"
  },
  {
   "slug": "funcafe_2295_1986",
@@ -530,6 +1000,26 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l7565compilado.htm"
  },
  {
+  "slug": "cetaceos_7643_1987",
+  "urn_lex": "urn:lex:br:federal:lei:1987-12-18;7643",
+  "tipo": "lei",
+  "numero": "7643",
+  "data": "1987-12-18",
+  "epigrafe": "Lei nº 7.643, de 18 de dezembro de 1987 (Proteção aos cetáceos)",
+  "ementa": "Proíbe a pesca de cetáceo nas águas jurisdicionais brasileiras.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l7643.htm"
+ },
+ {
+  "slug": "forolaudemio_2398_1987",
+  "urn_lex": "urn:lex:br:federal:decreto.lei:1987-12-21;2398",
+  "tipo": "lei",
+  "numero": "2398",
+  "data": "1987-12-21",
+  "epigrafe": "Decreto-Lei nº 2.398, de 21 de dezembro de 1987 (Foros, laudêmios e taxas de ocupação)",
+  "ementa": "Dispõe sobre foros, laudêmios e taxas de ocupação relativas a imóveis de propriedade da União.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/1965-1988/del2398compilado.htm"
+ },
+ {
   "slug": "gerenciamentocosteiro_7661_1988",
   "urn_lex": "urn:lex:br:federal:lei:1988-05-16;7661",
   "tipo": "lei",
@@ -538,6 +1028,16 @@
   "epigrafe": "Lei nº 7.661, de 16 de maio de 1988 (Plano Nacional de Gerenciamento Costeiro)",
   "ementa": "Institui o Plano Nacional de Gerenciamento Costeiro.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l7661.htm"
+ },
+ {
+  "slug": "csll_7689_1988",
+  "urn_lex": "urn:lex:br:federal:lei:1988-12-15;7689",
+  "tipo": "lei",
+  "numero": "7689",
+  "data": "1988-12-15",
+  "epigrafe": "Lei nº 7.689, de 15 de dezembro de 1988 (CSLL)",
+  "ementa": "Institui contribuição social sobre o lucro das pessoas jurídicas.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l7689.htm"
  },
  {
   "slug": "irpf_7713_1988",
@@ -558,6 +1058,16 @@
   "epigrafe": "Lei nº 7.716, de 5 de janeiro de 1989 (Crimes de preconceito e racismo)",
   "ementa": "Define os crimes resultantes de preconceito de raça ou de cor.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l7716compilado.htm"
+ },
+ {
+  "slug": "ibama_7735_1989",
+  "urn_lex": "urn:lex:br:federal:lei:1989-02-22;7735",
+  "tipo": "lei",
+  "numero": "7735",
+  "data": "1989-02-22",
+  "epigrafe": "Lei nº 7.735, de 22 de fevereiro de 1989 (Ibama)",
+  "ementa": "Cria o Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l7735.htm"
  },
  {
   "slug": "greve_7783_1989",
@@ -590,6 +1100,26 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l7827compilado.htm"
  },
  {
+  "slug": "apoiopcd_7853_1989",
+  "urn_lex": "urn:lex:br:federal:lei:1989-10-24;7853",
+  "tipo": "lei",
+  "numero": "7853",
+  "data": "1989-10-24",
+  "epigrafe": "Lei nº 7.853, de 24 de outubro de 1989 (Apoio às pessoas com deficiência)",
+  "ementa": "Dispõe sobre o apoio às pessoas portadoras de deficiência, sua integração social e a tutela jurisdicional de interesses coletivos ou difusos dessas pessoas.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l7853compilado.htm"
+ },
+ {
+  "slug": "prisaotemporaria_7960_1989",
+  "urn_lex": "urn:lex:br:federal:lei:1989-12-21;7960",
+  "tipo": "lei",
+  "numero": "7960",
+  "data": "1989-12-21",
+  "epigrafe": "Lei nº 7.960, de 21 de dezembro de 1989 (Prisão temporária)",
+  "ementa": "Dispõe sobre prisão temporária.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l7960.htm"
+ },
+ {
   "slug": "royalties_7990_1989",
   "urn_lex": "urn:lex:br:federal:lei:1989-12-28;7990",
   "tipo": "lei",
@@ -608,6 +1138,26 @@
   "epigrafe": "Lei nº 7.998, de 11 de janeiro de 1990 (Seguro-desemprego e FAT)",
   "ementa": "Regula o Programa do Seguro-Desemprego e o abono salarial e institui o Fundo de Amparo ao Trabalhador (FAT).",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l7998compilado.htm"
+ },
+ {
+  "slug": "cfem_8001_1990",
+  "urn_lex": "urn:lex:br:federal:lei:1990-03-13;8001",
+  "tipo": "lei",
+  "numero": "8001",
+  "data": "1990-03-13",
+  "epigrafe": "Lei nº 8.001, de 13 de março de 1990 (Distribuição da CFEM e da compensação hídrica)",
+  "ementa": "Define os percentuais da distribuição da compensação financeira de que trata a Lei nº 7.990, de 28 de dezembro de 1989.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l8001compilado.htm"
+ },
+ {
+  "slug": "bemdefamilia_8009_1990",
+  "urn_lex": "urn:lex:br:federal:lei:1990-03-29;8009",
+  "tipo": "lei",
+  "numero": "8009",
+  "data": "1990-03-29",
+  "epigrafe": "Lei nº 8.009, de 29 de março de 1990 (Bem de família)",
+  "ementa": "Dispõe sobre a impenhorabilidade do bem de família.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l8009.htm"
  },
  {
   "slug": "fgts_8036_1990",
@@ -700,6 +1250,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l8212compilado.htm"
  },
  {
+  "slug": "nutricao_8234_1991",
+  "urn_lex": "urn:lex:br:federal:lei:1991-09-17;8234",
+  "tipo": "lei",
+  "numero": "8234",
+  "data": "1991-09-17",
+  "epigrafe": "Lei nº 8.234, de 17 de setembro de 1991 (Profissão de Nutricionista)",
+  "ementa": "Regulamenta a profissão de Nutricionista.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/1989_1994/l8234.htm"
+ },
+ {
   "slug": "fnca_8242_1991",
   "urn_lex": "urn:lex:br:federal:lei:1991-10-12;8242",
   "tipo": "lei",
@@ -740,6 +1300,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l8313compilada.htm"
  },
  {
+  "slug": "ufir_8383_1991",
+  "urn_lex": "urn:lex:br:federal:lei:1991-12-30;8383",
+  "tipo": "lei",
+  "numero": "8383",
+  "data": "1991-12-30",
+  "epigrafe": "Lei nº 8.383, de 30 de dezembro de 1991 (UFIR e imposto de renda)",
+  "ementa": "Institui a Unidade Fiscal de Referência e altera a legislação do imposto de renda.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l8383compilado.htm"
+ },
+ {
   "slug": "zfm_8387_1991",
   "urn_lex": "urn:lex:br:federal:lei:1991-12-30;8387",
   "tipo": "lei",
@@ -750,6 +1320,26 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l8387compilado.htm"
  },
  {
+  "slug": "subvencaorural_8427_1992",
+  "urn_lex": "urn:lex:br:federal:lei:1992-05-27;8427",
+  "tipo": "lei",
+  "numero": "8427",
+  "data": "1992-05-27",
+  "epigrafe": "Lei nº 8.427, de 27 de maio de 1992 (Subvenção econômica no crédito rural)",
+  "ementa": "Dispõe sobre a concessão de subvenção econômica nas operações de crédito rural.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l8427compilado.htm"
+ },
+ {
+  "slug": "cautelarespoderpublico_8437_1992",
+  "urn_lex": "urn:lex:br:federal:lei:1992-06-30;8437",
+  "tipo": "lei",
+  "numero": "8437",
+  "data": "1992-06-30",
+  "epigrafe": "Lei nº 8.437, de 30 de junho de 1992 (Medidas cautelares contra o Poder Público)",
+  "ementa": "Dispõe sobre a concessão de medidas cautelares contra atos do Poder Público.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l8437.htm"
+ },
+ {
   "slug": "lotcu_8443_1992",
   "urn_lex": "urn:lex:br:federal:lei:1992-07-16;8443",
   "tipo": "lei",
@@ -758,6 +1348,26 @@
   "epigrafe": "Lei nº 8.443, de 16 de julho de 1992 (Lei Orgânica do TCU)",
   "ementa": "Dispõe sobre a Lei Orgânica do Tribunal de Contas da União.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l8443.htm"
+ },
+ {
+  "slug": "paternidade_8560_1992",
+  "urn_lex": "urn:lex:br:federal:lei:1992-12-29;8560",
+  "tipo": "lei",
+  "numero": "8560",
+  "data": "1992-12-29",
+  "epigrafe": "Lei nº 8.560, de 29 de dezembro de 1992 (Investigação de paternidade)",
+  "ementa": "Regula a investigação de paternidade dos filhos havidos fora do casamento.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l8560.htm"
+ },
+ {
+  "slug": "guiaturismo_8623_1993",
+  "urn_lex": "urn:lex:br:federal:lei:1993-01-28;8623",
+  "tipo": "lei",
+  "numero": "8623",
+  "data": "1993-01-28",
+  "epigrafe": "Lei nº 8.623, de 28 de janeiro de 1993 (Profissão de Guia de Turismo)",
+  "ementa": "Dispõe sobre a profissão de Guia de Turismo.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l8623.htm"
  },
  {
   "slug": "lonmp_8625_1993",
@@ -778,6 +1388,16 @@
   "epigrafe": "Lei nº 8.629, de 25 de fevereiro de 1993 (Reforma agrária)",
   "ementa": "Dispõe sobre a regulamentação dos dispositivos constitucionais relativos à reforma agrária.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l8629compilado.htm"
+ },
+ {
+  "slug": "servicosocial_8662_1993",
+  "urn_lex": "urn:lex:br:federal:lei:1993-06-07;8662",
+  "tipo": "lei",
+  "numero": "8662",
+  "data": "1993-06-07",
+  "epigrafe": "Lei nº 8.662, de 7 de junho de 1993 (Profissão de Assistente Social)",
+  "ementa": "Dispõe sobre a profissão de Assistente Social.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l8662.htm"
  },
  {
   "slug": "fii_8668_1993",
@@ -840,6 +1460,26 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l8842.htm"
  },
  {
+  "slug": "iof_8894_1994",
+  "urn_lex": "urn:lex:br:federal:lei:1994-06-21;8894",
+  "tipo": "lei",
+  "numero": "8894",
+  "data": "1994-06-21",
+  "epigrafe": "Lei nº 8.894, de 21 de junho de 1994 (IOF)",
+  "ementa": "Dispõe sobre o Imposto sobre Operações de Crédito, Câmbio e Seguro, ou relativas a Títulos e Valores Mobiliários.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l8894.htm"
+ },
+ {
+  "slug": "passelivre_8899_1994",
+  "urn_lex": "urn:lex:br:federal:lei:1994-06-29;8899",
+  "tipo": "lei",
+  "numero": "8899",
+  "data": "1994-06-29",
+  "epigrafe": "Lei nº 8.899, de 29 de junho de 1994 (Passe livre interestadual)",
+  "ementa": "Concede passe livre às pessoas portadoras de deficiência no sistema de transporte coletivo interestadual.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l8899.htm"
+ },
+ {
   "slug": "oab_8906_1994",
   "urn_lex": "urn:lex:br:federal:lei:1994-07-04;8906",
   "tipo": "lei",
@@ -868,6 +1508,16 @@
   "epigrafe": "Lei nº 8.934, de 18 de novembro de 1994 (Registro Público de Empresas Mercantis)",
   "ementa": "Dispõe sobre o Registro Público de Empresas Mercantis e Atividades Afins.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l8934compilado.htm"
+ },
+ {
+  "slug": "notarios_8935_1994",
+  "urn_lex": "urn:lex:br:federal:lei:1994-11-18;8935",
+  "tipo": "lei",
+  "numero": "8935",
+  "data": "1994-11-18",
+  "epigrafe": "Lei nº 8.935, de 18 de novembro de 1994 (Serviços notariais e de registro)",
+  "ementa": "Regulamenta o art. 236 da Constituição Federal, dispondo sobre serviços notariais e de registro.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l8935.htm"
  },
  {
   "slug": "fundacoesapoio_8958_1994",
@@ -930,6 +1580,26 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9028compilado.htm"
  },
  {
+  "slug": "discriminacaotrabalho_9029_1995",
+  "urn_lex": "urn:lex:br:federal:lei:1995-04-13;9029",
+  "tipo": "lei",
+  "numero": "9029",
+  "data": "1995-04-13",
+  "epigrafe": "Lei nº 9.029, de 13 de abril de 1995 (Práticas discriminatórias no trabalho)",
+  "ementa": "Proíbe a exigência de atestados de gravidez e esterilização, e outras práticas discriminatórias, para efeitos admissionais ou de permanência da relação jurídica de trabalho.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9029.htm"
+ },
+ {
+  "slug": "compensacaoprejuizos_9065_1995",
+  "urn_lex": "urn:lex:br:federal:lei:1995-06-20;9065",
+  "tipo": "lei",
+  "numero": "9065",
+  "data": "1995-06-20",
+  "epigrafe": "Lei nº 9.065, de 20 de junho de 1995 (Compensação de prejuízos fiscais e juros Selic)",
+  "ementa": "Dá nova redação a dispositivos da Lei nº 8.981, de 20 de janeiro de 1995 (limite de 30% na compensação de prejuízos e juros equivalentes à taxa Selic).",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9065.htm"
+ },
+ {
   "slug": "concessoesenergia_9074_1995",
   "urn_lex": "urn:lex:br:federal:lei:1995-07-07;9074",
   "tipo": "lei",
@@ -988,6 +1658,16 @@
   "epigrafe": "Lei nº 9.279, de 14 de maio de 1996 (Propriedade industrial)",
   "ementa": "Regula direitos e obrigações relativos à propriedade industrial.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9279.htm"
+ },
+ {
+  "slug": "propagandafumo_9294_1996",
+  "urn_lex": "urn:lex:br:federal:lei:1996-07-15;9294",
+  "tipo": "lei",
+  "numero": "9294",
+  "data": "1996-07-15",
+  "epigrafe": "Lei nº 9.294, de 15 de julho de 1996 (Propaganda de fumo, bebidas e medicamentos)",
+  "ementa": "Dispõe sobre as restrições ao uso e à propaganda de produtos fumígeros, bebidas alcoólicas, medicamentos, terapias e defensivos agrícolas.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9294.htm"
  },
  {
   "slug": "interceptacao_9296_1996",
@@ -1060,6 +1740,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9433.htm"
  },
  {
+  "slug": "transplantes_9434_1997",
+  "urn_lex": "urn:lex:br:federal:lei:1997-02-04;9434",
+  "tipo": "lei",
+  "numero": "9434",
+  "data": "1997-02-04",
+  "epigrafe": "Lei nº 9.434, de 4 de fevereiro de 1997 (Lei de Transplantes)",
+  "ementa": "Dispõe sobre a remoção de órgãos, tecidos e partes do corpo humano para fins de transplante e tratamento.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9434compilado.htm"
+ },
+ {
   "slug": "respcontroladores_9447_1997",
   "urn_lex": "urn:lex:br:federal:lei:1997-03-14;9447",
   "tipo": "lei",
@@ -1080,6 +1770,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9455.htm"
  },
  {
+  "slug": "cultivares_9456_1997",
+  "urn_lex": "urn:lex:br:federal:lei:1997-04-25;9456",
+  "tipo": "lei",
+  "numero": "9456",
+  "data": "1997-04-25",
+  "epigrafe": "Lei nº 9.456, de 25 de abril de 1997 (Proteção de Cultivares)",
+  "ementa": "Institui a Lei de Proteção de Cultivares.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9456.htm"
+ },
+ {
   "slug": "acordosuniao_9469_1997",
   "urn_lex": "urn:lex:br:federal:lei:1997-07-10;9469",
   "tipo": "lei",
@@ -1098,6 +1798,16 @@
   "epigrafe": "Lei nº 9.472, de 16 de julho de 1997 (Lei Geral de Telecomunicações)",
   "ementa": "Dispõe sobre a organização dos serviços de telecomunicações e a criação e funcionamento de um órgão regulador (Anatel).",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9472.htm"
+ },
+ {
+  "slug": "refugiados_9474_1997",
+  "urn_lex": "urn:lex:br:federal:lei:1997-07-22;9474",
+  "tipo": "lei",
+  "numero": "9474",
+  "data": "1997-07-22",
+  "epigrafe": "Lei nº 9.474, de 22 de julho de 1997 (Estatuto dos Refugiados)",
+  "ementa": "Define mecanismos para a implementação do Estatuto dos Refugiados de 1951.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9474.htm"
  },
  {
   "slug": "petroleo_9478_1997",
@@ -1128,6 +1838,16 @@
   "epigrafe": "Lei nº 9.492, de 10 de setembro de 1997 (Protesto de títulos)",
   "ementa": "Define competência, regulamenta os serviços concernentes ao protesto de títulos e outros documentos de dívida.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9492.htm"
+ },
+ {
+  "slug": "tutelafazenda_9494_1997",
+  "urn_lex": "urn:lex:br:federal:lei:1997-09-10;9494",
+  "tipo": "lei",
+  "numero": "9494",
+  "data": "1997-09-10",
+  "epigrafe": "Lei nº 9.494, de 10 de setembro de 1997 (Tutela antecipada contra a Fazenda Pública)",
+  "ementa": "Disciplina a aplicação da tutela antecipada contra a Fazenda Pública.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9494.htm"
  },
  {
   "slug": "eleicoes_9504_1997",
@@ -1230,6 +1950,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9610.htm"
  },
  {
+  "slug": "radiocomunitaria_9612_1998",
+  "urn_lex": "urn:lex:br:federal:lei:1998-02-19;9612",
+  "tipo": "lei",
+  "numero": "9612",
+  "data": "1998-02-19",
+  "epigrafe": "Lei nº 9.612, de 19 de fevereiro de 1998 (Radiodifusão comunitária)",
+  "ementa": "Institui o Serviço de Radiodifusão Comunitária.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9612.htm"
+ },
+ {
   "slug": "lavagem_9613_1998",
   "urn_lex": "urn:lex:br:federal:lei:1998-03-03;9613",
   "tipo": "lei",
@@ -1248,6 +1978,16 @@
   "epigrafe": "Lei nº 9.615, de 24 de março de 1998 (Lei Pelé (desporto))",
   "ementa": "Institui normas gerais sobre desporto.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9615compilada.htm"
+ },
+ {
+  "slug": "gestaoimoveisuniao_9636_1998",
+  "urn_lex": "urn:lex:br:federal:lei:1998-05-15;9636",
+  "tipo": "lei",
+  "numero": "9636",
+  "data": "1998-05-15",
+  "epigrafe": "Lei nº 9.636, de 15 de maio de 1998 (Regularização e alienação de imóveis da União)",
+  "ementa": "Dispõe sobre a regularização, administração, aforamento e alienação de bens imóveis de domínio da União.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9636compilado.htm"
  },
  {
   "slug": "os_9637_1998",
@@ -1278,6 +2018,16 @@
   "epigrafe": "Lei nº 9.656, de 3 de junho de 1998 (Planos de saúde)",
   "ementa": "Dispõe sobre os planos e seguros privados de assistência à saúde.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9656compilado.htm"
+ },
+ {
+  "slug": "educacaofisica_9696_1998",
+  "urn_lex": "urn:lex:br:federal:lei:1998-09-01;9696",
+  "tipo": "lei",
+  "numero": "9696",
+  "data": "1998-09-01",
+  "epigrafe": "Lei nº 9.696, de 1º de setembro de 1998 (Profissão de Educação Física)",
+  "ementa": "Dispõe sobre a regulamentação da Profissão de Educação Física e cria os respectivos Conselho Federal e Conselhos Regionais de Educação Física.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9696.htm"
  },
  {
   "slug": "consultapop_9709_1998",
@@ -1318,6 +2068,16 @@
   "epigrafe": "Lei nº 9.755, de 16 de dezembro de 1998 (Publicidade das contas)",
   "ementa": "Dispõe sobre a criação de homepage na internet pelo Tribunal de Contas da União para divulgação de dados e informações das contas públicas.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9755.htm"
+ },
+ {
+  "slug": "salarioeducacao_9766_1998",
+  "urn_lex": "urn:lex:br:federal:lei:1998-12-18;9766",
+  "tipo": "lei",
+  "numero": "9766",
+  "data": "1998-12-18",
+  "epigrafe": "Lei nº 9.766, de 18 de dezembro de 1998 (Salário-educação)",
+  "ementa": "Altera a legislação que rege o salário-educação.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9766.htm"
  },
  {
   "slug": "tribfii_9779_1999",
@@ -1390,6 +2150,26 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9818.htm"
  },
  {
+  "slug": "prescricaoadm_9873_1999",
+  "urn_lex": "urn:lex:br:federal:lei:1999-11-23;9873",
+  "tipo": "lei",
+  "numero": "9873",
+  "data": "1999-11-23",
+  "epigrafe": "Lei nº 9.873, de 23 de novembro de 1999 (Prescrição da ação punitiva da Administração)",
+  "ementa": "Estabelece prazo de prescrição para o exercício de ação punitiva pela Administração Pública Federal, direta e indireta.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9873.htm"
+ },
+ {
+  "slug": "abin_9883_1999",
+  "urn_lex": "urn:lex:br:federal:lei:1999-12-07;9883",
+  "tipo": "lei",
+  "numero": "9883",
+  "data": "1999-12-07",
+  "epigrafe": "Lei nº 9.883, de 7 de dezembro de 1999 (Sisbin e ABIN)",
+  "ementa": "Institui o Sistema Brasileiro de Inteligência, cria a Agência Brasileira de Inteligência - ABIN.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9883.htm"
+ },
+ {
   "slug": "ans_9961_2000",
   "urn_lex": "urn:lex:br:federal:lei:2000-01-28;9961",
   "tipo": "lei",
@@ -1400,6 +2180,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9961.htm"
  },
  {
+  "slug": "empregopublico_9962_2000",
+  "urn_lex": "urn:lex:br:federal:lei:2000-02-22;9962",
+  "tipo": "lei",
+  "numero": "9962",
+  "data": "2000-02-22",
+  "epigrafe": "Lei nº 9.962, de 22 de fevereiro de 2000 (Emprego público)",
+  "ementa": "Disciplina o regime de emprego público do pessoal da Administração federal direta, autárquica e fundacional.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9962.htm"
+ },
+ {
   "slug": "poluicaooleo_9966_2000",
   "urn_lex": "urn:lex:br:federal:lei:2000-04-28;9966",
   "tipo": "lei",
@@ -1408,6 +2198,16 @@
   "epigrafe": "Lei nº 9.966, de 28 de abril de 2000 (Poluição por óleo)",
   "ementa": "Dispõe sobre a prevenção, o controle e a fiscalização da poluição causada por lançamento de óleo em águas sob jurisdição nacional.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9966.htm"
+ },
+ {
+  "slug": "armazenagem_9973_2000",
+  "urn_lex": "urn:lex:br:federal:lei:2000-05-29;9973",
+  "tipo": "lei",
+  "numero": "9973",
+  "data": "2000-05-29",
+  "epigrafe": "Lei nº 9.973, de 29 de maio de 2000 (Armazenagem de produtos agropecuários)",
+  "ementa": "Dispõe sobre o sistema de armazenagem dos produtos agropecuários.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9973.htm"
  },
  {
   "slug": "ana_9984_2000",
@@ -1560,6 +2360,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10180.htm"
  },
  {
+  "slug": "sangue_10205_2001",
+  "urn_lex": "urn:lex:br:federal:lei:2001-03-21;10205",
+  "tipo": "lei",
+  "numero": "10205",
+  "data": "2001-03-21",
+  "epigrafe": "Lei nº 10.205, de 21 de março de 2001 (Política Nacional de Sangue)",
+  "ementa": "Regulamenta o § 4º do art. 199 da Constituição Federal, relativo à coleta, processamento, estocagem, distribuição e aplicação do sangue, seus componentes e derivados.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10205.htm"
+ },
+ {
   "slug": "spb_10214_2001",
   "urn_lex": "urn:lex:br:federal:lei:2001-03-27;10214",
   "tipo": "lei",
@@ -1640,6 +2450,26 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10332.htm"
  },
  {
+  "slug": "cidecombustiveis_10336_2001",
+  "urn_lex": "urn:lex:br:federal:lei:2001-12-19;10336",
+  "tipo": "lei",
+  "numero": "10336",
+  "data": "2001-12-19",
+  "epigrafe": "Lei nº 10.336, de 19 de dezembro de 2001 (Cide-Combustíveis)",
+  "ementa": "Institui Contribuição de Intervenção no Domínio Econômico incidente sobre a importação e a comercialização de petróleo e seus derivados, gás natural e seus derivados, e álcool etílico combustível (Cide).",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10336.htm"
+ },
+ {
+  "slug": "libras_10436_2002",
+  "urn_lex": "urn:lex:br:federal:lei:2002-04-24;10436",
+  "tipo": "lei",
+  "numero": "10436",
+  "data": "2002-04-24",
+  "epigrafe": "Lei nº 10.436, de 24 de abril de 2002 (Libras)",
+  "ementa": "Dispõe sobre a Língua Brasileira de Sinais - Libras.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10436.htm"
+ },
+ {
   "slug": "cde_10438_2002",
   "urn_lex": "urn:lex:br:federal:lei:2002-04-26;10438",
   "tipo": "lei",
@@ -1658,6 +2488,16 @@
   "epigrafe": "Lei nº 10.446, de 8 de maio de 2002 (Atribuições da Polícia Federal)",
   "ementa": "Dispõe sobre infrações penais de repercussão interestadual ou internacional que exigem repressão uniforme pela Polícia Federal.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10446.htm"
+ },
+ {
+  "slug": "pgf_10480_2002",
+  "urn_lex": "urn:lex:br:federal:lei:2002-07-02;10480",
+  "tipo": "lei",
+  "numero": "10480",
+  "data": "2002-07-02",
+  "epigrafe": "Lei nº 10.480, de 2 de julho de 2002 (Procuradoria-Geral Federal)",
+  "ementa": "Dispõe sobre o Quadro de Pessoal da Advocacia-Geral da União e cria a Procuradoria-Geral Federal.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10480compilado.htm"
  },
  {
   "slug": "pregao_10520_2002",
@@ -1700,6 +2540,26 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10637compilado.htm"
  },
  {
+  "slug": "infoambiental_10650_2003",
+  "urn_lex": "urn:lex:br:federal:lei:2003-04-16;10650",
+  "tipo": "lei",
+  "numero": "10650",
+  "data": "2003-04-16",
+  "epigrafe": "Lei nº 10.650, de 16 de abril de 2003 (Acesso à informação ambiental)",
+  "ementa": "Dispõe sobre o acesso público aos dados e informações existentes nos órgãos e entidades integrantes do Sisnama.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.650.htm"
+ },
+ {
+  "slug": "aposentadoriaespecial_10666_2003",
+  "urn_lex": "urn:lex:br:federal:lei:2003-05-08;10666",
+  "tipo": "lei",
+  "numero": "10666",
+  "data": "2003-05-08",
+  "epigrafe": "Lei nº 10.666, de 8 de maio de 2003 (Aposentadoria especial do cooperado e regras de custeio)",
+  "ementa": "Dispõe sobre a concessão da aposentadoria especial ao cooperado de cooperativa de trabalho ou de produção.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.666compilado.htm"
+ },
+ {
   "slug": "torcedor_10671_2003",
   "urn_lex": "urn:lex:br:federal:lei:2003-05-15;10671",
   "tipo": "lei",
@@ -1710,6 +2570,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.671compilado.htm"
  },
  {
+  "slug": "dividasrurais_10696_2003",
+  "urn_lex": "urn:lex:br:federal:lei:2003-07-02;10696",
+  "tipo": "lei",
+  "numero": "10696",
+  "data": "2003-07-02",
+  "epigrafe": "Lei nº 10.696, de 2 de julho de 2003 (Repactuação de dívidas rurais)",
+  "ementa": "Dispõe sobre a repactuação e o alongamento de dívidas oriundas de operações de crédito rural (o art. 19, que instituía o PAA, foi revogado pela Lei nº 14.628, de 2023).",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.696.htm"
+ },
+ {
   "slug": "sementesmudas_10711_2003",
   "urn_lex": "urn:lex:br:federal:lei:2003-08-05;10711",
   "tipo": "lei",
@@ -1718,6 +2588,16 @@
   "epigrafe": "Lei nº 10.711, de 5 de agosto de 2003 (Sistema Nacional de Sementes e Mudas)",
   "ementa": "Dispõe sobre o Sistema Nacional de Sementes e Mudas.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.711.htm"
+ },
+ {
+  "slug": "cmed_10742_2003",
+  "urn_lex": "urn:lex:br:federal:lei:2003-10-06;10742",
+  "tipo": "lei",
+  "numero": "10742",
+  "data": "2003-10-06",
+  "epigrafe": "Lei nº 10.742, de 6 de outubro de 2003 (CMED — regulação de medicamentos)",
+  "ementa": "Define normas de regulação para o setor farmacêutico e cria a Câmara de Regulação do Mercado de Medicamentos - CMED.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.742.htm"
  },
  {
   "slug": "livro_10753_2003",
@@ -1750,6 +2630,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.826compilado.htm"
  },
  {
+  "slug": "organicos_10831_2003",
+  "urn_lex": "urn:lex:br:federal:lei:2003-12-23;10831",
+  "tipo": "lei",
+  "numero": "10831",
+  "data": "2003-12-23",
+  "epigrafe": "Lei nº 10.831, de 23 de dezembro de 2003 (Agricultura orgânica)",
+  "ementa": "Dispõe sobre a agricultura orgânica.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.831.htm"
+ },
+ {
   "slug": "cofins_10833_2003",
   "urn_lex": "urn:lex:br:federal:lei:2003-12-29;10833",
   "tipo": "lei",
@@ -1758,6 +2648,16 @@
   "epigrafe": "Lei nº 10.833, de 29 de dezembro de 2003 (Cofins não cumulativa)",
   "ementa": "Altera a legislação tributária federal e dispõe sobre a não cumulatividade da Cofins.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.833compilado.htm"
+ },
+ {
+  "slug": "epe_10847_2004",
+  "urn_lex": "urn:lex:br:federal:lei:2004-03-15;10847",
+  "tipo": "lei",
+  "numero": "10847",
+  "data": "2004-03-15",
+  "epigrafe": "Lei nº 10.847, de 15 de março de 2004 (EPE)",
+  "ementa": "Autoriza a criação da Empresa de Pesquisa Energética - EPE.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.847.htm"
  },
  {
   "slug": "comercenergia_10848_2004",
@@ -1790,6 +2690,26 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.865compilado.htm"
  },
  {
+  "slug": "pnate_10880_2004",
+  "urn_lex": "urn:lex:br:federal:lei:2004-06-09;10880",
+  "tipo": "lei",
+  "numero": "10880",
+  "data": "2004-06-09",
+  "epigrafe": "Lei nº 10.880, de 9 de junho de 2004 (PNATE)",
+  "ementa": "Institui o Programa Nacional de Apoio ao Transporte do Escolar - PNATE e o Programa de Apoio aos Sistemas de Ensino para Atendimento à Educação de Jovens e Adultos.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.880.htm"
+ },
+ {
+  "slug": "rppsuniao_10887_2004",
+  "urn_lex": "urn:lex:br:federal:lei:2004-06-18;10887",
+  "tipo": "lei",
+  "numero": "10887",
+  "data": "2004-06-18",
+  "epigrafe": "Lei nº 10.887, de 18 de junho de 2004 (Contribuição e cálculo dos benefícios do RPPS)",
+  "ementa": "Dispõe sobre a aplicação de disposições da Emenda Constitucional nº 41, de 19 de dezembro de 2003 (cálculo dos proventos e contribuição previdenciária do servidor).",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.887compilado.htm"
+ },
+ {
   "slug": "fmm_10893_2004",
   "urn_lex": "urn:lex:br:federal:lei:2004-07-13;10893",
   "tipo": "lei",
@@ -1798,6 +2718,16 @@
   "epigrafe": "Lei nº 10.893, de 13 de julho de 2004 (AFRMM e Fundo da Marinha Mercante)",
   "ementa": "Dispõe sobre o Adicional ao Frete para a Renovação da Marinha Mercante (AFRMM) e o Fundo da Marinha Mercante (FMM).",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.893compilado.htm"
+ },
+ {
+  "slug": "piscofinsagro_10925_2004",
+  "urn_lex": "urn:lex:br:federal:lei:2004-07-23;10925",
+  "tipo": "lei",
+  "numero": "10925",
+  "data": "2004-07-23",
+  "epigrafe": "Lei nº 10.925, de 23 de julho de 2004 (PIS/Cofins no agronegócio e na cesta básica)",
+  "ementa": "Reduz as alíquotas do PIS/Pasep e da Cofins incidentes na importação e na comercialização do mercado interno de fertilizantes e defensivos agropecuários.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.925compilada.htm"
  },
  {
   "slug": "titulosimob_10931_2004",
@@ -1970,6 +2900,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11350.htm"
  },
  {
+  "slug": "carreirasjudiciario_11416_2006",
+  "urn_lex": "urn:lex:br:federal:lei:2006-12-15;11416",
+  "tipo": "lei",
+  "numero": "11416",
+  "data": "2006-12-15",
+  "epigrafe": "Lei nº 11.416, de 15 de dezembro de 2006 (Carreiras do Poder Judiciário da União)",
+  "ementa": "Dispõe sobre as Carreiras dos Servidores do Poder Judiciário da União.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11416.htm"
+ },
+ {
   "slug": "sumulavinculante_11417_2006",
   "urn_lex": "urn:lex:br:federal:lei:2006-12-19;11417",
   "tipo": "lei",
@@ -2040,6 +2980,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11457.htm"
  },
  {
+  "slug": "forcanacional_11473_2007",
+  "urn_lex": "urn:lex:br:federal:lei:2007-05-10;11473",
+  "tipo": "lei",
+  "numero": "11473",
+  "data": "2007-05-10",
+  "epigrafe": "Lei nº 11.473, de 10 de maio de 2007 (Força Nacional de Segurança Pública)",
+  "ementa": "Dispõe sobre cooperação federativa no âmbito da segurança pública.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11473compilado.htm"
+ },
+ {
   "slug": "fipie_11478_2007",
   "urn_lex": "urn:lex:br:federal:lei:2007-05-29;11478",
   "tipo": "lei",
@@ -2050,6 +3000,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11478.htm"
  },
  {
+  "slug": "padis_11484_2007",
+  "urn_lex": "urn:lex:br:federal:lei:2007-05-31;11484",
+  "tipo": "lei",
+  "numero": "11484",
+  "data": "2007-05-31",
+  "epigrafe": "Lei nº 11.484, de 31 de maio de 2007 (Padis e PATVD)",
+  "ementa": "Dispõe sobre os incentivos às indústrias de equipamentos para TV Digital e de componentes eletrônicos semicondutores e sobre a proteção à propriedade intelectual das topografias de circuitos integrados.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11484compilado.htm"
+ },
+ {
   "slug": "reidi_11488_2007",
   "urn_lex": "urn:lex:br:federal:lei:2007-06-15;11488",
   "tipo": "lei",
@@ -2058,6 +3018,26 @@
   "epigrafe": "Lei nº 11.488, de 15 de junho de 2007 (REIDI)",
   "ementa": "Cria o Regime Especial de Incentivos para o Desenvolvimento da Infraestrutura (Reidi) e reduz o prazo mínimo para utilização dos créditos da Contribuição para o PIS/Pasep e da Cofins decorrentes da aquisição de edificações.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11488.htm"
+ },
+ {
+  "slug": "zpe_11508_2007",
+  "urn_lex": "urn:lex:br:federal:lei:2007-07-20;11508",
+  "tipo": "lei",
+  "numero": "11508",
+  "data": "2007-07-20",
+  "epigrafe": "Lei nº 11.508, de 20 de julho de 2007 (Zonas de Processamento de Exportação)",
+  "ementa": "Dispõe sobre o regime tributário, cambial e administrativo das Zonas de Processamento de Exportação.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11508compilado.htm"
+ },
+ {
+  "slug": "icmbio_11516_2007",
+  "urn_lex": "urn:lex:br:federal:lei:2007-08-28;11516",
+  "tipo": "lei",
+  "numero": "11516",
+  "data": "2007-08-28",
+  "epigrafe": "Lei nº 11.516, de 28 de agosto de 2007 (ICMBio)",
+  "ementa": "Dispõe sobre a criação do Instituto Chico Mendes de Conservação da Biodiversidade.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11516.htm"
  },
  {
   "slug": "fndct_11540_2007",
@@ -2090,6 +3070,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11631.htm"
  },
  {
+  "slug": "ebc_11652_2008",
+  "urn_lex": "urn:lex:br:federal:lei:2008-04-07;11652",
+  "tipo": "lei",
+  "numero": "11652",
+  "data": "2008-04-07",
+  "epigrafe": "Lei nº 11.652, de 7 de abril de 2008 (Radiodifusão pública e EBC)",
+  "ementa": "Institui os princípios e objetivos dos serviços de radiodifusão pública e autoriza o Poder Executivo a constituir a Empresa Brasil de Comunicação - EBC.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11652.htm"
+ },
+ {
   "slug": "presidiosfederais_11671_2008",
   "urn_lex": "urn:lex:br:federal:lei:2008-05-08;11671",
   "tipo": "lei",
@@ -2098,6 +3088,16 @@
   "epigrafe": "Lei nº 11.671, de 8 de maio de 2008 (Presos em estabelecimentos federais)",
   "ementa": "Dispõe sobre a transferência e a inclusão de presos em estabelecimentos penais federais de segurança máxima.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11671.htm"
+ },
+ {
+  "slug": "pisomagisterio_11738_2008",
+  "urn_lex": "urn:lex:br:federal:lei:2008-07-16;11738",
+  "tipo": "lei",
+  "numero": "11738",
+  "data": "2008-07-16",
+  "epigrafe": "Lei nº 11.738, de 16 de julho de 2008 (Piso salarial do magistério)",
+  "ementa": "Institui o piso salarial profissional nacional para os profissionais do magistério público da educação básica.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11738.htm"
  },
  {
   "slug": "turismo_11771_2008",
@@ -2130,6 +3130,66 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11795.htm"
  },
  {
+  "slug": "alimentosgravidicos_11804_2008",
+  "urn_lex": "urn:lex:br:federal:lei:2008-11-05;11804",
+  "tipo": "lei",
+  "numero": "11804",
+  "data": "2008-11-05",
+  "epigrafe": "Lei nº 11.804, de 5 de novembro de 2008 (Alimentos gravídicos)",
+  "ementa": "Disciplina o direito a alimentos gravídicos e a forma como ele será exercido.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11804.htm"
+ },
+ {
+  "slug": "institutosfederais_11892_2008",
+  "urn_lex": "urn:lex:br:federal:lei:2008-12-29;11892",
+  "tipo": "lei",
+  "numero": "11892",
+  "data": "2008-12-29",
+  "epigrafe": "Lei nº 11.892, de 29 de dezembro de 2008 (Rede Federal e Institutos Federais)",
+  "ementa": "Institui a Rede Federal de Educação Profissional, Científica e Tecnológica e cria os Institutos Federais de Educação, Ciência e Tecnologia.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11892.htm"
+ },
+ {
+  "slug": "bombeirocivil_11901_2009",
+  "urn_lex": "urn:lex:br:federal:lei:2009-01-12;11901",
+  "tipo": "lei",
+  "numero": "11901",
+  "data": "2009-01-12",
+  "epigrafe": "Lei nº 11.901, de 12 de janeiro de 2009 (Profissão de Bombeiro Civil)",
+  "ementa": "Dispõe sobre a profissão de Bombeiro Civil.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l11901.htm"
+ },
+ {
+  "slug": "parcelamento_11941_2009",
+  "urn_lex": "urn:lex:br:federal:lei:2009-05-27;11941",
+  "tipo": "lei",
+  "numero": "11941",
+  "data": "2009-05-27",
+  "epigrafe": "Lei nº 11.941, de 27 de maio de 2009 (Parcelamento de débitos e Regime Tributário de Transição)",
+  "ementa": "Altera a legislação tributária federal relativa ao parcelamento ordinário de débitos tributários, concede remissão e institui regime tributário de transição.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l11941.htm"
+ },
+ {
+  "slug": "pnae_11947_2009",
+  "urn_lex": "urn:lex:br:federal:lei:2009-06-16;11947",
+  "tipo": "lei",
+  "numero": "11947",
+  "data": "2009-06-16",
+  "epigrafe": "Lei nº 11.947, de 16 de junho de 2009 (PNAE e PDDE)",
+  "ementa": "Dispõe sobre o atendimento da alimentação escolar e do Programa Dinheiro Direto na Escola aos alunos da educação básica.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l11947.htm"
+ },
+ {
+  "slug": "terralegal_11952_2009",
+  "urn_lex": "urn:lex:br:federal:lei:2009-06-25;11952",
+  "tipo": "lei",
+  "numero": "11952",
+  "data": "2009-06-25",
+  "epigrafe": "Lei nº 11.952, de 25 de junho de 2009 (Regularização fundiária na Amazônia Legal)",
+  "ementa": "Dispõe sobre a regularização fundiária das ocupações incidentes em terras situadas em áreas da União, no âmbito da Amazônia Legal.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l11952.htm"
+ },
+ {
   "slug": "aquiculturapesca_11959_2009",
   "urn_lex": "urn:lex:br:federal:lei:2009-06-29;11959",
   "tipo": "lei",
@@ -2158,6 +3218,16 @@
   "epigrafe": "Lei nº 12.016, de 7 de agosto de 2009 (Mandado de segurança)",
   "ementa": "Disciplina o mandado de segurança individual e coletivo.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l12016.htm"
+ },
+ {
+  "slug": "trabalhoavulso_12023_2009",
+  "urn_lex": "urn:lex:br:federal:lei:2009-08-27;12023",
+  "tipo": "lei",
+  "numero": "12023",
+  "data": "2009-08-27",
+  "epigrafe": "Lei nº 12.023, de 27 de agosto de 2009 (Trabalho avulso)",
+  "ementa": "Dispõe sobre as atividades de movimentação de mercadorias em geral e sobre o trabalho avulso.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l12023.htm"
  },
  {
   "slug": "identcriminal_12037_2009",
@@ -2230,6 +3300,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12213.htm"
  },
  {
+  "slug": "publicidade_12232_2010",
+  "urn_lex": "urn:lex:br:federal:lei:2010-04-29;12232",
+  "tipo": "lei",
+  "numero": "12232",
+  "data": "2010-04-29",
+  "epigrafe": "Lei nº 12.232, de 29 de abril de 2010 (Licitação de serviços de publicidade)",
+  "ementa": "Dispõe sobre as normas gerais para licitação e contratação pela administração pública de serviços de publicidade prestados por intermédio de agências de propaganda.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12232.htm"
+ },
+ {
   "slug": "igualdaderacial_12288_2010",
   "urn_lex": "urn:lex:br:federal:lei:2010-07-20;12288",
   "tipo": "lei",
@@ -2248,6 +3328,16 @@
   "epigrafe": "Lei nº 12.305, de 2 de agosto de 2010 (Resíduos sólidos)",
   "ementa": "Institui a Política Nacional de Resíduos Sólidos.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12305.htm"
+ },
+ {
+  "slug": "alienacaoparental_12318_2010",
+  "urn_lex": "urn:lex:br:federal:lei:2010-08-26;12318",
+  "tipo": "lei",
+  "numero": "12318",
+  "data": "2010-08-26",
+  "epigrafe": "Lei nº 12.318, de 26 de agosto de 2010 (Alienação parental)",
+  "ementa": "Dispõe sobre a alienação parental.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12318.htm"
  },
  {
   "slug": "barragens_12334_2010",
@@ -2278,6 +3368,16 @@
   "epigrafe": "Lei nº 12.351, de 22 de dezembro de 2010 (Partilha de produção (pré-sal))",
   "ementa": "Dispõe sobre a exploração e a produção de petróleo sob o regime de partilha de produção e cria o Fundo Social.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12351.htm"
+ },
+ {
+  "slug": "arquitetura_12378_2010",
+  "urn_lex": "urn:lex:br:federal:lei:2010-12-31;12378",
+  "tipo": "lei",
+  "numero": "12378",
+  "data": "2010-12-31",
+  "epigrafe": "Lei nº 12.378, de 31 de dezembro de 2010 (Arquitetura e Urbanismo — CAU)",
+  "ementa": "Regulamenta o exercício da Arquitetura e Urbanismo; cria o Conselho de Arquitetura e Urbanismo do Brasil - CAU/BR.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12378.htm"
  },
  {
   "slug": "snv_12379_2011",
@@ -2320,6 +3420,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12465.htm"
  },
  {
+  "slug": "taxista_12468_2011",
+  "urn_lex": "urn:lex:br:federal:lei:2011-08-26;12468",
+  "tipo": "lei",
+  "numero": "12468",
+  "data": "2011-08-26",
+  "epigrafe": "Lei nº 12.468, de 26 de agosto de 2011 (Profissão de taxista)",
+  "ementa": "Regulamenta a profissão de taxista.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12468.htm"
+ },
+ {
   "slug": "bambu_12484_2011",
   "urn_lex": "urn:lex:br:federal:lei:2011-09-08;12484",
   "tipo": "lei",
@@ -2350,6 +3460,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12506.htm"
  },
  {
+  "slug": "bolsaverde_12512_2011",
+  "urn_lex": "urn:lex:br:federal:lei:2011-10-14;12512",
+  "tipo": "lei",
+  "numero": "12512",
+  "data": "2011-10-14",
+  "epigrafe": "Lei nº 12.512, de 14 de outubro de 2011 (Bolsa Verde e Fomento Rural)",
+  "ementa": "Institui o Programa de Apoio à Conservação Ambiental e o Programa de Fomento às Atividades Produtivas Rurais.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12512.htm"
+ },
+ {
   "slug": "cade_12529_2011",
   "urn_lex": "urn:lex:br:federal:lei:2011-11-30;12529",
   "tipo": "lei",
@@ -2368,6 +3488,16 @@
   "epigrafe": "Lei nº 12.546, de 14 de dezembro de 2011 (Contribuição sobre a receita bruta e Reintegra)",
   "ementa": "Institui o Regime Especial de Reintegração de Valores Tributários (Reintegra) e a contribuição previdenciária sobre a receita bruta.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12546compilado.htm"
+ },
+ {
+  "slug": "representacaointerventiva_12562_2011",
+  "urn_lex": "urn:lex:br:federal:lei:2011-12-23;12562",
+  "tipo": "lei",
+  "numero": "12562",
+  "data": "2011-12-23",
+  "epigrafe": "Lei nº 12.562, de 23 de dezembro de 2011 (Representação interventiva)",
+  "ementa": "Regulamenta o inciso III do art. 36 da Constituição Federal, para dispor sobre o processo e julgamento da representação interventiva perante o Supremo Tribunal Federal.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12562.htm"
  },
  {
   "slug": "mobilidade_12587_2012",
@@ -2440,6 +3570,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12681compilado.htm"
  },
  {
+  "slug": "cooperativastrabalho_12690_2012",
+  "urn_lex": "urn:lex:br:federal:lei:2012-07-19;12690",
+  "tipo": "lei",
+  "numero": "12690",
+  "data": "2012-07-19",
+  "epigrafe": "Lei nº 12.690, de 19 de julho de 2012 (Cooperativas de trabalho)",
+  "ementa": "Dispõe sobre a organização e o funcionamento das Cooperativas de Trabalho e institui o Programa Nacional de Fomento às Cooperativas de Trabalho - PRONACOOP.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm"
+ },
+ {
   "slug": "colegiado_12694_2012",
   "urn_lex": "urn:lex:br:federal:lei:2012-07-24;12694",
   "tipo": "lei",
@@ -2480,6 +3620,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12712.htm"
  },
  {
+  "slug": "transparenciatributaria_12741_2012",
+  "urn_lex": "urn:lex:br:federal:lei:2012-12-08;12741",
+  "tipo": "lei",
+  "numero": "12741",
+  "data": "2012-12-08",
+  "epigrafe": "Lei nº 12.741, de 8 de dezembro de 2012 (Transparência tributária ao consumidor)",
+  "ementa": "Dispõe sobre as medidas de esclarecimento ao consumidor, de que trata o § 5º do artigo 150 da Constituição Federal (informação dos tributos incidentes no preço).",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12741.htm"
+ },
+ {
   "slug": "tea_12764_2012",
   "urn_lex": "urn:lex:br:federal:lei:2012-12-27;12764",
   "tipo": "lei",
@@ -2498,6 +3648,16 @@
   "epigrafe": "Lei nº 12.772, de 28 de dezembro de 2012 (Plano de Carreiras do Magistério Federal)",
   "ementa": "Dispõe sobre a estruturação do Plano de Carreiras e Cargos de Magistério Federal, sobre a Carreira do Magistério Superior, de que trata a Lei nº 7.596, de 10 de abril de 1987, e sobre o Plano de Carreira e Cargos de Magistério do Ensino Básico, Técnico e Tecnológico.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12772compilado.htm"
+ },
+ {
+  "slug": "concessoeseletricas_12783_2013",
+  "urn_lex": "urn:lex:br:federal:lei:2013-01-11;12783",
+  "tipo": "lei",
+  "numero": "12783",
+  "data": "2013-01-11",
+  "epigrafe": "Lei nº 12.783, de 11 de janeiro de 2013 (Renovação das concessões de energia elétrica)",
+  "ementa": "Dispõe sobre as concessões de geração, transmissão e distribuição de energia elétrica, sobre a redução dos encargos setoriais e sobre a modicidade tarifária.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12783.htm"
  },
  {
   "slug": "irrigacao_12787_2013",
@@ -2530,6 +3690,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12805.htm"
  },
  {
+  "slug": "parcelamentoentes_12810_2013",
+  "urn_lex": "urn:lex:br:federal:lei:2013-05-15;12810",
+  "tipo": "lei",
+  "numero": "12810",
+  "data": "2013-05-15",
+  "epigrafe": "Lei nº 12.810, de 15 de maio de 2013 (Parcelamento previdenciário dos entes e registro de ativos financeiros)",
+  "ementa": "Dispõe sobre o parcelamento de débitos com a Fazenda Nacional relativos às contribuições previdenciárias de responsabilidade dos Estados, do Distrito Federal e dos Municípios, e sobre o registro e o depósito centralizado de ativos financeiros.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12810.htm"
+ },
+ {
   "slug": "conflitointeresses_12813_2013",
   "urn_lex": "urn:lex:br:federal:lei:2013-05-16;12813",
   "tipo": "lei",
@@ -2560,6 +3730,26 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12830.htm"
  },
  {
+  "slug": "medicina_12842_2013",
+  "urn_lex": "urn:lex:br:federal:lei:2013-07-10;12842",
+  "tipo": "lei",
+  "numero": "12842",
+  "data": "2013-07-10",
+  "epigrafe": "Lei nº 12.842, de 10 de julho de 2013 (Lei do Ato Médico)",
+  "ementa": "Dispõe sobre o exercício da Medicina.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12842.htm"
+ },
+ {
+  "slug": "violenciasexual_12845_2013",
+  "urn_lex": "urn:lex:br:federal:lei:2013-08-01;12845",
+  "tipo": "lei",
+  "numero": "12845",
+  "data": "2013-08-01",
+  "epigrafe": "Lei nº 12.845, de 1º de agosto de 2013 (Atendimento a vítimas de violência sexual)",
+  "ementa": "Dispõe sobre o atendimento obrigatório e integral de pessoas em situação de violência sexual.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12845.htm"
+ },
+ {
   "slug": "prevencaotortura_12847_2013",
   "urn_lex": "urn:lex:br:federal:lei:2013-08-02;12847",
   "tipo": "lei",
@@ -2588,6 +3778,16 @@
   "epigrafe": "Lei nº 12.852, de 5 de agosto de 2013 (Estatuto da Juventude)",
   "ementa": "Institui o Estatuto da Juventude e dispõe sobre os direitos dos jovens.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12852.htm"
+ },
+ {
+  "slug": "royaltieseducacao_12858_2013",
+  "urn_lex": "urn:lex:br:federal:lei:2013-09-09;12858",
+  "tipo": "lei",
+  "numero": "12858",
+  "data": "2013-09-09",
+  "epigrafe": "Lei nº 12.858, de 9 de setembro de 2013 (Royalties do petróleo para educação e saúde)",
+  "ementa": "Dispõe sobre a destinação para as áreas de educação e saúde de parcela da participação no resultado ou da compensação financeira pela exploração de petróleo e gás natural.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12858.htm"
  },
  {
   "slug": "pagamentos_12865_2013",
@@ -2630,6 +3830,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm"
  },
  {
+  "slug": "irpjifrs_12973_2014",
+  "urn_lex": "urn:lex:br:federal:lei:2014-05-13;12973",
+  "tipo": "lei",
+  "numero": "12973",
+  "data": "2014-05-13",
+  "epigrafe": "Lei nº 12.973, de 13 de maio de 2014 (IRPJ e CSLL após os padrões contábeis internacionais)",
+  "ementa": "Altera a legislação tributária federal relativa ao IRPJ, à CSLL, ao PIS/Pasep e à Cofins, adequando-a aos padrões contábeis internacionais e extinguindo o Regime Tributário de Transição.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12973.htm"
+ },
+ {
   "slug": "pne_13005_2014",
   "urn_lex": "urn:lex:br:federal:lei:2014-06-25;13005",
   "tipo": "lei",
@@ -2660,6 +3870,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019compilado.htm"
  },
  {
+  "slug": "farmacia_13021_2014",
+  "urn_lex": "urn:lex:br:federal:lei:2014-08-08;13021",
+  "tipo": "lei",
+  "numero": "13021",
+  "data": "2014-08-08",
+  "epigrafe": "Lei nº 13.021, de 8 de agosto de 2014 (Atividades farmacêuticas)",
+  "ementa": "Dispõe sobre o exercício e a fiscalização das atividades farmacêuticas.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13021.htm"
+ },
+ {
   "slug": "ldo2015_13080_2015",
   "urn_lex": "urn:lex:br:federal:lei:2015-01-02;13080",
   "tipo": "lei",
@@ -2668,6 +3888,26 @@
   "epigrafe": "Lei nº 13.080, de 2 de janeiro de 2015 (LDO 2015)",
   "ementa": "Dispõe sobre as diretrizes para a elaboração e execução da Lei Orçamentária de 2015 e dá outras providências.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13080.htm"
+ },
+ {
+  "slug": "metropole_13089_2015",
+  "urn_lex": "urn:lex:br:federal:lei:2015-01-12;13089",
+  "tipo": "lei",
+  "numero": "13089",
+  "data": "2015-01-12",
+  "epigrafe": "Lei nº 13.089, de 12 de janeiro de 2015 (Estatuto da Metrópole)",
+  "ementa": "Institui o Estatuto da Metrópole.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13089.htm"
+ },
+ {
+  "slug": "motorista_13103_2015",
+  "urn_lex": "urn:lex:br:federal:lei:2015-03-02;13103",
+  "tipo": "lei",
+  "numero": "13103",
+  "data": "2015-03-02",
+  "epigrafe": "Lei nº 13.103, de 2 de março de 2015 (Motorista profissional)",
+  "ementa": "Dispõe sobre o exercício da profissão de motorista.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13103.htm"
  },
  {
   "slug": "loa2015_13115_2015",
@@ -2710,6 +3950,36 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13153.htm"
  },
  {
+  "slug": "bullying_13185_2015",
+  "urn_lex": "urn:lex:br:federal:lei:2015-11-06;13185",
+  "tipo": "lei",
+  "numero": "13185",
+  "data": "2015-11-06",
+  "epigrafe": "Lei nº 13.185, de 6 de novembro de 2015 (Combate ao bullying)",
+  "ementa": "Institui o Programa de Combate à Intimidação Sistemática (Bullying).",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13185.htm"
+ },
+ {
+  "slug": "direitoderesposta_13188_2015",
+  "urn_lex": "urn:lex:br:federal:lei:2015-11-11;13188",
+  "tipo": "lei",
+  "numero": "13188",
+  "data": "2015-11-11",
+  "epigrafe": "Lei nº 13.188, de 11 de novembro de 2015 (Direito de resposta)",
+  "ementa": "Dispõe sobre o direito de resposta ou retificação do ofendido em matéria divulgada, publicada ou transmitida por veículo de comunicação social.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13188.htm"
+ },
+ {
+  "slug": "alienacaoimoveisuniao_13240_2015",
+  "urn_lex": "urn:lex:br:federal:lei:2015-12-30;13240",
+  "tipo": "lei",
+  "numero": "13240",
+  "data": "2015-12-30",
+  "epigrafe": "Lei nº 13.240, de 30 de dezembro de 2015 (Administração e alienação de imóveis da União)",
+  "ementa": "Dispõe sobre a administração, a alienação, a transferência de gestão de imóveis da União e seu uso para a constituição de fundos.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13240.htm"
+ },
+ {
   "slug": "ldo2016_13242_2015",
   "urn_lex": "urn:lex:br:federal:lei:2015-12-30;13242",
   "tipo": "lei",
@@ -2728,6 +3998,16 @@
   "epigrafe": "Lei nº 13.255, de 14 de janeiro de 2016 (LOA 2016)",
   "ementa": "Estima a receita e fixa a despesa da União para o exercício financeiro de 2016.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/lei/l13255.htm"
+ },
+ {
+  "slug": "primeirainfancia_13257_2016",
+  "urn_lex": "urn:lex:br:federal:lei:2016-03-08;13257",
+  "tipo": "lei",
+  "numero": "13257",
+  "data": "2016-03-08",
+  "epigrafe": "Lei nº 13.257, de 8 de março de 2016 (Marco Legal da Primeira Infância)",
+  "ementa": "Dispõe sobre as políticas públicas para a primeira infância.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/lei/l13257.htm"
  },
  {
   "slug": "terrorismo_13260_2016",
@@ -2750,6 +4030,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/lei/l13300.htm"
  },
  {
+  "slug": "honorariosadvpublica_13327_2016",
+  "urn_lex": "urn:lex:br:federal:lei:2016-07-29;13327",
+  "tipo": "lei",
+  "numero": "13327",
+  "data": "2016-07-29",
+  "epigrafe": "Lei nº 13.327, de 29 de julho de 2016 (Honorários da advocacia pública)",
+  "ementa": "Altera a remuneração de servidores públicos; dispõe sobre os honorários advocatícios de sucumbência das causas em que forem parte a União, suas autarquias e fundações (arts. 27 a 36); reestrutura cargos e carreiras.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/lei/l13327.htm"
+ },
+ {
   "slug": "ppi_13334_2016",
   "urn_lex": "urn:lex:br:federal:lei:2016-09-13;13334",
   "tipo": "lei",
@@ -2758,6 +4048,16 @@
   "epigrafe": "Lei nº 13.334, de 13 de setembro de 2016 (Parcerias de Investimentos (PPI))",
   "ementa": "Cria o Programa de Parcerias de Investimentos (PPI).",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/lei/l13334compilado.htm"
+ },
+ {
+  "slug": "traficopessoas_13344_2016",
+  "urn_lex": "urn:lex:br:federal:lei:2016-10-06;13344",
+  "tipo": "lei",
+  "numero": "13344",
+  "data": "2016-10-06",
+  "epigrafe": "Lei nº 13.344, de 6 de outubro de 2016 (Tráfico de pessoas)",
+  "ementa": "Dispõe sobre prevenção e repressão ao tráfico interno e internacional de pessoas e sobre medidas de atenção às vítimas.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/lei/l13344.htm"
  },
  {
   "slug": "ldo2017_13408_2016",
@@ -2778,6 +4078,16 @@
   "epigrafe": "Lei nº 13.414, de 10 de janeiro de 2017 (LOA 2017)",
   "ementa": "Estima a receita e fixa a despesa da União para o exercício financeiro de 2017.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13414.htm"
+ },
+ {
+  "slug": "escutaprotegida_13431_2017",
+  "urn_lex": "urn:lex:br:federal:lei:2017-04-04;13431",
+  "tipo": "lei",
+  "numero": "13431",
+  "data": "2017-04-04",
+  "epigrafe": "Lei nº 13.431, de 4 de abril de 2017 (Criança vítima ou testemunha de violência)",
+  "ementa": "Estabelece o sistema de garantia de direitos da criança e do adolescente vítima ou testemunha de violência.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13431.htm"
  },
  {
   "slug": "migracao_13445_2017",
@@ -2870,6 +4180,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13587.htm"
  },
  {
+  "slug": "prr_13606_2018",
+  "urn_lex": "urn:lex:br:federal:lei:2018-01-09;13606",
+  "tipo": "lei",
+  "numero": "13606",
+  "data": "2018-01-09",
+  "epigrafe": "Lei nº 13.606, de 9 de janeiro de 2018 (Regularização Tributária Rural e averbação pré-executória)",
+  "ementa": "Institui o Programa de Regularização Tributária Rural (PRR) na Secretaria da Receita Federal do Brasil e na Procuradoria-Geral da Fazenda Nacional.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13606.htm"
+ },
+ {
   "slug": "pnatrans_13614_2018",
   "urn_lex": "urn:lex:br:federal:lei:2018-01-11;13614",
   "tipo": "lei",
@@ -2950,6 +4270,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13710.htm"
  },
  {
+  "slug": "desburocratizacao_13726_2018",
+  "urn_lex": "urn:lex:br:federal:lei:2018-10-08;13726",
+  "tipo": "lei",
+  "numero": "13726",
+  "data": "2018-10-08",
+  "epigrafe": "Lei nº 13.726, de 8 de outubro de 2018 (Desburocratização)",
+  "ementa": "Racionaliza atos e procedimentos administrativos dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios e institui o Selo de Desburocratização e Simplificação.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13726.htm"
+ },
+ {
   "slug": "rota2030_13755_2018",
   "urn_lex": "urn:lex:br:federal:lei:2018-12-10;13755",
   "tipo": "lei",
@@ -2968,6 +4298,16 @@
   "epigrafe": "Lei nº 13.756, de 12 de dezembro de 2018 (Fundo Nacional de Segurança Pública)",
   "ementa": "Dispõe sobre o Fundo Nacional de Segurança Pública (FNSP) e sobre as loterias.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13756compilado.htm"
+ },
+ {
+  "slug": "distrato_13786_2018",
+  "urn_lex": "urn:lex:br:federal:lei:2018-12-27;13786",
+  "tipo": "lei",
+  "numero": "13786",
+  "data": "2018-12-27",
+  "epigrafe": "Lei nº 13.786, de 27 de dezembro de 2018 (Distrato imobiliário)",
+  "ementa": "Disciplina a resolução do contrato por inadimplemento do adquirente de unidade imobiliária em incorporação imobiliária e em parcelamento de solo urbano.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13786.htm"
  },
  {
   "slug": "ervamate_13791_2019",
@@ -3030,6 +4370,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13844compilado.htm"
  },
  {
+  "slug": "revisaobeneficios_13846_2019",
+  "urn_lex": "urn:lex:br:federal:lei:2019-06-18;13846",
+  "tipo": "lei",
+  "numero": "13846",
+  "data": "2019-06-18",
+  "epigrafe": "Lei nº 13.846, de 18 de junho de 2019 (Revisão de benefícios previdenciários)",
+  "ementa": "Institui o Programa Especial para Análise de Benefícios com Indícios de Irregularidade e o Programa de Revisão de Benefícios por Incapacidade.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13846.htm"
+ },
+ {
   "slug": "agenciasreg_13848_2019",
   "urn_lex": "urn:lex:br:federal:lei:2019-06-25;13848",
   "tipo": "lei",
@@ -3088,6 +4438,16 @@
   "epigrafe": "Lei nº 13.898, de 11 de novembro de 2019 (LDO 2020)",
   "ementa": "Dispõe sobre as diretrizes para a elaboração e a execução da Lei Orçamentária de 2020 e dá outras providências.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13898.htm"
+ },
+ {
+  "slug": "psicologiaescolas_13935_2019",
+  "urn_lex": "urn:lex:br:federal:lei:2019-12-11;13935",
+  "tipo": "lei",
+  "numero": "13935",
+  "data": "2019-12-11",
+  "epigrafe": "Lei nº 13.935, de 11 de dezembro de 2019 (Psicologia e serviço social nas escolas)",
+  "ementa": "Dispõe sobre a prestação de serviços de psicologia e de serviço social nas redes públicas de educação básica.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13935.htm"
  },
  {
   "slug": "carreiramilitar_13954_2019",
@@ -3218,6 +4578,46 @@
   "epigrafe": "Lei nº 14.144, de 22 de abril de 2021 (LOA 2021)",
   "ementa": "Estima a receita e fixa a despesa da União para o exercício financeiro de 2021.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14144.htm"
+ },
+ {
+  "slug": "perse_14148_2021",
+  "urn_lex": "urn:lex:br:federal:lei:2021-05-03;14148",
+  "tipo": "lei",
+  "numero": "14148",
+  "data": "2021-05-03",
+  "epigrafe": "Lei nº 14.148, de 3 de maio de 2021 (Perse)",
+  "ementa": "Dispõe sobre ações emergenciais e temporárias destinadas ao setor de eventos e institui o Programa Emergencial de Retomada do Setor de Eventos (Perse).",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14148.htm"
+ },
+ {
+  "slug": "eletrobras_14182_2021",
+  "urn_lex": "urn:lex:br:federal:lei:2021-07-12;14182",
+  "tipo": "lei",
+  "numero": "14182",
+  "data": "2021-07-12",
+  "epigrafe": "Lei nº 14.182, de 12 de julho de 2021 (Desestatização da Eletrobras)",
+  "ementa": "Dispõe sobre a desestatização da empresa Centrais Elétricas Brasileiras S.A. (Eletrobras).",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14182.htm"
+ },
+ {
+  "slug": "violenciapolitica_14192_2021",
+  "urn_lex": "urn:lex:br:federal:lei:2021-08-04;14192",
+  "tipo": "lei",
+  "numero": "14192",
+  "data": "2021-08-04",
+  "epigrafe": "Lei nº 14.192, de 4 de agosto de 2021 (Violência política contra a mulher)",
+  "ementa": "Estabelece normas para prevenir, reprimir e combater a violência política contra a mulher.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14192.htm"
+ },
+ {
+  "slug": "saf_14193_2021",
+  "urn_lex": "urn:lex:br:federal:lei:2021-08-06;14193",
+  "tipo": "lei",
+  "numero": "14193",
+  "data": "2021-08-06",
+  "epigrafe": "Lei nº 14.193, de 6 de agosto de 2021 (Sociedade Anônima do Futebol)",
+  "ementa": "Institui a Sociedade Anônima do Futebol e dispõe sobre normas de constituição, governança, controle e transparência, meios de financiamento da atividade futebolística e tratamento dos passivos das entidades de práticas desportivas.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14193.htm"
  },
  {
   "slug": "ldo2022_14194_2021",
@@ -3440,6 +4840,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14611.htm"
  },
  {
+  "slug": "paa_14628_2023",
+  "urn_lex": "urn:lex:br:federal:lei:2023-07-20;14628",
+  "tipo": "lei",
+  "numero": "14628",
+  "data": "2023-07-20",
+  "epigrafe": "Lei nº 14.628, de 20 de julho de 2023 (PAA — Programa de Aquisição de Alimentos)",
+  "ementa": "Institui o Programa de Aquisição de Alimentos (PAA) e o Programa Cozinha Solidária.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14628.htm"
+ },
+ {
   "slug": "flores_14637_2023",
   "urn_lex": "urn:lex:br:federal:lei:2023-07-25;14637",
   "tipo": "lei",
@@ -3470,6 +4880,36 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14666.htm"
  },
  {
+  "slug": "carf_14689_2023",
+  "urn_lex": "urn:lex:br:federal:lei:2023-09-20;14689",
+  "tipo": "lei",
+  "numero": "14689",
+  "data": "2023-09-20",
+  "epigrafe": "Lei nº 14.689, de 20 de setembro de 2023 (Voto de qualidade no Carf e conformidade tributária)",
+  "ementa": "Disciplina a proclamação de resultados de julgamentos na hipótese de empate na votação no âmbito do Conselho Administrativo de Recursos Fiscais (Carf); dispõe sobre a autorregularização de débitos e a conformidade tributária.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14689.htm"
+ },
+ {
+  "slug": "terrasindigenas_14701_2023",
+  "urn_lex": "urn:lex:br:federal:lei:2023-10-20;14701",
+  "tipo": "lei",
+  "numero": "14701",
+  "data": "2023-10-20",
+  "epigrafe": "Lei nº 14.701, de 20 de outubro de 2023 (Demarcação de terras indígenas)",
+  "ementa": "Regulamenta o art. 231 da Constituição Federal, para dispor sobre o reconhecimento, a demarcação, o uso e a gestão de terras indígenas.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14701.htm"
+ },
+ {
+  "slug": "marcogarantias_14711_2023",
+  "urn_lex": "urn:lex:br:federal:lei:2023-10-30;14711",
+  "tipo": "lei",
+  "numero": "14711",
+  "data": "2023-10-30",
+  "epigrafe": "Lei nº 14.711, de 30 de outubro de 2023 (Marco Legal das Garantias)",
+  "ementa": "Dispõe sobre o aprimoramento das regras de garantia, a execução extrajudicial de créditos garantidos por hipoteca, a execução extrajudicial de garantia imobiliária em concurso de credores e o procedimento de busca e apreensão extrajudicial de bens móveis.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14711.htm"
+ },
+ {
   "slug": "transplantes_14722_2023",
   "urn_lex": "urn:lex:br:federal:lei:2023-11-08;14722",
   "tipo": "lei",
@@ -3478,6 +4918,26 @@
   "epigrafe": "Lei nº 14.722, de 8 de novembro de 2023 (Política Nacional de Doação e Transplante de Órgãos)",
   "ementa": "Institui a Política Nacional de Conscientização e Incentivo à Doação e ao Transplante de Órgãos e Tecidos.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14722.htm"
+ },
+ {
+  "slug": "autorregularizacao_14740_2023",
+  "urn_lex": "urn:lex:br:federal:lei:2023-11-29;14740",
+  "tipo": "lei",
+  "numero": "14740",
+  "data": "2023-11-29",
+  "epigrafe": "Lei nº 14.740, de 29 de novembro de 2023 (Autorregularização incentivada)",
+  "ementa": "Dispõe sobre a autorregularização incentivada de tributos administrados pela Secretaria Especial da Receita Federal do Brasil.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14740.htm"
+ },
+ {
+  "slug": "lopmbombeiros_14751_2023",
+  "urn_lex": "urn:lex:br:federal:lei:2023-12-12;14751",
+  "tipo": "lei",
+  "numero": "14751",
+  "data": "2023-12-12",
+  "epigrafe": "Lei nº 14.751, de 12 de dezembro de 2023 (Lei Orgânica das Polícias Militares e Bombeiros)",
+  "ementa": "Institui a Lei Orgânica Nacional das Polícias Militares e dos Corpos de Bombeiros Militares dos Estados, do Distrito Federal e dos Territórios.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14751.htm"
  },
  {
   "slug": "tribfundos_14754_2023",
@@ -3520,6 +4980,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14785.htm"
  },
  {
+  "slug": "naoenao_14786_2023",
+  "urn_lex": "urn:lex:br:federal:lei:2023-12-28;14786",
+  "tipo": "lei",
+  "numero": "14786",
+  "data": "2023-12-28",
+  "epigrafe": "Lei nº 14.786, de 28 de dezembro de 2023 (Protocolo Não é Não)",
+  "ementa": "Cria o protocolo 'Não é Não', para prevenção ao constrangimento e à violência contra a mulher e para proteção à vítima.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14786.htm"
+ },
+ {
   "slug": "subvencoes_14789_2023",
   "urn_lex": "urn:lex:br:federal:lei:2023-12-29;14789",
   "tipo": "lei",
@@ -3528,6 +4998,16 @@
   "epigrafe": "Lei nº 14.789, de 29 de dezembro de 2023 (Crédito fiscal de subvenção para investimento)",
   "ementa": "Dispõe sobre o crédito fiscal decorrente de subvenção para a implantação ou expansão de empreendimento econômico.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14789.htm"
+ },
+ {
+  "slug": "apostas_14790_2023",
+  "urn_lex": "urn:lex:br:federal:lei:2023-12-29;14790",
+  "tipo": "lei",
+  "numero": "14790",
+  "data": "2023-12-29",
+  "epigrafe": "Lei nº 14.790, de 29 de dezembro de 2023 (Apostas de quota fixa)",
+  "ementa": "Dispõe sobre a modalidade lotérica denominada apostas de quota fixa.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14790.htm"
  },
  {
   "slug": "ldo2024_14791_2023",
@@ -3680,6 +5160,26 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14948.htm"
  },
  {
+  "slug": "segurancaprivada_14967_2024",
+  "urn_lex": "urn:lex:br:federal:lei:2024-09-09;14967",
+  "tipo": "lei",
+  "numero": "14967",
+  "data": "2024-09-09",
+  "epigrafe": "Lei nº 14.967, de 9 de setembro de 2024 (Estatuto da Segurança Privada)",
+  "ementa": "Institui o Estatuto da Segurança Privada e da Segurança das Instituições Financeiras.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14967.htm"
+ },
+ {
+  "slug": "desoneracaofolha_14973_2024",
+  "urn_lex": "urn:lex:br:federal:lei:2024-09-16;14973",
+  "tipo": "lei",
+  "numero": "14973",
+  "data": "2024-09-16",
+  "epigrafe": "Lei nº 14.973, de 16 de setembro de 2024 (Transição da desoneração da folha)",
+  "ementa": "Estabelece regime de transição para a contribuição substitutiva prevista nos arts. 7º e 8º da Lei nº 12.546, de 14 de dezembro de 2011, e para o adicional sobre a Cofins-Importação.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14973.htm"
+ },
+ {
   "slug": "cocoicultura_14975_2024",
   "urn_lex": "urn:lex:br:federal:lei:2024-09-18;14975",
   "tipo": "lei",
@@ -3688,6 +5188,26 @@
   "epigrafe": "Lei nº 14.975, de 18 de setembro de 2024 (Política Nacional de Cocoicultura)",
   "ementa": "Institui a Política Nacional de Incentivo à Cocoicultura de Qualidade.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14975.htm"
+ },
+ {
+  "slug": "combustiveldofuturo_14993_2024",
+  "urn_lex": "urn:lex:br:federal:lei:2024-10-08;14993",
+  "tipo": "lei",
+  "numero": "14993",
+  "data": "2024-10-08",
+  "epigrafe": "Lei nº 14.993, de 8 de outubro de 2024 (Combustível do Futuro)",
+  "ementa": "Dispõe sobre a promoção da mobilidade sustentável de baixo carbono e a captura e a estocagem geológica de dióxido de carbono; institui o ProBioQAV, o PNDBio e o Programa Nacional de Descarbonização do Produtor e Importador de Gás Natural.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14993.htm"
+ },
+ {
+  "slug": "mercadocarbono_15042_2024",
+  "urn_lex": "urn:lex:br:federal:lei:2024-12-11;15042",
+  "tipo": "lei",
+  "numero": "15042",
+  "data": "2024-12-11",
+  "epigrafe": "Lei nº 15.042, de 11 de dezembro de 2024 (Mercado de carbono — SBCE)",
+  "ementa": "Institui o Sistema Brasileiro de Comércio de Emissões de Gases de Efeito Estufa (SBCE).",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l15042.htm"
  },
  {
   "slug": "economiasolidaria_15068_2024",
@@ -3730,6 +5250,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15089.htm"
  },
  {
+  "slug": "offshore_15097_2025",
+  "urn_lex": "urn:lex:br:federal:lei:2025-01-10;15097",
+  "tipo": "lei",
+  "numero": "15097",
+  "data": "2025-01-10",
+  "epigrafe": "Lei nº 15.097, de 10 de janeiro de 2025 (Energia offshore)",
+  "ementa": "Disciplina o aproveitamento de potencial energético offshore.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15097.htm"
+ },
+ {
   "slug": "loa2025_15121_2025",
   "urn_lex": "urn:lex:br:federal:lei:2025-04-10;15121",
   "tipo": "lei",
@@ -3768,6 +5298,16 @@
   "epigrafe": "Lei nº 15.140, de 28 de maio de 2025 (Política Nacional de Proteção da Pessoa com Albinismo)",
   "ementa": "Institui a Política Nacional de Proteção dos Direitos da Pessoa com Albinismo.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15140.htm"
+ },
+ {
+  "slug": "cotasconcursos_15142_2025",
+  "urn_lex": "urn:lex:br:federal:lei:2025-06-03;15142",
+  "tipo": "lei",
+  "numero": "15142",
+  "data": "2025-06-03",
+  "epigrafe": "Lei nº 15.142, de 3 de junho de 2025 (Cotas raciais em concursos públicos)",
+  "ementa": "Reserva às pessoas pretas e pardas, indígenas e quilombolas o percentual de 30% das vagas oferecidas nos concursos públicos para provimento de cargos efetivos e empregos públicos no âmbito da administração pública federal.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15142.htm"
  },
  {
   "slug": "hpv_15174_2025",

@@ -151,7 +151,7 @@ varredura do `REGISTRO`; a que se revelar revogada na conferência da ementa
 sai (e, se ainda for consultada, entra com `somente_vigente=false`, como a
 Lei 10.520).
 
-### Lote 13 — direito público de base (~24)
+### Lote 13 — direito público de base (~24) *(executado em 2026-09-14; revelou o bug nº 11)*
 
 Organização administrativa: **DL 200/1967**, Lei 9.962/2000 (emprego público),
 Lei 11.416/2006 (carreiras do Judiciário), Lei 10.480/2002 (PGF), Lei
@@ -165,7 +165,7 @@ Lei 11.416/2006 (carreiras do Judiciário), Lei 10.480/2002 (PGF), Lei
 Metrópole), Lei 12.232/2010 (licitação de publicidade), Lei 13.726/2018
 (desburocratização), Lei 8.935/1994 (notários e registradores).
 
-### Lote 14 — direito privado, família e penal especial (~32)
+### Lote 14 — direito privado, família e penal especial (~32) *(executado em 2026-09-14)*
 
 **DL 3.688/1941** (contravenções), **DL 25/1937** (tombamento), DL 911/1969,
 DL 70/1966, DL 167/1967, DL 986/1969 (alimentos), **Lei 8.009/1990**, **Lei
@@ -179,7 +179,7 @@ Lei 14.786/2023, Lei 14.192/2021 (violência política de gênero), Lei
 (refúgio), Lei 14.701/2023 (terras indígenas), Lei 15.142/2025 (cotas em
 concursos — confirmar que substituiu a 12.990/2014), Lei 6.091/1974.
 
-### Lote 15 — trabalho, profissões regulamentadas e previdência (~40)
+### Lote 15 — trabalho, profissões regulamentadas e previdência (~40) *(executado em 2026-09-14)*
 
 Trabalho: **Lei 4.090/1962** (13º), Lei 4.749/1965, **Lei 7.418/1985**
 (vale-transporte), Lei 6.321/1976 (PAT), Lei 9.029/1995, Lei 13.103/2015
@@ -199,7 +199,7 @@ Lei 6.615/1978, DL 972/1969, Lei 3.999/1961, Lei 5.811/1972, Lei
 11.901/2009, Lei 8.623/1993, Lei 4.769/1965, Lei 1.411/1951, DL 938/1969,
 Lei 6.684/1979, Lei 7.394/1985.
 
-### Lote 16 — tributário e financeiro estrutural (~26)
+### Lote 16 — tributário e financeiro estrutural (~26) *(executado em 2026-09-14)*
 
 **Lei 7.689/1988** (CSLL), **DL 1.598/1977**, **Lei 8.383/1991**, **Lei
 12.973/2014**, Lei 11.941/2009, Lei 9.065/1995, Lei 8.894/1994 (IOF), Lei
@@ -213,7 +213,7 @@ A Lei 8.383 fecha um buraco medido: o `art_72` da Rota 2030 é, no índice, o
 art. 72 da 8.383 citado entre aspas (lote 8) — com a 8.383 no corpus o
 usuário chega ao texto de verdade.
 
-### Lote 17 — saúde, educação, ambiente, energia e agrário (~36)
+### Lote 17 — saúde, educação, ambiente, energia e agrário (~36) *(executado em 2026-09-14)*
 
 Saúde: **Lei 9.434/1997** (transplantes), Lei 9.294/1996 (tabaco), Lei
 5.991/1973, Lei 10.205/2001 (sangue), Lei 6.259/1975, Lei 14.454/2022 (rol
@@ -233,7 +233,7 @@ Lei 14.790/2023 (apostas).
 
 ---
 
-## Lote 19 — decretos, 2ª fatia (~20)
+## Lote 19 — decretos, 2ª fatia (~20) *(executado em 2026-09-14)*
 
 Mesmo recorte do lote 5 (regulamenta lei do corpus ou consolida regulamento de
 consulta frequente), lista curada: **Dec. 9.191/2017** (elaboração de atos
@@ -251,7 +251,7 @@ inteiros — antes seriam 2-6 artigos de casca.
 
 ---
 
-## Lote 20 — tratados internacionais promulgados *(depende do 11-B)*
+## Lote 20 — tratados internacionais promulgados *(executado em 2026-09-14)*
 
 Entram pelo decreto promulgador, `tipo=decreto`, com o nome do tratado no
 apelido ("Decreto nº 678, de 6 de novembro de 1992 (Pacto de São José da Costa

@@ -22,7 +22,7 @@ Windows usa `.\tasks.ps1 <alvo>`; Linux/macOS usa `make <alvo>` (mesmos nomes). 
 
 Um teste só: `.venv\Scripts\python -m pytest tests/unit/test_ingest.py::test_nome -q`. Testes de rede têm marker `network` (excluído por padrão); `tests/integration/test_search.py` auto-skipa se `data/qdrant` estiver vazio e carrega os modelos (lento).
 
-Scripts de manutenção do corpus (rodar com `.venv\Scripts\python`): `scripts/descobrir_{lcps,ordinarias,decretos,sumulas}.py` geram os JSONs de registro; `scripts/verificar_parser.py --novos --baixar` **antes de indexar qualquer lote**; `scripts/reindexar_do_cache.py` reparseia `data/raw/` sem rede (para correção de parser; pare o daemon).
+Scripts de manutenção do corpus (rodar com `.venv\Scripts\python`): `scripts/descobrir_{lcps,ordinarias,decretos,sumulas}.py` geram os JSONs de registro; `scripts/verificar_parser.py --novos --baixar` **antes de indexar qualquer lote**; `scripts/reindexar_do_cache.py` reparseia `data/raw/` sem rede (para correção de parser; pare o daemon); com `--novos` indexa só as normas ausentes do `state` (lote recém-verificado), e com `--slug` reprocessa normas nomeadas.
 
 ## Arquitetura
 
@@ -38,6 +38,7 @@ Claude Code ──stdio──> mcp_server/server.py (cliente fino, sem torch/qdr
 - **Qdrant embedded** (`data/qdrant/`) é um diretório com lock de arquivo: só um processo o abre. Bootstrap, reindexação, snapshot e testes de integração conflitam com o daemon no ar — por isso os scripts checam `/health` e recusam. O `update` semanal (`scripts/weekly_update.ps1`) prefere `POST /update` no daemon e só cai para a CLI se ele estiver fora.
 - **Busca** (`retrieve/hybrid_search.py`): BGE-M3 gera vetor denso + esparso da consulta → dois prefetches no Qdrant fundidos por RRF → reranker BGE-reranker-v2-m3 reordena e corta por `reranker_score_min` (0,55). O texto passado ao reranker é o **mesmo texto contextualizado** do embedding (`[epígrafe] [parent_label] Label: texto`, ver `index/chunker.py`) — mudar um sem o outro degrada a busca.
 - **Chunking**: 1 dispositivo (artigo) = 1 ponto; `point_id = uuid5(urn_lex#path)`, determinístico, então reindexar sobrescreve em vez de duplicar. O payload guarda o texto literal.
+- **Anexos** (lote 11): a partir do cabeçalho `ANEXO` (ou do primeiro `Artigo N` depois do fecho, nos tratados) o artigo sai com prefixo (`anexo_art_1`, `anexo_ii_art_3`) e o anexo sem artigo vira texto em partes (`anexo_i`, `anexo_i_p2`). Quando o texto apenso **é** o documento (CLT no DL 5.452, RIR, RPS, BPC), o `recorte` do `NormaMeta` descarta o ato de aprovação e o apenso fica dono de `art_N` — o `verificar_parser` aponta caso novo ("texto apenso sem recorte"). O ADCT é documento próprio (`adct_1988`), por recorte da mesma página da CF.
 - **Device** (`device.py`): CUDA+fp16 se houver, senão CPU fp32; override `LEX_RAG_DEVICE`. Config toda em `config.py` (pydantic-settings, prefixo `LEX_RAG_`, lê `.env`).
 - **Catálogo** = `ingest/urn_mapper.py::REGISTRO`: `REGISTRO_CURADO` (à mão) mesclado com os JSONs gerados (`registro_lcp/ordinarias/decretos.json`, `sumulas_vinculantes.json`). Em conflito de URN, o curado vence. Para incluir norma avulsa: entrada curada + `update`.
 - **Três caminhos de ingestão**, despachados por `meta.tipo` em `ingest/source.py` e em `parse_norma`:
@@ -54,4 +55,4 @@ O git guarda só o código; `data/` é ignorado. O corpus (índice + `state.sqli
 
 ## Histórico e decisões
 
-`PLANO_DE_IMPLEMENTACAO.md` registra os 10 bugs de parser já encontrados (com heurísticas de detecção reproduzíveis), o histórico dos 10 lotes do corpus e o backlog. Consulte antes de mexer em `html_parser.py`: quatro das nove expansões do corpus revelaram bug de parser, e os suspeitos apontados por `verificar_parser.py` devem ser inspecionados um a um mesmo quando parecem ruído conhecido.
+`PLANO_DE_IMPLEMENTACAO.md` registra os 11 bugs de parser já encontrados (com heurísticas de detecção reproduzíveis), o histórico dos 10 lotes do corpus e o backlog. Consulte antes de mexer em `html_parser.py`: quatro das nove expansões do corpus revelaram bug de parser, e os suspeitos apontados por `verificar_parser.py` devem ser inspecionados um a um mesmo quando parecem ruído conhecido.

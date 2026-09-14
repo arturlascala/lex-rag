@@ -1,5 +1,25 @@
 [
  {
+  "slug": "leiloeiros_21981_1932",
+  "urn_lex": "urn:lex:br:federal:decreto:1932-10-19;21981",
+  "tipo": "decreto",
+  "numero": "21981",
+  "data": "1932-10-19",
+  "epigrafe": "Decreto nº 21.981, de 19 de outubro de 1932 (Profissão de leiloeiro)",
+  "ementa": "Regula a profissão de leiloeiro no território da República.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/1930-1949/d21981.htm"
+ },
+ {
+  "slug": "convdiscriminacaoracial_65810_1969",
+  "urn_lex": "urn:lex:br:federal:decreto:1969-12-08;65810",
+  "tipo": "decreto",
+  "numero": "65810",
+  "data": "1969-12-08",
+  "epigrafe": "Decreto nº 65.810, de 8 de dezembro de 1969 (Convenção sobre a Eliminação da Discriminação Racial)",
+  "ementa": "Promulga a Convenção Internacional sobre a Eliminação de Todas as Formas de Discriminação Racial.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/1950-1969/d65810.html"
+ },
+ {
   "slug": "paf_70235_1972",
   "urn_lex": "urn:lex:br:federal:decreto:1972-03-06;70235",
   "tipo": "decreto",
@@ -8,6 +28,66 @@
   "epigrafe": "Decreto nº 70.235, de 6 de março de 1972 (Processo administrativo fiscal)",
   "ementa": "Dispõe sobre o processo administrativo fiscal.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/d70235compilado.htm"
+ },
+ {
+  "slug": "convcrianca_99710_1990",
+  "urn_lex": "urn:lex:br:federal:decreto:1990-11-21;99710",
+  "tipo": "decreto",
+  "numero": "99710",
+  "data": "1990-11-21",
+  "epigrafe": "Decreto nº 99.710, de 21 de novembro de 1990 (Convenção sobre os Direitos da Criança)",
+  "ementa": "Promulga a Convenção sobre os Direitos da Criança.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/1990-1994/d99710.htm"
+ },
+ {
+  "slug": "convtortura_40_1991",
+  "urn_lex": "urn:lex:br:federal:decreto:1991-02-15;40",
+  "tipo": "decreto",
+  "numero": "40",
+  "data": "1991-02-15",
+  "epigrafe": "Decreto nº 40, de 15 de fevereiro de 1991 (Convenção contra a Tortura)",
+  "ementa": "Promulga a Convenção contra a Tortura e Outros Tratamentos ou Penas Cruéis, Desumanos ou Degradantes.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/1990-1994/d0040.htm"
+ },
+ {
+  "slug": "assuncao_350_1991",
+  "urn_lex": "urn:lex:br:federal:decreto:1991-11-21;350",
+  "tipo": "decreto",
+  "numero": "350",
+  "data": "1991-11-21",
+  "epigrafe": "Decreto nº 350, de 21 de novembro de 1991 (Tratado de Assunção — Mercosul)",
+  "ementa": "Promulga o Tratado para a Constituição de um Mercado Comum entre a República Argentina, a República Federativa do Brasil, a República do Paraguai e a República Oriental do Uruguai (Tratado Mercosul).",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/1990-1994/d0350.htm"
+ },
+ {
+  "slug": "pidesc_591_1992",
+  "urn_lex": "urn:lex:br:federal:decreto:1992-07-06;591",
+  "tipo": "decreto",
+  "numero": "591",
+  "data": "1992-07-06",
+  "epigrafe": "Decreto nº 591, de 6 de julho de 1992 (Pacto Internacional sobre Direitos Econômicos, Sociais e Culturais)",
+  "ementa": "Promulga o Pacto Internacional sobre Direitos Econômicos, Sociais e Culturais.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/1990-1994/d0591.htm"
+ },
+ {
+  "slug": "pidcp_592_1992",
+  "urn_lex": "urn:lex:br:federal:decreto:1992-07-06;592",
+  "tipo": "decreto",
+  "numero": "592",
+  "data": "1992-07-06",
+  "epigrafe": "Decreto nº 592, de 6 de julho de 1992 (Pacto Internacional sobre Direitos Civis e Políticos)",
+  "ementa": "Promulga o Pacto Internacional sobre Direitos Civis e Políticos.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/1990-1994/d0592.htm"
+ },
+ {
+  "slug": "pactosaojose_678_1992",
+  "urn_lex": "urn:lex:br:federal:decreto:1992-11-06;678",
+  "tipo": "decreto",
+  "numero": "678",
+  "data": "1992-11-06",
+  "epigrafe": "Decreto nº 678, de 6 de novembro de 1992 (Pacto de São José da Costa Rica)",
+  "ementa": "Promulga a Convenção Americana sobre Direitos Humanos (Pacto de São José da Costa Rica), de 22 de novembro de 1969.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/d0678.htm"
  },
  {
   "slug": "etica_1171_1994",
@@ -28,6 +108,26 @@
   "epigrafe": "Decreto nº 1.590, de 10 de agosto de 1995 (Jornada de trabalho dos servidores)",
   "ementa": "Dispõe sobre a jornada de trabalho dos servidores da administração pública federal direta, das autarquias e das fundações públicas federais.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/d1590.htm"
+ },
+ {
+  "slug": "demarcacaoindigena_1775_1996",
+  "urn_lex": "urn:lex:br:federal:decreto:1996-01-08;1775",
+  "tipo": "decreto",
+  "numero": "1775",
+  "data": "1996-01-08",
+  "epigrafe": "Decreto nº 1.775, de 8 de janeiro de 1996 (Demarcação de terras indígenas)",
+  "ementa": "Dispõe sobre o procedimento administrativo de demarcação das terras indígenas.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/d1775.htm"
+ },
+ {
+  "slug": "belemdopara_1973_1996",
+  "urn_lex": "urn:lex:br:federal:decreto:1996-08-01;1973",
+  "tipo": "decreto",
+  "numero": "1973",
+  "data": "1996-08-01",
+  "epigrafe": "Decreto nº 1.973, de 1º de agosto de 1996 (Convenção de Belém do Pará)",
+  "ementa": "Promulga a Convenção Interamericana para Prevenir, Punir e Erradicar a Violência contra a Mulher, concluída em Belém do Pará, em 9 de junho de 1994.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/1996/d1973.htm"
  },
  {
   "slug": "sndc_2181_1997",
@@ -74,6 +174,36 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/d3298.htm"
  },
  {
+  "slug": "haiasequestro_3413_2000",
+  "urn_lex": "urn:lex:br:federal:decreto:2000-04-14;3413",
+  "tipo": "decreto",
+  "numero": "3413",
+  "data": "2000-04-14",
+  "epigrafe": "Decreto nº 3.413, de 14 de abril de 2000 (Convenção de Haia sobre sequestro internacional de crianças)",
+  "ementa": "Promulga a Convenção sobre os Aspectos Civis do Sequestro Internacional de Crianças, concluída na cidade de Haia, em 25 de outubro de 1980.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/d3413.htm"
+ },
+ {
+  "slug": "regarquivos_4073_2002",
+  "urn_lex": "urn:lex:br:federal:decreto:2002-01-03;4073",
+  "tipo": "decreto",
+  "numero": "4073",
+  "data": "2002-01-03",
+  "epigrafe": "Decreto nº 4.073, de 3 de janeiro de 2002 (Regulamento da política de arquivos)",
+  "ementa": "Regulamenta a Lei nº 8.159, de 8 de janeiro de 1991, que dispõe sobre a política nacional de arquivos públicos e privados.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/2002/d4073.htm"
+ },
+ {
+  "slug": "cedaw_4377_2002",
+  "urn_lex": "urn:lex:br:federal:decreto:2002-09-13;4377",
+  "tipo": "decreto",
+  "numero": "4377",
+  "data": "2002-09-13",
+  "epigrafe": "Decreto nº 4.377, de 13 de setembro de 2002 (CEDAW — discriminação contra a mulher)",
+  "ementa": "Promulga a Convenção sobre a Eliminação de Todas as Formas de Discriminação contra a Mulher, de 1979.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/2002/d4377.htm"
+ },
+ {
   "slug": "regitr_4382_2002",
   "urn_lex": "urn:lex:br:federal:decreto:2002-09-19;4382",
   "tipo": "decreto",
@@ -82,6 +212,36 @@
   "epigrafe": "Decreto nº 4.382, de 19 de setembro de 2002 (Regulamento do ITR)",
   "ementa": "Regulamenta a tributação, fiscalização, arrecadação e administração do Imposto sobre a Propriedade Territorial Rural - ITR.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/2002/d4382.htm"
+ },
+ {
+  "slug": "estatutoroma_4388_2002",
+  "urn_lex": "urn:lex:br:federal:decreto:2002-09-25;4388",
+  "tipo": "decreto",
+  "numero": "4388",
+  "data": "2002-09-25",
+  "epigrafe": "Decreto nº 4.388, de 25 de setembro de 2002 (Estatuto de Roma do TPI)",
+  "ementa": "Promulga o Estatuto de Roma do Tribunal Penal Internacional.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/2002/d4388.htm"
+ },
+ {
+  "slug": "quilombolas_4887_2003",
+  "urn_lex": "urn:lex:br:federal:decreto:2003-11-20;4887",
+  "tipo": "decreto",
+  "numero": "4887",
+  "data": "2003-11-20",
+  "epigrafe": "Decreto nº 4.887, de 20 de novembro de 2003 (Terras quilombolas)",
+  "ementa": "Regulamenta o procedimento para identificação, reconhecimento, delimitação, demarcação e titulação das terras ocupadas por remanescentes das comunidades dos quilombos de que trata o art. 68 do Ato das Disposições Constitucionais Transitórias.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/2003/d4887.htm"
+ },
+ {
+  "slug": "palermo_5015_2004",
+  "urn_lex": "urn:lex:br:federal:decreto:2004-03-12;5015",
+  "tipo": "decreto",
+  "numero": "5015",
+  "data": "2004-03-12",
+  "epigrafe": "Decreto nº 5.015, de 12 de março de 2004 (Convenção de Palermo)",
+  "ementa": "Promulga a Convenção das Nações Unidas contra o Crime Organizado Transnacional.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/decreto/d5015.htm"
  },
  {
   "slug": "comercializacaoenergia_5163_2004",
@@ -102,6 +262,56 @@
   "epigrafe": "Decreto nº 5.296, de 2 de dezembro de 2004 (Regulamento da acessibilidade)",
   "ementa": "Regulamenta as Leis nº 10.048, de 8 de novembro de 2000, que dá prioridade de atendimento às pessoas que especifica, e nº 10.098, de 19 de dezembro de 2000, que estabelece normas gerais e critérios básicos para a promoção da acessibilidade das pessoas com deficiência ou com mobilidade reduzida.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/decreto/d5296.htm"
+ },
+ {
+  "slug": "reglibras_5626_2005",
+  "urn_lex": "urn:lex:br:federal:decreto:2005-12-22;5626",
+  "tipo": "decreto",
+  "numero": "5626",
+  "data": "2005-12-22",
+  "epigrafe": "Decreto nº 5.626, de 22 de dezembro de 2005 (Regulamento da Libras)",
+  "ementa": "Regulamenta a Lei nº 10.436, de 24 de abril de 2002, que dispõe sobre a Língua Brasileira de Sinais - Libras, e o art. 18 da Lei nº 10.098, de 19 de dezembro de 2000.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/decreto/d5626.htm"
+ },
+ {
+  "slug": "merida_5687_2006",
+  "urn_lex": "urn:lex:br:federal:decreto:2006-01-31;5687",
+  "tipo": "decreto",
+  "numero": "5687",
+  "data": "2006-01-31",
+  "epigrafe": "Decreto nº 5.687, de 31 de janeiro de 2006 (Convenção de Mérida)",
+  "ementa": "Promulga a Convenção das Nações Unidas contra a Corrupção, adotada pela Assembleia-Geral das Nações Unidas em 31 de outubro de 2003.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/decreto/d5687.htm"
+ },
+ {
+  "slug": "diarias_5992_2006",
+  "urn_lex": "urn:lex:br:federal:decreto:2006-12-19;5992",
+  "tipo": "decreto",
+  "numero": "5992",
+  "data": "2006-12-19",
+  "epigrafe": "Decreto nº 5.992, de 19 de dezembro de 2006 (Diárias)",
+  "ementa": "Dispõe sobre a concessão de diárias no âmbito da administração federal direta, autárquica e fundacional.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/decreto/d5992.htm"
+ },
+ {
+  "slug": "regconsorcios_6017_2007",
+  "urn_lex": "urn:lex:br:federal:decreto:2007-01-17;6017",
+  "tipo": "decreto",
+  "numero": "6017",
+  "data": "2007-01-17",
+  "epigrafe": "Decreto nº 6.017, de 17 de janeiro de 2007 (Regulamento dos consórcios públicos)",
+  "ementa": "Regulamenta a Lei nº 11.107, de 6 de abril de 2005, que dispõe sobre normas gerais de contratação de consórcios públicos.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/decreto/d6017.htm"
+ },
+ {
+  "slug": "povostradicionais_6040_2007",
+  "urn_lex": "urn:lex:br:federal:decreto:2007-02-07;6040",
+  "tipo": "decreto",
+  "numero": "6040",
+  "data": "2007-02-07",
+  "epigrafe": "Decreto nº 6.040, de 7 de fevereiro de 2007 (Povos e comunidades tradicionais)",
+  "ementa": "Institui a Política Nacional de Desenvolvimento Sustentável dos Povos e Comunidades Tradicionais.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/decreto/d6040.htm"
  },
  {
   "slug": "bpc_6214_2007",
@@ -148,6 +358,36 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/decreto/d6759.htm"
  },
  {
+  "slug": "convpcd_6949_2009",
+  "urn_lex": "urn:lex:br:federal:decreto:2009-08-25;6949",
+  "tipo": "decreto",
+  "numero": "6949",
+  "data": "2009-08-25",
+  "epigrafe": "Decreto nº 6.949, de 25 de agosto de 2009 (Convenção sobre os Direitos das Pessoas com Deficiência)",
+  "ementa": "Promulga a Convenção Internacional sobre os Direitos das Pessoas com Deficiência e seu Protocolo Facultativo, assinados em Nova York, em 30 de março de 2007 (status de emenda constitucional, CF, art. 5º, § 3º).",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/decreto/d6949.htm"
+ },
+ {
+  "slug": "vienatratados_7030_2009",
+  "urn_lex": "urn:lex:br:federal:decreto:2009-12-14;7030",
+  "tipo": "decreto",
+  "numero": "7030",
+  "data": "2009-12-14",
+  "epigrafe": "Decreto nº 7.030, de 14 de dezembro de 2009 (Convenção de Viena sobre o Direito dos Tratados)",
+  "ementa": "Promulga a Convenção de Viena sobre o Direito dos Tratados, concluída em 23 de maio de 1969, com reserva aos artigos 25 e 66.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/decreto/d7030.htm"
+ },
+ {
+  "slug": "nepotismo_7203_2010",
+  "urn_lex": "urn:lex:br:federal:decreto:2010-06-04;7203",
+  "tipo": "decreto",
+  "numero": "7203",
+  "data": "2010-06-04",
+  "epigrafe": "Decreto nº 7.203, de 4 de junho de 2010 (Vedação do nepotismo)",
+  "ementa": "Dispõe sobre a vedação do nepotismo no âmbito da administração pública federal.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/decreto/d7203.htm"
+ },
+ {
   "slug": "ripi_7212_2010",
   "urn_lex": "urn:lex:br:federal:decreto:2010-06-15;7212",
   "tipo": "decreto",
@@ -168,6 +408,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/decreto/d7508.htm"
  },
  {
+  "slug": "processofiscal_7574_2011",
+  "urn_lex": "urn:lex:br:federal:decreto:2011-09-29;7574",
+  "tipo": "decreto",
+  "numero": "7574",
+  "data": "2011-09-29",
+  "epigrafe": "Decreto nº 7.574, de 29 de setembro de 2011 (Processo de exigência de créditos tributários e consulta)",
+  "ementa": "Regulamenta o processo de determinação e exigência de créditos tributários da União, o processo de consulta sobre a aplicação da legislação tributária federal e outros processos que especifica.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/decreto/d7574.htm"
+ },
+ {
   "slug": "reglai_7724_2012",
   "urn_lex": "urn:lex:br:federal:decreto:2012-05-16;7724",
   "tipo": "decreto",
@@ -176,6 +426,16 @@
   "epigrafe": "Decreto nº 7.724, de 16 de maio de 2012 (Regulamento da LAI)",
   "ementa": "Regulamenta a Lei nº 12.527, de 18 de novembro de 2011, que dispõe sobre o acesso a informações previsto no inciso XXXIII do caput do art. 5º, no inciso II do § 3º do art. 37 e no § 2º do art. 216 da Constituição.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/decreto/d7724.htm"
+ },
+ {
+  "slug": "infoclassificada_7845_2012",
+  "urn_lex": "urn:lex:br:federal:decreto:2012-11-14;7845",
+  "tipo": "decreto",
+  "numero": "7845",
+  "data": "2012-11-14",
+  "epigrafe": "Decreto nº 7.845, de 14 de novembro de 2012 (Informação classificada e credenciamento de segurança)",
+  "ementa": "Regulamenta procedimentos para credenciamento de segurança e tratamento de informação classificada em qualquer grau de sigilo, e dispõe sobre o Núcleo de Segurança e Credenciamento.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/decreto/d7845.htm"
  },
  {
   "slug": "srp_7892_2013",
@@ -196,6 +456,16 @@
   "epigrafe": "Decreto nº 7.962, de 15 de março de 2013 (Comércio eletrônico)",
   "ementa": "Regulamenta a Lei nº 8.078, de 11 de setembro de 1990, para dispor sobre a contratação no comércio eletrônico.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/decreto/d7962.htm"
+ },
+ {
+  "slug": "orcamentoobras_7983_2013",
+  "urn_lex": "urn:lex:br:federal:decreto:2013-04-08;7983",
+  "tipo": "decreto",
+  "numero": "7983",
+  "data": "2013-04-08",
+  "epigrafe": "Decreto nº 7.983, de 8 de abril de 2013 (Orçamento de referência de obras públicas)",
+  "ementa": "Estabelece regras e critérios para elaboração do orçamento de referência de obras e serviços de engenharia, contratados e executados com recursos dos orçamentos da União.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/decreto/d7983.htm"
  },
  {
   "slug": "regantidumping_8058_2013",
@@ -228,6 +498,26 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/decreto/d8538.htm"
  },
  {
+  "slug": "processoeletronico_8539_2015",
+  "urn_lex": "urn:lex:br:federal:decreto:2015-10-08;8539",
+  "tipo": "decreto",
+  "numero": "8539",
+  "data": "2015-10-08",
+  "epigrafe": "Decreto nº 8.539, de 8 de outubro de 2015 (Processo administrativo eletrônico (SEI))",
+  "ementa": "Dispõe sobre o uso do meio eletrônico para a realização do processo administrativo no âmbito dos órgãos e das entidades da administração pública federal direta, autárquica e fundacional.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/decreto/d8539.htm"
+ },
+ {
+  "slug": "apostila_8660_2016",
+  "urn_lex": "urn:lex:br:federal:decreto:2016-01-29;8660",
+  "tipo": "decreto",
+  "numero": "8660",
+  "data": "2016-01-29",
+  "epigrafe": "Decreto nº 8.660, de 29 de janeiro de 2016 (Convenção da Apostila de Haia)",
+  "ementa": "Promulga a Convenção sobre a Eliminação da Exigência de Legalização de Documentos Públicos Estrangeiros, firmada em Haia, em 5 de outubro de 1961.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/d8660.htm"
+ },
+ {
   "slug": "regosc_8726_2016",
   "urn_lex": "urn:lex:br:federal:decreto:2016-04-27;8726",
   "tipo": "decreto",
@@ -236,6 +526,56 @@
   "epigrafe": "Decreto nº 8.726, de 27 de abril de 2016 (Regulamento do MROSC)",
   "ementa": "Regulamenta a Lei nº 13.019, de 31 de julho de 2014, para dispor sobre regras e procedimentos do regime jurídico das parcerias celebradas entre a administração pública federal e as organizações da sociedade civil.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/d8726.htm"
+ },
+ {
+  "slug": "dadosabertos_8777_2016",
+  "urn_lex": "urn:lex:br:federal:decreto:2016-05-11;8777",
+  "tipo": "decreto",
+  "numero": "8777",
+  "data": "2016-05-11",
+  "epigrafe": "Decreto nº 8.777, de 11 de maio de 2016 (Política de Dados Abertos)",
+  "ementa": "Institui a Política de Dados Abertos do Poder Executivo federal.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/d8777.htm"
+ },
+ {
+  "slug": "regestatais_8945_2016",
+  "urn_lex": "urn:lex:br:federal:decreto:2016-12-27;8945",
+  "tipo": "decreto",
+  "numero": "8945",
+  "data": "2016-12-27",
+  "epigrafe": "Decreto nº 8.945, de 27 de dezembro de 2016 (Regulamento do Estatuto das Estatais)",
+  "ementa": "Regulamenta, no âmbito da União, a Lei nº 13.303, de 30 de junho de 2016, que dispõe sobre o estatuto jurídico da empresa pública, da sociedade de economia mista e de suas subsidiárias.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/d8945.htm"
+ },
+ {
+  "slug": "acordoparis_9073_2017",
+  "urn_lex": "urn:lex:br:federal:decreto:2017-06-05;9073",
+  "tipo": "decreto",
+  "numero": "9073",
+  "data": "2017-06-05",
+  "epigrafe": "Decreto nº 9.073, de 5 de junho de 2017 (Acordo de Paris)",
+  "ementa": "Promulga o Acordo de Paris sob a Convenção-Quadro das Nações Unidas sobre Mudança do Clima, celebrado em Paris, em 12 de dezembro de 2015.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9073.htm"
+ },
+ {
+  "slug": "simplificacao_9094_2017",
+  "urn_lex": "urn:lex:br:federal:decreto:2017-07-17;9094",
+  "tipo": "decreto",
+  "numero": "9094",
+  "data": "2017-07-17",
+  "epigrafe": "Decreto nº 9.094, de 17 de julho de 2017 (Simplificação do atendimento ao usuário)",
+  "ementa": "Dispõe sobre a simplificação do atendimento prestado aos usuários dos serviços públicos, ratifica a dispensa do reconhecimento de firma e da autenticação em documentos produzidos no País e institui a Carta de Serviços ao Usuário.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9094.htm"
+ },
+ {
+  "slug": "atosnormativos_9191_2017",
+  "urn_lex": "urn:lex:br:federal:decreto:2017-11-01;9191",
+  "tipo": "decreto",
+  "numero": "9191",
+  "data": "2017-11-01",
+  "epigrafe": "Decreto nº 9.191, de 1º de novembro de 2017 (Elaboração de atos normativos)",
+  "ementa": "Estabelece as normas e as diretrizes para elaboração, redação, alteração, consolidação e encaminhamento de propostas de atos normativos ao Presidente da República pelos Ministros de Estado.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9191.htm"
  },
  {
   "slug": "regmigracao_9199_2017",
@@ -258,6 +598,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9203.htm"
  },
  {
+  "slug": "desfazimentobens_9373_2018",
+  "urn_lex": "urn:lex:br:federal:decreto:2018-05-11;9373",
+  "tipo": "decreto",
+  "numero": "9373",
+  "data": "2018-05-11",
+  "epigrafe": "Decreto nº 9.373, de 11 de maio de 2018 (Desfazimento de bens móveis)",
+  "ementa": "Dispõe sobre a alienação, a cessão, a transferência, a destinação e a disposição final ambientalmente adequadas de bens móveis no âmbito da administração pública federal direta, autárquica e fundacional.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9373.htm"
+ },
+ {
   "slug": "execucaoindireta_9507_2018",
   "urn_lex": "urn:lex:br:federal:decreto:2018-09-21;9507",
   "tipo": "decreto",
@@ -266,6 +616,16 @@
   "epigrafe": "Decreto nº 9.507, de 21 de setembro de 2018 (Execução indireta de serviços)",
   "ementa": "Dispõe sobre a execução indireta, mediante contratação, de serviços da administração pública federal direta, autárquica e fundacional e das empresas públicas e das sociedades de economia mista controladas pela União.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9507.htm"
+ },
+ {
+  "slug": "marraqueche_9522_2018",
+  "urn_lex": "urn:lex:br:federal:decreto:2018-10-08;9522",
+  "tipo": "decreto",
+  "numero": "9522",
+  "data": "2018-10-08",
+  "epigrafe": "Decreto nº 9.522, de 8 de outubro de 2018 (Tratado de Marraqueche)",
+  "ementa": "Promulga o Tratado de Marraqueche para Facilitar o Acesso a Obras Publicadas às Pessoas Cegas, com Deficiência Visual ou com Outras Dificuldades para Ter Acesso ao Texto Impresso (status de emenda constitucional, CF, art. 5º, § 3º).",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9522.htm"
  },
  {
   "slug": "rir_9580_2018",
@@ -280,6 +640,26 @@
    "REGULAMENTO DO IMPOSTO SOBRE A RENDA E PROVENTOS DE QUALQUER NATUREZA",
    ""
   ]
+ },
+ {
+  "slug": "colegiados_9759_2019",
+  "urn_lex": "urn:lex:br:federal:decreto:2019-04-11;9759",
+  "tipo": "decreto",
+  "numero": "9759",
+  "data": "2019-04-11",
+  "epigrafe": "Decreto nº 9.759, de 11 de abril de 2019 (Colegiados da administração federal)",
+  "ementa": "Extingue e estabelece diretrizes, regras e limitações para colegiados da administração pública federal.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/decreto/d9759.htm"
+ },
+ {
+  "slug": "reglindb_9830_2019",
+  "urn_lex": "urn:lex:br:federal:decreto:2019-06-10;9830",
+  "tipo": "decreto",
+  "numero": "9830",
+  "data": "2019-06-10",
+  "epigrafe": "Decreto nº 9.830, de 10 de junho de 2019 (Regulamento da LINDB (arts. 20 a 30))",
+  "ementa": "Regulamenta o disposto nos art. 20 ao art. 30 do Decreto-Lei nº 4.657, de 4 de setembro de 1942, que institui a Lei de Introdução às normas do Direito brasileiro.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/decreto/d9830.htm"
  },
  {
   "slug": "pndp_9991_2019",
@@ -312,6 +692,36 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/decreto/d10088.htm"
  },
  {
+  "slug": "revisaoatos_10139_2019",
+  "urn_lex": "urn:lex:br:federal:decreto:2019-11-28;10139",
+  "tipo": "decreto",
+  "numero": "10139",
+  "data": "2019-11-28",
+  "epigrafe": "Decreto nº 10.139, de 28 de novembro de 2019 (Revisão e consolidação de atos normativos)",
+  "ementa": "Dispõe sobre a revisão e a consolidação dos atos normativos inferiores a decreto.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/decreto/d10139.htm"
+ },
+ {
+  "slug": "digitalizacao_10278_2020",
+  "urn_lex": "urn:lex:br:federal:decreto:2020-03-18;10278",
+  "tipo": "decreto",
+  "numero": "10278",
+  "data": "2020-03-18",
+  "epigrafe": "Decreto nº 10.278, de 18 de março de 2020 (Digitalização de documentos)",
+  "ementa": "Estabelece a técnica e os requisitos para a digitalização de documentos públicos ou privados, a fim de que os documentos digitalizados produzam os mesmos efeitos legais dos documentos originais.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/decreto/d10278.htm"
+ },
+ {
+  "slug": "air_10411_2020",
+  "urn_lex": "urn:lex:br:federal:decreto:2020-06-30;10411",
+  "tipo": "decreto",
+  "numero": "10411",
+  "data": "2020-06-30",
+  "epigrafe": "Decreto nº 10.411, de 30 de junho de 2020 (Análise de impacto regulatório)",
+  "ementa": "Regulamenta a análise de impacto regulatório, de que tratam o art. 5º da Lei nº 13.874, de 20 de setembro de 2019, e o art. 6º da Lei nº 13.848, de 25 de junho de 2019.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/decreto/d10411.htm"
+ },
+ {
   "slug": "consoltrabalhista_10854_2021",
   "urn_lex": "urn:lex:br:federal:decreto:2021-11-10;10854",
   "tipo": "decreto",
@@ -320,6 +730,16 @@
   "epigrafe": "Decreto nº 10.854, de 10 de novembro de 2021 (Consolidação trabalhista infralegal)",
   "ementa": "Regulamenta disposições relativas à legislação trabalhista e institui o Programa Permanente de Consolidação, Simplificação e Desburocratização de Normas Trabalhistas Infralegais e o Prêmio Nacional Trabalhista.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/decreto/d10854.htm"
+ },
+ {
+  "slug": "convracismo_10932_2022",
+  "urn_lex": "urn:lex:br:federal:decreto:2022-01-10;10932",
+  "tipo": "decreto",
+  "numero": "10932",
+  "data": "2022-01-10",
+  "epigrafe": "Decreto nº 10.932, de 10 de janeiro de 2022 (Convenção Interamericana contra o Racismo)",
+  "ementa": "Promulga a Convenção Interamericana contra o Racismo, a Discriminação Racial e Formas Correlatas de Intolerância (status de emenda constitucional, CF, art. 5º, § 3º).",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/decreto/d10932.htm"
  },
  {
   "slug": "pca_10947_2022",
