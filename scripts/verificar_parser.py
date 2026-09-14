@@ -25,8 +25,10 @@ import re
 import sys
 import time
 
+from bs4 import BeautifulSoup
+
 from lex_rag.config import settings
-from lex_rag.ingest import raw_cache
+from lex_rag.ingest import html_parser, raw_cache
 from lex_rag.ingest.html_parser import parse_dispositivos, recortar
 from lex_rag.ingest.jurisprudencia import TIPOS_JURISPRUDENCIA
 from lex_rag.ingest.source import obter_html
@@ -54,7 +56,9 @@ def suspeitos(dispositivos) -> dict[str, list[str]]:
         if not d.texto:
             anota("caput vazio", d)
             continue
-        if _INICIO_MINUSCULO.match(d.texto):
+        # Parte de anexo (``anexo_i_p2``) começa onde a anterior cortou, no
+        # meio da frase: minúscula ali é do corte, não do rótulo.
+        if _INICIO_MINUSCULO.match(d.texto) and d.tipo != "anexo":
             regra = "sufixo + caput minusculo" if _SUFIXO.search(d.label) else "caput minusculo"
             anota(regra, d)
         # Rótulo repetido dentro do próprio texto: marcador não consumido.
@@ -66,6 +70,28 @@ def suspeitos(dispositivos) -> dict[str, list[str]]:
     if fantasmas:
         achados["path duplicado (__N)"] = fantasmas
     return achados
+
+
+def texto_apenso_sem_recorte(html: str) -> int:
+    """Artigos depois do fecho e fora de anexo, quando são mais que os do corpo.
+
+    É a forma do ato que aprova um texto e o serve apenso (a CLT no DL 5.452,
+    o Regulamento no decreto que o aprova): o corpo tem 2-5 artigos e o apenso
+    recomeça em "Art. 1º" e é o documento que se cita. O parser trata o corpo
+    como a norma, então o apenso colide (``art_1__1``) ou, sob cabeçalho
+    ``ANEXO``, vira ``anexo_art_N``. A resposta certa é o ``recorte`` no
+    registro (lote 11), e esta regra existe para apontar o caso novo. Devolve o
+    número de artigos apensos (0 = forma normal).
+    """
+    text, _ = html_parser._flatten(BeautifulSoup(html, "html.parser"))
+    fecho = html_parser._FECHO.search(text)
+    if not fecho:
+        return 0
+    corpo = len(html_parser._ART_MARK.findall(text[:fecho.start()]))
+    cauda = text[fecho.end():]
+    anexo = html_parser._ANEXO_MARK.search(cauda)
+    apenso = len(html_parser._ART_MARK.findall(cauda[:anexo.start()] if anexo else cauda))
+    return apenso if apenso > corpo else 0
 
 
 def main() -> int:
@@ -106,8 +132,12 @@ def main() -> int:
             continue
         # Mesmo recorte que o pipeline aplica: sem ele o regimento apareceria
         # aqui com dezenas de paths duplicados que a carga não tem.
-        disp = parse_dispositivos(recortar(html, REGISTRO[slug].recorte))
+        recortado = recortar(html, REGISTRO[slug].recorte)
+        disp = parse_dispositivos(recortado)
         achados = suspeitos(disp)
+        apensos = texto_apenso_sem_recorte(recortado)
+        if apensos:
+            achados["texto apenso sem recorte"] = [f"{apensos} artigos depois do fecho"]
         total_disp += len(disp)
         total_susp += sum(len(v) for v in achados.values())
         if achados:

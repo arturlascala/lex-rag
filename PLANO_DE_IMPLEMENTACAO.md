@@ -999,6 +999,68 @@ Planalto numa madrugada regride o índice sem ninguém perceber.
   (Resolução nº 25/2001, 19 artigos), que já vem baixado na mesma página do RICD
   e só precisa de uma segunda entrada com o recorte complementar.
 
+- [x] **11º lote — estrutural: ADCT e anexos** *(executado em 2026-09-14, abre a
+  onda de expansão do [PLANO_EXPANSAO_CORPUS.md](PLANO_EXPANSAO_CORPUS.md))*:
+  zero normas novas de rede, **um documento novo** (o ADCT) e o único lote da
+  onda que muda o esquema de identificadores — por isso foi primeiro, com
+  reindexação completa do cache (`pipeline_version` 0.4.0 → 0.5.0).
+- **O ADCT estava no índice como fantasma.** A página da CF traz o ADCT
+  recomeçando em `Art. 1º`, e o parser gerava **128 paths `__N`**: `art_1__1`
+  era o art. 1º do ADCT e `art_97` (precatórios) só existia como `art_97__1`.
+  Pior — e só a comparação norma a norma revelou —, **o índice servia o art.
+  117 do ADCT como art. 117 da CF**: o art. 117 do corpo está revogado
+  (tachado) e a regra "versão não tachada vence" elegia a do ADCT. É o `recorte`
+  do lote 10, sem parser: `cf_1988` corta em `ATO DAS DISPOSIÇÕES
+  CONSTITUCIONAIS TRANSITÓRIAS` e `adct_1988` começa ali (URN sintético
+  `...;1988!adct`, com o `!` de fragmento do LexML). CF 413 → 276 dispositivos,
+  0 duplicados; ADCT 149 (arts. 1 a 138, com sufixos).
+- **Anexo como dispositivo próprio** (item de backlog, agora fechado). A
+  medição no cache mostrou a forma real antes do regex: 64 normas com `ANEXO`
+  depois do fecho; `ANEXO` maiúsculo **antes** do fecho só dentro de texto
+  citado (LCP 227, Lei 11.105); o RPS grafa `A N E X O I` espaçado; a LCP 214
+  aninha os anexos da LCP 123 dentro dos seus ("ANEXO XVIII ... ANEXO I
+  Alíquotas"); a Lei 11.457 imprime cabeçalho duplo ("ANEXO I (Anexo I da Lei
+  10.910) ANEXO I ESTRUTURA"). Daí as regras: cabeçalho é `ANEXO` maiúsculo
+  (inclusive espaçado), só depois do primeiro fecho quando há fecho, não
+  precedido de aspa de abertura nem de preposição ("no ANEXO XV"), e dois
+  cabeçalhos a menos de 120 chars são um só. No escopo do anexo o artigo sai
+  com prefixo (`anexo_art_1`, `anexo_ii_art_3`) e aceita a grafia por extenso
+  dos tratados (`Artigo 8º`, `ARTIGO 1`, `Artigo XII` em romano — quatro
+  convenções da OIT), normalizada para `art_N`; anexo sem artigo vira texto em
+  partes de 4 KB (`anexo_i`, `anexo_i_p2`). O cache não muda, então a carga foi
+  `reindexar_do_cache.py`.
+- **Texto aprovado apenso é outro problema, e a resposta é `recorte`, não
+  prefixo.** A medição achou 5 normas com mais artigos depois do fecho que
+  antes: CLT (2 vs 1.018 — o DL 5.452 aprova a Consolidação e a serve apensa,
+  **sem** cabeçalho de anexo, e `art_1` era "Fica aprovada a Consolidação..."),
+  RPS (3 vs 470), RIR (5 vs 1.050), BPC (4 vs 60) e ANEEL (6 vs 32). Nas quatro
+  primeiras o apenso é o documento que se cita — "CLT, art. 7º" tem de ser
+  `art_7` — e o corpo é cláusula de aprovação: entraram com `recorte` no título
+  em caixa alta (o `registro_decretos.json` ganhou o campo, gravado por
+  `RECORTES` em `descobrir_decretos.py`). A ANEEL ficou sem recorte: os 6
+  artigos do corpo constituem a agência e a Estrutura Regimental vai para
+  `anexo_i_art_N`. `verificar_parser.py` ganhou a regra "texto apenso sem
+  recorte" para apontar caso novo (dispara na CLT e no RPS sem o recorte; não
+  dispara nas normas de forma normal).
+- **Medição norma a norma (parser antigo × novo, 698 HTMLs):** 39.351 →
+  41.374 dispositivos (+2.063 de anexo); duplicados `__N` 594 → 492 (CF 128 →
+  0, RIR 5 → 0, BPC 4 → 0, RPS 3 → 0, CLT 7 → 5); nenhum path canônico
+  perdido fora da ANEEL (decisão) e do ADCT (mudou de documento); art. 382 do
+  RPS de 211 KB → 291 chars, art. 922 da CLT de 24 KB → 161 (o quadro do art.
+  577 virou `anexo`). O Dec. 10.088 (OIT) passou de 6 para **1.651**
+  dispositivos, todas as convenções estruturadas; o Código de Ética do Dec.
+  1.171 entrou como `anexo` em partes. `__N` novos: OIT 56 (convenção +
+  protocolo com a mesma numeração no mesmo anexo), LDO 2018 4 ("ANEXO IV" à
+  frente de cada seção IV.1, IV.2...), LOA 2022 2, ANAC 1, ADCT 1 (art. 111 com
+  duas redações não tachadas) — repetições reais da fonte, não do parser.
+- **Suspeitos do corpus** (`verificar_parser`): 676 → 621 com o parser novo;
+  parte de anexo (`_p2`...) fica isenta da regra de minúscula, porque começa
+  onde a anterior cortou.
+- **Preço aceito:** os 2-5 artigos de aprovação/vigência dos decretos com
+  recorte (RIR, RPS, BPC) e os 2 do DL 5.452 saem do índice. O art. 4º do RIR
+  ("Fica revogado o Decreto nº 3.000") não é o que se consulta num Regulamento
+  de 1.049 artigos.
+
 ### 6. Operação
 
 - [ ] **Agendamento do `update` — falta só registrar a tarefa.** A máquina já
@@ -1014,6 +1076,18 @@ Planalto numa madrugada regride o índice sem ninguém perceber.
 - [x] `/update` no daemon serializado com `threading.Lock` (retorna "update já
       em andamento" se concorrente) e cliente com timeout próprio de 30 min.
       *(Evolução possível: disparo em background com endpoint de status.)*
+
+### 7. Onda de expansão do corpus *(planejada em 2026-09-14)*
+
+- [ ] Plano completo em [PLANO_EXPANSAO_CORPUS.md](PLANO_EXPANSAO_CORPUS.md):
+      lotes 11 a 22, de 761 para ~975 documentos. Abre com o conserto
+      estrutural dos anexos (`anexo_*`, item do backlog abaixo) e com o
+      **ADCT**, que hoje colide com o corpo da CF — **128 paths `__N`**
+      medidos, `art_1__1` é o art. 1º do ADCT —, e segue com cinco lotes
+      temáticos de leis, decretos, tratados (dependem dos anexos) e
+      resoluções do Senado/CN. Emendas Constitucionais ficaram **fora**: a
+      CF compilada já registra a redação de cada EC; só o resíduo das
+      emendas com artigos próprios (EC 103, 132) ficou como opcional.
 
 ### Backlog menor (sem urgência)
 

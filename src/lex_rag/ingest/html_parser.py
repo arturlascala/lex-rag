@@ -12,6 +12,15 @@ Texto tachado (``<strike>``) tem dois significados no Planalto:
 Por isso o parser rastreia quais trechos são tachados: se um número de artigo tem
 versão tachada e não-tachada, fica a não-tachada (redação atual); se só há a
 tachada, o artigo é mantido e marcado ``vigente=False``.
+
+Os **anexos** que o Planalto serve na mesma página, depois do fecho, têm espaço
+de path próprio: a partir do cabeçalho ``ANEXO`` (``_ANEXO_MARK``) o artigo sai
+com prefixo (``anexo_art_1``, ``anexo_ii_art_3``) e o anexo sem artigo — tabela,
+quadro, código por incisos — vira dispositivo de texto (``anexo_i``, em partes
+se for grande). Quando o anexo **é** o documento que se cita (a CLT apensa ao
+Decreto-Lei 5.452, o Regulamento apenso ao decreto que o aprova), o certo é o
+``recorte`` do ``NormaMeta``, que descarta o ato de aprovação e deixa o texto
+apenso dono de ``art_N`` — o parser não adivinha qual dos dois o leitor quer.
 """
 
 from __future__ import annotations
@@ -126,7 +135,58 @@ _HDR_MARK = re.compile(
     re.IGNORECASE,
 )
 
-_LEVEL = {"LIVRO": 0, "PARTE": 0, "TITULO": 1, "CAPITULO": 2, "SUBSECAO": 3, "SECAO": 3}
+# Cabeçalho de anexo. O Planalto serve os anexos na mesma página, depois do
+# fecho, e até aqui o parser só os via como texto colado ao último artigo (ou
+# perdido no corte do fecho) — e os artigos do Regulamento "anexo a este
+# Decreto" colidiam com os do próprio decreto (``art_1`` do RIR era "Fica
+# aprovado o Regulamento..."). A partir do cabeçalho, o parser entra em
+# **escopo de anexo**: artigo ganha o prefixo do anexo (``anexo_art_1``,
+# ``anexo_ii_art_3``) e anexo sem artigo (tabela, quadro, código de ética por
+# incisos) vira dispositivo de texto, em partes se for grande.
+# Só a grafia em caixa alta é cabeçalho — "Anexo I" no meio de frase é
+# referência —, inclusive a forma espaçada "A N E X O I" do RPS. Medido nos
+# 698 HTMLs em cache: ``ANEXO`` em caixa alta antes do fecho só ocorre dentro
+# de texto citado entre aspas (que o guarda de aspas já descarta), então o
+# cabeçalho pode ser reconhecido em qualquer posição da página. Numeral em
+# letra ("ANEXO A") fica de fora de propósito: "ANEXO A QUE SE REFERE O ART."
+# é frequente e o "A" ali é artigo definido.
+_ANEXO_MARK = re.compile(
+    r"\bA\s?N\s?E\s?X\s?O\b(?:\s+([IVXLCDM]+|[ÚU]NICO|\d{1,3})(?![A-Za-zÀ-ÿ0-9]))?"
+)
+# "no ANEXO XV", "do ANEXO I": referência em caixa alta dentro de título de
+# anexo (a LCP 214 grafa "RELACIONADOS NO ANEXO XV)" no cabeçalho do Anexo I).
+_REF_ANEXO = re.compile(r"\b(?:n[oa]s?|d[oa]s?|a[oa]s?|nest[ea]|dest[ea]|conforme|vide)\s+$",
+                        re.IGNORECASE)
+# Marcador de artigo por extenso, como grafam os tratados promulgados por
+# decreto ("Artigo 8º - Garantias judiciais", "ARTIGO 1"). Só vale em escopo
+# de anexo, e só com inicial maiúscula: no corpo da lei "artigo" por extenso é
+# sempre referência ("nos termos do artigo 5º"), e aceitá-lo lá abriria falso
+# dispositivo em cada uma. Aceita numeral romano ("Artigo I", "Artigo XII" —
+# quatro convenções da OIT no Dec. 10.088 são assim). O path é normalizado para
+# ``art_N`` em arábico — a citação por path não deve depender da grafia da fonte.
+_ARTIGO_MARK = re.compile(
+    r"\b(?:Artigo|ARTIGO)\s+(?:(\d{1,3})(?:\s*\.?\s*[º°ª]|\s*o(?![A-Za-zÀ-ÿ]))?"
+    r"|([IVXLCDM]{1,7})(?![A-Za-zÀ-ÿ]))"
+)
+_ROMANO = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+
+
+def _romano_para_int(s: str) -> int:
+    total = 0
+    for i, c in enumerate(s):
+        v = _ROMANO[c]
+        total += -v if i + 1 < len(s) and _ROMANO[s[i + 1]] > v else v
+    return total
+# Anexo sem artigo entra como texto em partes deste tamanho (~1.000 tokens),
+# que o embedder e o reranker enxergam inteiros; o anexo do PNE tem 160 KB.
+_ANEXO_PARTE = 4000
+# Anexo menor que isto é cabeçalho de imagem ou tabela vazia, não conteúdo.
+_ANEXO_MIN = 30
+
+# Níveis do contexto hierárquico (``parent_label``): o anexo é o nível 0 e os
+# cabeçalhos estruturais recomeçam dentro dele.
+_LEVEL = {"LIVRO": 1, "PARTE": 1, "TITULO": 2, "CAPITULO": 3, "SUBSECAO": 4, "SECAO": 4}
+_NIVEIS = 5
 _STRIKE = {"strike", "s", "del"}
 _SKIP = {"script", "style"}
 
@@ -198,6 +258,33 @@ def _path_artigo(num: str, suf: str | None) -> str:
     return f"art_{num}_{suf}" if suf else f"art_{num}"
 
 
+def _label_anexo(numeral: str | None, ordem: int) -> str:
+    if numeral:
+        return f"Anexo {numeral.upper() if numeral[0].isalpha() else numeral}"
+    return "Anexo" if ordem == 1 else f"Anexo ({ordem}º)"
+
+
+def _path_anexo(numeral: str | None, ordem: int) -> str:
+    """``anexo``, ``anexo_i``, ``anexo_unico``, ``anexo_3``; sem numeral, o 2º é ``anexo_2``."""
+    if numeral:
+        return f"anexo_{_strip_accents(numeral).lower()}"
+    return "anexo" if ordem == 1 else f"anexo_{ordem}"
+
+
+def _partes(texto: str, tamanho: int = _ANEXO_PARTE) -> list[str]:
+    """Divide texto longo em partes de até ``tamanho`` chars, cortando em espaço."""
+    partes: list[str] = []
+    while len(texto) > tamanho:
+        corte = texto.rfind(" ", tamanho // 2, tamanho)
+        if corte < 0:
+            corte = tamanho
+        partes.append(texto[:corte].rstrip())
+        texto = texto[corte:].lstrip()
+    if texto:
+        partes.append(texto)
+    return partes
+
+
 def _e_tachado(node: Tag) -> bool:
     # O Planalto tacha por tag (<strike>/<s>/<del>) ou por CSS inline
     # (ex.: Lei 8.666 art. 3º usa span com text-decoration: line-through).
@@ -249,19 +336,71 @@ def parse_dispositivos(html: str) -> list[Dispositivo]:
     soup = BeautifulSoup(html, "html.parser")
     text, struck_spans = _flatten(soup)
 
+    def _e_citacao_ou_referencia(m: re.Match) -> bool:
+        if _ASPA_ABRE.search(text[max(0, m.start() - 30):m.start()]):
+            return True  # artigo de outra lei, citado dentro de um dispositivo alterador
+        # referência a artigo dentro de citação, não abertura de dispositivo
+        return bool(_REFERENCIA.match(text[m.end():m.end() + 20]))
+
     markers: list[tuple[int, int, str, tuple]] = []
     for m in _ART_MARK.finditer(text):
-        if _ASPA_ABRE.search(text[max(0, m.start() - 30):m.start()]):
-            continue  # artigo de outra lei, citado dentro de um dispositivo alterador
-        if _REFERENCIA.match(text[m.end():m.end() + 20]):
-            continue  # referência a artigo dentro de citação, não abertura de dispositivo
+        if _e_citacao_ou_referencia(m):
+            continue
         markers.append((m.start(), m.end(), "art", (m.group(1), m.group(2) or m.group(3))))
     for m in _HDR_MARK.finditer(text):
         markers.append((m.start(), m.end(), "hdr", (m.group(1), m.group(2))))
+    # Anexo só existe depois do fecho da norma: o que aparece antes é anexo de
+    # OUTRA lei, reproduzido por dispositivo alterador (a LCP 227 reescreve os
+    # anexos da LCP 123 no corpo, com linha de pontos e sem aspa por perto).
+    # Página sem fecho (regimento, texto recortado) aceita anexo em qualquer
+    # posição.
+    fecho = _FECHO.search(text)
+    inicio_anexos = fecho.end() if fecho else 0
+    ultimo_anexo: int | None = None
+    for m in _ANEXO_MARK.finditer(text, inicio_anexos):
+        if _ASPA_ABRE.search(text[max(0, m.start() - 30):m.start()]):
+            continue  # anexo de outra lei, reproduzido em dispositivo alterador
+        if _REF_ANEXO.search(text[max(0, m.start() - 12):m.start()]):
+            continue  # "no ANEXO XV": referência, não cabeçalho
+        # Cabeçalho duplo é um cabeçalho só: "ANEXO I (Anexo I da Lei 10.910)
+        # ANEXO I ESTRUTURA DE CARGOS" (Lei 11.457) e o anexo aninhado da LCP
+        # 214, "ANEXO XVIII Produção de efeitos (LCP 123) ANEXO I Alíquotas...",
+        # que reproduz o anexo de outra lei dentro do seu. Sem isto o segundo
+        # abria anexo novo e colidia com o Anexo I de verdade.
+        if ultimo_anexo is not None and m.start() - ultimo_anexo < 120:
+            continue
+        ultimo_anexo = m.end()
+        markers.append((m.start(), m.end(), "anexo", (m.group(1),)))
+    primeiro_anexo = min((mk[0] for mk in markers if mk[2] == "anexo"), default=None)
+    if primeiro_anexo is not None:
+        for m in _ARTIGO_MARK.finditer(text, primeiro_anexo):
+            if _e_citacao_ou_referencia(m):
+                continue
+            num = m.group(1) or str(_romano_para_int(m.group(2)))
+            markers.append((m.start(), m.end(), "art", (num, None)))
     markers.sort(key=lambda x: x[0])
 
-    context: list[str | None] = [None, None, None, None]
+    # Para cada cabeçalho de anexo, se há artigo antes do anexo seguinte: com
+    # artigo, o anexo é articulado e só os artigos entram (com prefixo); sem,
+    # o anexo inteiro entra como texto.
+    anexo_articulado: dict[int, bool] = {}
+    fim_anexo: dict[int, int] = {}
+    atual: int | None = None
+    for i, (start, _end, kind, _payload) in enumerate(markers):
+        if kind == "anexo":
+            if atual is not None:
+                fim_anexo[atual] = start
+            atual = i
+            anexo_articulado[i] = False
+        elif kind == "art" and atual is not None:
+            anexo_articulado[atual] = True
+    if atual is not None:
+        fim_anexo[atual] = len(text)
+
+    context: list[str | None] = [None] * _NIVEIS
     entries: list[dict] = []  # artigos crus, antes da deduplicação
+    anexo_path: str | None = None  # prefixo do path enquanto em escopo de anexo
+    n_anexos = 0
 
     def parent_label() -> str:
         return " - ".join(s for s in context if s)
@@ -279,17 +418,46 @@ def parse_dispositivos(html: str) -> list[Dispositivo]:
                 continue
             label = _norm(f"{keyword} {numeral}")
             context[level] = f"{label} - {content}" if content else label
-            for deeper in range(level + 1, 4):
+            for deeper in range(level + 1, _NIVEIS):
                 context[deeper] = None
+            continue
+
+        if kind == "anexo":
+            n_anexos += 1
+            numeral = payload[0]
+            anexo_path = _path_anexo(numeral, n_anexos)
+            label = _label_anexo(numeral, n_anexos)
+            titulo = content[:120]
+            context[0] = f"{label.upper()} - {titulo}" if titulo else label.upper()
+            for deeper in range(1, _NIVEIS):
+                context[deeper] = None
+            if anexo_articulado[i]:
+                continue
+            texto = _ate_o_fecho(_norm(text[label_end:fim_anexo[i]].strip(" .-–—")))
+            if len(texto) < _ANEXO_MIN:
+                continue
+            struck = _in_struck(start, struck_spans)
+            for n, parte in enumerate(_partes(texto), 1):
+                entries.append(
+                    {
+                        "base": anexo_path if n == 1 else f"{anexo_path}_p{n}",
+                        "label": label if n == 1 else f"{label} (parte {n})",
+                        "tipo": TipoDispositivo.anexo,
+                        "struck": struck,
+                        "content": parte,
+                        "parent_label": "",
+                    }
+                )
             continue
 
         num = payload[0].replace(".", "")
         suf = payload[1]
+        base = _path_artigo(num, suf)
         entries.append(
             {
-                "base": _path_artigo(num, suf),
-                "num": num,
-                "suf": suf,
+                "base": f"{anexo_path}_{base}" if anexo_path else base,
+                "label": _label_artigo(num, suf),
+                "tipo": TipoDispositivo.artigo,
                 "struck": _in_struck(start, struck_spans),
                 "content": content,
                 "parent_label": parent_label(),
@@ -322,8 +490,8 @@ def parse_dispositivos(html: str) -> list[Dispositivo]:
         out.append(
             Dispositivo(
                 path=path,
-                label=_label_artigo(e["num"], e["suf"]),
-                tipo=TipoDispositivo.artigo,
+                label=e["label"],
+                tipo=e["tipo"],
                 texto=e["content"],
                 parent_label=e["parent_label"],
                 vigente=vigente,

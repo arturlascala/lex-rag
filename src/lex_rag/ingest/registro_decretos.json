@@ -57,7 +57,11 @@
   "data": "1999-05-06",
   "epigrafe": "Decreto nº 3.048, de 6 de maio de 1999 (RPS)",
   "ementa": "Aprova o Regulamento da Previdência Social.",
-  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/d3048compilado.htm"
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto/d3048compilado.htm",
+  "recorte": [
+   "REGULAMENTO DA PREVIDÊNCIA SOCIAL",
+   ""
+  ]
  },
  {
   "slug": "integracaopcd_3298_1999",
@@ -107,7 +111,11 @@
   "data": "2007-09-26",
   "epigrafe": "Decreto nº 6.214, de 26 de setembro de 2007 (BPC)",
   "ementa": "Regulamenta o benefício de prestação continuada da assistência social devido à pessoa com deficiência e ao idoso de que tratam a Lei nº 8.742, de 7 de dezembro de 1993, e a Lei nº 10.741, de 1º de outubro de 2003.",
-  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/decreto/d6214compilado.htm"
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/decreto/d6214compilado.htm",
+  "recorte": [
+   "REGULAMENTO DO BENEF&Iacute;CIO DE PRESTA&Ccedil;&Atilde;O CONTINUADA",
+   ""
+  ]
  },
  {
   "slug": "regiof_6306_2007",
@@ -267,7 +275,11 @@
   "data": "2018-11-22",
   "epigrafe": "Decreto nº 9.580, de 22 de novembro de 2018 (RIR)",
   "ementa": "Regulamenta a tributação, a fiscalização, a arrecadação e a administração do Imposto sobre a Renda e Proventos de Qualquer Natureza.",
-  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9580.htm"
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9580.htm",
+  "recorte": [
+   "REGULAMENTO DO IMPOSTO SOBRE A RENDA E PROVENTOS DE QUALQUER NATUREZA",
+   ""
+  ]
  },
  {
   "slug": "pndp_9991_2019",

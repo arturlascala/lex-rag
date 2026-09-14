@@ -16,13 +16,18 @@ class TipoDispositivo(StrEnum):
     # Documento sem articulação, cujo texto inteiro é um dispositivo só — o
     # enunciado de Súmula Vinculante (ver ingest/jurisprudencia.py).
     enunciado = "enunciado"
+    # Anexo sem articulação (tabela, quadro, código por incisos), servido como
+    # texto em partes: ``anexo_i``, ``anexo_i_p2``... Anexo articulado não usa
+    # este tipo — seus artigos entram como ``artigo`` com o path prefixado
+    # (``anexo_i_art_3``). Ver ``html_parser._ANEXO_MARK``.
+    anexo = "anexo"
 
 
 class Dispositivo(BaseModel):
     """Um dispositivo no nível de artigo (caput + parágrafos/incisos inlinados)."""
 
-    path: str  # ex.: "art_37", "art_5_A", "enunciado"
-    label: str  # ex.: "Art. 37", "Art. 5º-A", "Enunciado"
+    path: str  # ex.: "art_37", "art_5_A", "anexo_i_art_3", "anexo_ii", "enunciado"
+    label: str  # ex.: "Art. 37", "Art. 5º-A", "Anexo II", "Enunciado"
     tipo: TipoDispositivo = TipoDispositivo.artigo
     texto: str  # texto literal
     parent_label: str = ""  # ex.: "TÍTULO III - CAPÍTULO VII - Da Administração Pública"

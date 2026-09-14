@@ -47,7 +47,9 @@ class Settings(BaseSettings):
     # 0.2.0: ordinal separado ("Art. 1 o")
     # 0.3.0: marcador sem ponto ("Art 1º") + veto que roubava o path do artigo
     # 0.4.0: decode cp1252 (aspas e travessões vinham como controle C1)
-    pipeline_version: str = "0.4.0"
+    # 0.5.0: anexo como dispositivo próprio (anexo_*), ADCT separado da CF,
+    #        texto apenso (CLT, RIR, RPS, BPC) dono de art_N via recorte
+    pipeline_version: str = "0.5.0"
 
     log_level: str = "INFO"
 

@@ -297,8 +297,10 @@ def test_referencia_a_artigo_nao_abre_dispositivo():
         "<p>ANEXO IV - METAS FISCAIS (Art. 4º, § 1º, da Lei Complementar nº 101, de 4 de "
         "maio de 2000) A Lei Complementar estabelece que integrará o projeto.</p>"
     )
-    assert [x.path for x in d] == ["art_4"]
+    # O anexo entra como dispositivo próprio (lote 11), sem roubar o art. 4º.
+    assert [x.path for x in d] == ["art_4", "anexo_iv"]
     assert d[0].texto.startswith("Para efeito desta Lei")
+    assert d[1].texto.startswith("METAS FISCAIS")
 
     # "art. 3º da Portaria AGU nº 40/2015" — preposição também denuncia citação.
     prep = parse_dispositivos(
@@ -335,11 +337,12 @@ def test_fecho_encerra_o_texto_articulado():
         "BOLSONARO Paulo Guedes Este texto não substitui o publicado no DOU de 24.1.2022 "
         "ANEXO V AUTORIZAÇÕES ESPECÍFICAS 27 812 5026 00SL 0001 Apoio à Implantação.</p>"
     )
-    assert len(d) == 1
+    assert [x.path for x in d] == ["art_10", "anexo_v"]  # o anexo é dispositivo próprio
     assert d[0].texto == (
         "Esta Lei entra em vigor na data de sua publicação. Brasília, 21 de janeiro de "
         "2022; 201º da Independência"
     )
+    assert d[1].texto.startswith("AUTORIZAÇÕES ESPECÍFICAS")
 
     # Sem fecho, nada é truncado.
     sem = parse_dispositivos("<p>Art. 1º Esta Lei dispõe sobre o que especifica.</p>")
@@ -387,3 +390,111 @@ def test_registro_tem_os_dois_regimentos_internos():
         assert meta.recorte is not None
         assert meta.urn_lex.startswith("urn:lex:br:")
         assert "planalto.gov.br" not in meta.url_canonica
+
+
+# ------------------------------------------------------------------ anexos (lote 11)
+
+
+def test_anexo_articulado_ganha_prefixo_e_nao_colide_com_o_corpo():
+    """Decreto que aprova o Regulamento anexo: os dois recomeçam em Art. 1º."""
+    d = parse_dispositivos(
+        "<p>Art. 1º Fica aprovado o Regulamento anexo a este Decreto.</p>"
+        "<p>Art. 2º Este Decreto entra em vigor na data de sua publicação.</p>"
+        "<p>Brasília, 26 de setembro de 2007; 186º da Independência e 119º da República.</p>"
+        "<p>ANEXO</p><p>REGULAMENTO DO BENEFÍCIO</p>"
+        "<p>CAPÍTULO I</p><p>DO BENEFÍCIO</p>"
+        "<p>Art. 1º O Benefício de Prestação Continuada é a garantia de um salário mínimo.</p>"
+        "<p>Art. 2º Compete ao Ministério a gestão do benefício.</p>"
+    )
+    paths = [x.path for x in d]
+    assert paths == ["art_1", "art_2", "anexo_art_1", "anexo_art_2"]
+    assert not any("__" in p for p in paths)
+    ds = {x.path: x for x in d}
+    assert ds["art_1"].texto.startswith("Fica aprovado")
+    assert ds["anexo_art_1"].texto.startswith("O Benefício de Prestação Continuada")
+    assert ds["anexo_art_1"].label == "Art. 1º"
+    assert ds["anexo_art_1"].parent_label.startswith("ANEXO - REGULAMENTO DO BENEFÍCIO")
+    assert "CAPÍTULO I" in ds["anexo_art_1"].parent_label
+    # o fecho já não engole o anexo: o art. 2º do decreto termina no fecho
+    assert ds["art_2"].texto.endswith("da Independência")
+
+
+def test_anexo_sem_artigo_vira_dispositivo_de_texto():
+    d = parse_dispositivos(
+        "<p>Art. 89. Esta Lei entra em vigor na data de sua publicação.</p>"
+        "<p>Brasília, 14 de dezembro de 2006; 185º da Independência e 118º da República.</p>"
+        "<p>ANEXO I DA LEI COMPLEMENTAR Nº 123</p>"
+        "<p>Alíquotas e Partilha do Simples Nacional - Comércio</p>"
+        "<p>Receita Bruta em 12 Meses Alíquota IRPJ CSLL Cofins</p>"
+        "<p>ANEXO II DA LEI COMPLEMENTAR Nº 123</p>"
+        "<p>Alíquotas e Partilha do Simples Nacional - Indústria</p>"
+    )
+    assert [x.path for x in d] == ["art_89", "anexo_i", "anexo_ii"]
+    assert d[0].texto.endswith("185º da Independência")
+    assert d[1].label == "Anexo I" and d[1].tipo == "anexo"
+    assert d[1].texto.startswith("DA LEI COMPLEMENTAR Nº 123 Alíquotas")
+    assert "Indústria" not in d[1].texto and "Indústria" in d[2].texto
+
+
+def test_anexo_grande_sai_em_partes():
+    from lex_rag.ingest import html_parser
+
+    texto = " ".join(f"linha {i} da tabela" for i in range(600))  # ~11 KB
+    d = parse_dispositivos(f"<p>Art. 1º Vale.</p><p>ANEXO ÚNICO</p><p>{texto}</p>")
+    paths = [x.path for x in d]
+    assert paths[:2] == ["art_1", "anexo_unico"]
+    assert paths[2].startswith("anexo_unico_p2")
+    assert all(len(x.texto) <= html_parser._ANEXO_PARTE for x in d[1:])
+    assert d[2].label == "Anexo ÚNICO (parte 2)"
+    assert "".join(x.texto.replace(" ", "") for x in d[1:]) == texto.replace(" ", "")
+
+
+def test_tratado_em_anexo_usa_artigo_por_extenso():
+    """Decreto promulgador: o texto da Convenção grafa "Artigo N", não "Art."."""
+    d = parse_dispositivos(
+        "<p>Art. 1º A Convenção apensa por cópia ao presente decreto deverá ser cumprida.</p>"
+        "<p>Brasília, 6 de novembro de 1992; 171º da Independência e 104º da República.</p>"
+        "<p>ANEXO</p><p>CONVENÇÃO AMERICANA SOBRE DIREITOS HUMANOS</p>"
+        "<p>Artigo 1º - Obrigação de respeitar os direitos. Os Estados Partes comprometem-se "
+        "a respeitar os direitos, nos termos do artigo 2 e do Artigo 3, § 1º.</p>"
+        "<p>ARTIGO 8 Garantias judiciais. Toda pessoa tem direito a ser ouvida.</p>"
+        "<p>Artigo XII 1. A presente Convenção será ratificada.</p>"
+    )
+    paths = [x.path for x in d]
+    assert paths == ["art_1", "anexo_art_1", "anexo_art_8", "anexo_art_12"]
+    ds = {x.path: x for x in d}
+    assert "nos termos do artigo 2 e do Artigo 3" in ds["anexo_art_1"].texto
+    assert ds["anexo_art_8"].label == "Art. 8º"
+    assert ds["anexo_art_12"].label == "Art. 12"  # romano normalizado
+
+
+def test_artigo_por_extenso_fora_do_anexo_nao_abre_dispositivo():
+    d = parse_dispositivos(
+        "<p>Art. 1º Aplica-se o disposto no Artigo 5 da Convenção às partes.</p>"
+    )
+    assert [x.path for x in d] == ["art_1"]
+    assert d[0].texto.endswith("às partes")
+
+
+def test_anexo_citado_entre_aspas_e_referencia_nao_abrem_anexo():
+    d = parse_dispositivos(
+        "<p>Art. 1º A Lei passa a vigorar com a seguinte redação: “ANEXO VII Alimentos "
+        "destinados ao consumo humano”.</p>"
+        "<p>Art. 2º Os produtos relacionados no ANEXO XV ficam isentos.</p>"
+    )
+    assert [x.path for x in d] == ["art_1", "art_2"]
+
+
+def test_cf_fixture_recorte_separa_adct_do_corpo():
+    """A página da CF traz o ADCT recomeçando em Art. 1º: 128 paths __N medidos."""
+    from lex_rag.ingest.urn_mapper import REGISTRO
+
+    html = _html("cf_1988.html")
+    corpo = {x.path: x for x in parse_dispositivos(recortar(html, REGISTRO["cf_1988"].recorte))}
+    adct = {x.path: x for x in parse_dispositivos(recortar(html, REGISTRO["adct_1988"].recorte))}
+    assert not any("__" in p for p in corpo), "o ADCT não pode mais colidir com o corpo"
+    assert "maioria absoluta" in corpo["art_97"].texto  # reserva de plenário
+    assert "precatório" in adct["art_97"].texto.lower()  # regime especial de pagamento
+    assert adct["art_1"].texto.startswith("O Presidente da República, o Presidente do Supremo")
+    assert "art_250" in corpo and "art_250" not in adct
+

@@ -69,8 +69,11 @@ def obter_dispositivo(urn_lex: str, dispositivo_path: str) -> str:
 
     ``urn_lex`` é o identificador do documento (ex.:
     'urn:lex:br:federal:constituicao:1988-10-05;1988') e ``dispositivo_path`` o
-    caminho do artigo (ex.: 'art_37', 'art_5_A'). Súmula Vinculante tem
-    dispositivo único, de path 'enunciado'.
+    caminho do artigo (ex.: 'art_37', 'art_5_A'). Artigo de anexo leva o prefixo
+    do anexo ('anexo_art_1', 'anexo_ii_art_3'); anexo sem articulação (tabela,
+    quadro) é dispositivo de texto ('anexo_i', 'anexo_i_p2'...). O ADCT é
+    documento próprio ('urn:lex:br:federal:constituicao:1988-10-05;1988!adct').
+    Súmula Vinculante tem dispositivo único, de path 'enunciado'.
     """
     return client.dispositivo(urn_lex, dispositivo_path)
 

@@ -219,6 +219,23 @@ CANDIDATAS: list[tuple[str, str, date, str, str]] = [
 ]
 
 
+# Decreto que só aprova o Regulamento apenso: o corpo tem 3-5 artigos de
+# aprovação e vigência, e o Regulamento — o documento que se cita — recomeça em
+# "Art. 1º". Sem o recorte, ``art_1`` do RIR era "Fica aprovado o Regulamento..."
+# e o parser (lote 11) serviria o Regulamento como ``anexo_art_N``. O recorte
+# descarta o ato de aprovação e deixa o apenso dono de ``art_N``; o marcador é
+# o título em caixa alta, único na página (o corpo o cita em caixa mista).
+# Não entra aqui o decreto cujo corpo é substantivo (Dec. 2.335, que constitui
+# a ANEEL em 6 artigos e apensa a estrutura regimental): nele o anexo fica como
+# ``anexo_i_art_N``. Quem aponta caso novo é ``verificar_parser.py`` (regra
+# "texto apenso sem recorte").
+RECORTES: dict[str, tuple[str, str]] = {
+    "rir_9580_2018": ("REGULAMENTO DO IMPOSTO SOBRE A RENDA E PROVENTOS DE QUALQUER NATUREZA", ""),
+    "rps_3048_1999": ("REGULAMENTO DA PREVIDÊNCIA SOCIAL", ""),
+    "bpc_6214_2007": ("REGULAMENTO DO BENEF&Iacute;CIO DE PRESTA&Ccedil;&Atilde;O CONTINUADA", ""),
+}
+
+
 def resolver(numero: str, d: date) -> tuple[str, int, str]:
     """Primeira URL que baixa e parseia com dispositivos plausíveis."""
     erros: list[str] = []
@@ -304,6 +321,7 @@ def main() -> int:
             "epigrafe": epigrafe(ESPECIE, numero, d, apelido),
             "ementa": ementa,
             "url_canonica": url,
+            **({"recorte": list(RECORTES[slug])} if slug in RECORTES else {}),
         })
 
     validadas.sort(key=lambda e: (e["data"], int(e["numero"])))

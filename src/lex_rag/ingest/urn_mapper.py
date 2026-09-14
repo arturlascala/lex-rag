@@ -51,10 +51,18 @@ class NormaMeta:
     url_canonica: str
     fixture: str | None = None  # nome do arquivo em tests/fixtures/ (fallback offline)
     # Trecho da página que é o documento, como (marcador de início, marcador de
-    # fim); "" de um dos lados = sem corte ali. Só os regimentos usam: cada Casa
-    # serve mais de um documento na mesma URL (ver ``html_parser.recortar``).
+    # fim); "" de um dos lados = sem corte ali (ver ``html_parser.recortar``).
+    # Usam: os regimentos (cada Casa serve mais de um documento na mesma URL);
+    # a CF e o ADCT, que dividem a página e recomeçam em "Art. 1º"; e o texto
+    # aprovado **apenso** a um ato de aprovação (a CLT no Decreto-Lei 5.452, o
+    # Regulamento no decreto que o aprova), em que o apenso é o documento que se
+    # cita e tem de ser dono de ``art_N`` — o parser trataria o corpo como a
+    # norma e o apenso como anexo (``anexo_art_N``).
     recorte: tuple[str, str] | None = None
 
+
+# Cabeçalho do ADCT na página da CF (ocorrência única no HTML).
+_ADCT_MARCADOR = "ATO DAS DISPOSIÇÕES CONSTITUCIONAIS TRANSITÓRIAS"
 
 REGISTRO_CURADO: dict[str, NormaMeta] = {
     "cf_1988": NormaMeta(
@@ -67,6 +75,25 @@ REGISTRO_CURADO: dict[str, NormaMeta] = {
         ementa="Constituição da República Federativa do Brasil de 1988.",
         url_canonica="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm",
         fixture="cf_1988.html",
+        # A mesma página traz o ADCT, que recomeça em "Art. 1º": sem o corte, o
+        # art. 1º do ADCT saía como ``art_1__1`` e ``art_97`` (precatórios) só
+        # existia como ``art_97__1`` — 128 paths duplicados, medidos no lote 11.
+        recorte=("", _ADCT_MARCADOR),
+    ),
+    "adct_1988": NormaMeta(
+        slug="adct_1988",
+        # O ``!`` é o componente de fragmento do padrão LexML; o ADCT é parte da
+        # mesma Constituição, não norma distinta, e o resolvedor não conhece a
+        # forma — registrado como sintético, a exemplo das súmulas.
+        urn_lex="urn:lex:br:federal:constituicao:1988-10-05;1988!adct",
+        tipo="constituicao",
+        numero=None,
+        data=date(1988, 10, 5),
+        epigrafe="Ato das Disposições Constitucionais Transitórias (ADCT)",
+        ementa="Ato das Disposições Constitucionais Transitórias da Constituição de 1988.",
+        url_canonica="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm",
+        fixture="cf_1988.html",
+        recorte=(_ADCT_MARCADOR, ""),
     ),
     "lcp_95_1998": NormaMeta(
         slug="lcp_95_1998",
@@ -217,6 +244,10 @@ REGISTRO_CURADO: dict[str, NormaMeta] = {
         epigrafe="Decreto-Lei nº 5.452, de 1º de maio de 1943 (CLT)",
         ementa="Consolidação das Leis do Trabalho.",
         url_canonica="https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        # O Decreto-Lei aprova a Consolidação e a serve apensa: sem o corte,
+        # ``art_1`` era "Fica aprovada a Consolidação..." e o art. 1º da CLT
+        # saía como ``art_1__1`` (lote 11).
+        recorte=("CONSOLIDAÇÃO DAS LEIS DO TRABALHO", ""),
     ),
     "cdc_8078_1990": NormaMeta(
         slug="cdc_8078_1990",
@@ -492,6 +523,7 @@ def _carregar_json(caminho: Path, tipo_padrao: str) -> dict[str, NormaMeta]:
             epigrafe=e["epigrafe"],
             ementa=e["ementa"],
             url_canonica=e["url_canonica"],
+            recorte=tuple(e["recorte"]) if e.get("recorte") else None,
         )
         for e in entradas
         if e["urn_lex"] not in urns_curadas
