@@ -22,7 +22,7 @@ Windows usa `.\tasks.ps1 <alvo>`; Linux/macOS usa `make <alvo>` (mesmos nomes). 
 
 Um teste só: `.venv\Scripts\python -m pytest tests/unit/test_ingest.py::test_nome -q`. Testes de rede têm marker `network` (excluído por padrão); `tests/integration/test_search.py` auto-skipa se `data/qdrant` estiver vazio e carrega os modelos (lento).
 
-Scripts de manutenção do corpus (rodar com `.venv\Scripts\python`): `scripts/descobrir_{lcps,ordinarias,decretos,sumulas,sumulas_stf}.py` geram os JSONs de registro (`verificar_sumulas.py [--stf]` confere os de súmula); `scripts/verificar_parser.py --novos --baixar` **antes de indexar qualquer lote**; `scripts/reindexar_do_cache.py` reparseia `data/raw/` sem rede (para correção de parser; pare o daemon); com `--novos` indexa só as normas ausentes do `state` (lote recém-verificado), e com `--slug` reprocessa normas nomeadas.
+Scripts de manutenção do corpus (rodar com `.venv\Scripts\python`): `scripts/descobrir_{lcps,ordinarias,decretos,sumulas,sumulas_stf}.py` geram os JSONs de registro (`verificar_sumulas.py [--stf]` confere os de súmula); `scripts/gerar_tabela_corpus.py` regrava a tabela do corpus no README a partir do `REGISTRO` (rode após cada lote); `scripts/verificar_parser.py --novos --baixar` **antes de indexar qualquer lote**; `scripts/reindexar_do_cache.py` reparseia `data/raw/` sem rede (para correção de parser; pare o daemon); com `--novos` indexa só as normas ausentes do `state` (lote recém-verificado), e com `--slug` reprocessa normas nomeadas.
 
 ## Arquitetura
 
