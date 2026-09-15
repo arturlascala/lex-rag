@@ -1311,9 +1311,11 @@ CANDIDATAS: list[tuple[str, str, str, date, str, str]] = [
      "Franca de Manaus."),
 
     # --------------------- sistema financeiro: resolução, mercado e sanção
-    ("liquidacaoif_6024_1974", "lei", "6024", date(1974, 3, 13), "Intervenção e liquidação de instituições financeiras",
+    ("liquidacaoif_6024_1974", "lei", "6024", date(1974, 3, 13),
+     "Intervenção e liquidação de instituições financeiras",
      "Dispõe sobre a intervenção e a liquidação extrajudicial de instituições financeiras."),
-    ("respcontroladores_9447_1997", "lei", "9447", date(1997, 3, 14), "Responsabilidade de controladores de instituição financeira",
+    ("respcontroladores_9447_1997", "lei", "9447", date(1997, 3, 14),
+     "Responsabilidade de controladores de instituição financeira",
      "Dispõe sobre a responsabilidade solidária de controladores de instituições "
      "submetidas aos regimes da Lei nº 6.024, de 13 de março de 1974, e do Decreto-Lei "
      "nº 2.321, de 25 de fevereiro de 1987, sobre a indisponibilidade de seus bens e "
@@ -1321,28 +1323,32 @@ CANDIDATAS: list[tuple[str, str, str, date, str, str]] = [
     ("spb_10214_2001", "lei", "10214", date(2001, 3, 27), "Sistema de Pagamentos Brasileiro",
      "Dispõe sobre a atuação das câmaras e dos prestadores de serviços de compensação e "
      "de liquidação, no âmbito do sistema de pagamentos brasileiro."),
-    ("sancionadorbcbcvm_13506_2017", "lei", "13506", date(2017, 11, 13), "Processo sancionador do BCB e da CVM",
+    ("sancionadorbcbcvm_13506_2017", "lei", "13506", date(2017, 11, 13),
+     "Processo sancionador do BCB e da CVM",
      "Dispõe sobre o processo administrativo sancionador na esfera de atuação do Banco "
      "Central do Brasil e da Comissão de Valores Mobiliários."),
     ("mercadocapitais_4728_1965", "lei", "4728", date(1965, 7, 14), "Mercado de capitais",
      "Disciplina o mercado de capitais e estabelece medidas para o seu desenvolvimento."),
 
     # ------------------------- organização empresarial e canais de venda
-    ("registroempresas_8934_1994", "lei", "8934", date(1994, 11, 18), "Registro Público de Empresas Mercantis",
+    ("registroempresas_8934_1994", "lei", "8934", date(1994, 11, 18),
+     "Registro Público de Empresas Mercantis",
      "Dispõe sobre o Registro Público de Empresas Mercantis e Atividades Afins."),
     ("repcomercial_4886_1965", "lei", "4886", date(1965, 12, 9), "Representação comercial",
      "Regula as atividades dos representantes comerciais autônomos."),
     ("leiferrari_6729_1979", "lei", "6729", date(1979, 11, 28), "Lei Ferrari",
      "Dispõe sobre a concessão comercial entre produtores e distribuidores de veículos "
      "automotores de via terrestre."),
-    ("crimesordemecon_8176_1991", "lei", "8176", date(1991, 2, 8), "Crimes contra a ordem econômica",
+    ("crimesordemecon_8176_1991", "lei", "8176", date(1991, 2, 8),
+     "Crimes contra a ordem econômica",
      "Define crimes contra a ordem econômica e cria o Sistema de Estoques de Combustíveis."),
 
     # ------------------------------- infraestrutura: portos e parcerias
     ("portos_12815_2013", "lei", "12815", date(2013, 6, 5), "Lei dos Portos",
      "Dispõe sobre a exploração direta e indireta pela União de portos e instalações "
      "portuárias e sobre as atividades desempenhadas pelos operadores portuários."),
-    ("relicitacao_13448_2017", "lei", "13448", date(2017, 6, 5), "Prorrogação e relicitação de contratos de parceria",
+    ("relicitacao_13448_2017", "lei", "13448", date(2017, 6, 5),
+     "Prorrogação e relicitação de contratos de parceria",
      "Estabelece diretrizes gerais para prorrogação e relicitação dos contratos de "
      "parceria definidos nos termos da Lei nº 13.334, de 13 de setembro de 2016, nos "
      "setores rodoviário, ferroviário e aeroportuário da administração pública federal."),
@@ -1360,7 +1366,8 @@ CANDIDATAS: list[tuple[str, str, str, date, str, str]] = [
     ("leidoagro_13986_2020", "lei", "13986", date(2020, 4, 7), "Lei do Agro",
      "Institui o Fundo Garantidor Solidário (FGS) e dispõe sobre o patrimônio rural em "
      "afetação, a Cédula Imobiliária Rural (CIR) e a escrituração de títulos de crédito."),
-    ("titulosimob_10931_2004", "lei", "10931", date(2004, 8, 2), "Patrimônio de afetação, LCI, CCI e CCB",
+    ("titulosimob_10931_2004", "lei", "10931", date(2004, 8, 2),
+     "Patrimônio de afetação, LCI, CCI e CCB",
      "Dispõe sobre o patrimônio de afetação de incorporações imobiliárias, a Letra de "
      "Crédito Imobiliário (LCI), a Cédula de Crédito Imobiliário (CCI) e a Cédula de "
      "Crédito Bancário (CCB)."),

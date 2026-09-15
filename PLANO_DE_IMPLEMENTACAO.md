@@ -1,13 +1,13 @@
 # Plano de implementação — lex-rag
 
-> Estado em 2026-09-14, **após os lotes 11 a 20 da onda de expansão**
-> ([PLANO_EXPANSAO_CORPUS.md](PLANO_EXPANSAO_CORPUS.md)). Corpus de **958
-> documentos** e **48.314 pontos**: 893 normas do Planalto (38 curadas, com o
+> Estado em 2026-09-15, **após os lotes 11 a 21 da onda de expansão**
+> ([PLANO_EXPANSAO_CORPUS.md](PLANO_EXPANSAO_CORPUS.md)). Corpus de **969
+> documentos** e **48.818 pontos**: 893 normas do Planalto (38 curadas, com o
 > ADCT em documento próprio + 235 LCs + 541 ordinárias + 84 decretos, entre
-> eles 19 tratados promulgados), **63 enunciados de Súmula Vinculante** e os
-> **2 regimentos internos**. Pendentes da onda: lote 21 (resoluções do Senado
-> e do Congresso — fonte HTML a resolver), lote 22 (súmulas STJ/STF, opcional)
-> e a Release do snapshot.
+> eles 19 tratados promulgados), **63 enunciados de Súmula Vinculante** e **13
+> documentos das Casas** (RISF, RICD, Regimento Comum, resolução das MPs, CMO,
+> dois Códigos de Ética e 6 resoluções do Senado do art. 52 da CF). Pendentes
+> da onda: lote 22 (súmulas STJ/STF, opcional) e a Release do snapshot.
 >
 > Estado anterior, em 2026-08-31, após o 10º lote: 761 documentos / 39.393
 > pontos (696 normas do Planalto, 63 SVs, 2 regimentos).
@@ -45,7 +45,8 @@
 > setorial, 2026-08-18); 759 / 38.629 após o 9º lote (direito econômico,
 > 2026-08-21); 762 / 41.552 após o 11º lote (ADCT + anexos, reindexação do
 > cache, 2026-09-14); 856 / 44.631 após os lotes 13-15 (bug nº 11, 2026-09-14);
-> 958 / 48.314 após os lotes 16, 17, 19 e 20 (tratados, 2026-09-14).
+> 958 / 48.314 após os lotes 16, 17, 19 e 20 (tratados, 2026-09-14); 969 /
+> 48.818 após o lote 21 (resoluções das Casas, 2026-09-15).
 
 ---
 
@@ -1227,6 +1228,46 @@ Planalto numa madrugada regride o índice sem ninguém perceber.
   `reindex_norma` do pipeline (apaga + reinsere + registra) — a lógica deixou de
   estar duplicada no script. É o que o `POST /update` faria para o lote, menos
   o download do corpus inteiro para conferir hash.
+
+- [x] **21º lote — resoluções do Senado e do Congresso, 11 documentos, espécie
+  e fonte novas** *(executado em 2026-09-15)*: 958 → **969 documentos**,
+  48.314 → **48.818 pontos**. Entram com tipo `regimento` o Regimento Comum
+  (Res. 1/1970-CN), a resolução de tramitação das MPs (1/2002-CN), a da CMO
+  (1/2006-CN) e os dois Códigos de Ética (Res. 20/1993-SF e 25/2001-CD); com
+  tipo **`resolucao`** (novo no vocabulário do `tipo_norma`), as do art. 52 da
+  CF: RSF 40 e 43/2001 (dívida e crédito dos entes), 48/2007 (crédito e
+  garantias da União), 13/2012 (ICMS de importados), 95/1996 (ICMS no
+  transporte aéreo) e 9/1992 (ITCMD).
+- **Fonte, resolvida pela API de dados abertos do Senado:**
+  `legis.senado.leg.br/dadosabertos/legislacao/lista?tipo=RSF&numero=40&ano=2001`
+  dá o **id da norma** (562458), a data de assinatura e a ementa; a página
+  `norma/{id}` lista as publicações, e a que serve o texto compilado é a
+  **"Compilação Multivigente"** (`norma/562458/publicacao/16433576`) — ou a
+  publicação original quando é a única. O id `582803` sondado no planejamento
+  era outra norma (uma permissão de radiodifusão), daí os "zero artigos". As
+  URNs (`urn:lex:br:senado.federal:resolucao:2001-12-20;40`,
+  `urn:lex:br:congresso.nacional:resolucao:1970-08-11;1`) são as que a própria
+  API imprime em `urlDocumento` — oficiais, não sintéticas. O documento vem
+  como um `<html>` interno (exportação do Word) embutido na página do portal.
+- **Fecho da Casa não tem "Nº da Independência"**, então o `_FECHO` não corta
+  assinatura e notas — e casar cidade+data está descartado de propósito no
+  próprio comentário do regex. Solução coerente com o RISF: `recorte`
+  terminando no fecho impresso ("Senado Federal, em 9 de abril de 2002") ou,
+  quando a página não o imprime, no traço/nota que fecha o articulado. Todas as
+  11 entradas são curadas (`_RESOLUCOES_SENADO` em `urn_mapper.py`, mais o
+  Código de Ética da Câmara como **terceiro documento da página do RICD**, com
+  recorte a partir do cabeçalho do Código). `TIPOS_PARLAMENTO` passou a incluir
+  `resolucao`. O `conferir_data` por espécie previsto na Fase 0 **não se
+  aplica**: a epígrafe do Senado traz só o ano ("RESOLUÇÃO Nº 40, DE 2001"); a
+  data conferida é o `dataassinatura` da API.
+- **Ficou de fora a RSF 22/1989** (alíquotas interestaduais do ICMS, 7% e 12%):
+  a única publicação disponível é uma conversão de PDF com as palavras
+  quebradas na fonte ("alí quota", "sobr e", "Faç o"), e reconstituir o texto
+  seria inventar o que o Senado não publicou. Fica no backlog, a reincluir se
+  o portal servir uma compilação limpa. Suspeito único do lote: o art. 69-A
+  da CMO com duas redações (`__1`, padrão conhecido). Verificação por tools:
+  RSF 40 art. 3º (limites de 2 e 1,2 RCL), Res. 1/2002-CN arts. 2º e 3º
+  (comissão mista), Código de Ética da Câmara art. 4º.
 
 ### 6. Operação
 

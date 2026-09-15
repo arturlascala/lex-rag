@@ -6,9 +6,11 @@ primeiras têm ``fixture`` (HTML offline em tests/fixtures/, usado como fallback
 as demais são baixadas ao vivo do Planalto. Todos os itens foram validados
 (download + parse com dispositivos plausíveis).
 
-As duas exceções à origem são os **regimentos internos** (``risf_93_1970`` e
-``ricd_17_1989``), que o Planalto não publica: vêm do sítio da própria Casa, em
-UTF-8 e com mais de um documento por página, e por isso carregam ``recorte``.
+As exceções à origem são os **regimentos internos** (``risf_93_1970`` e
+``ricd_17_1989``) e as **resoluções das Casas** (lote 21: Regimento Comum,
+Códigos de Ética e as resoluções do Senado do art. 52 da CF), que o Planalto não
+publica: vêm do sítio da própria Casa, em UTF-8 e com mais de um documento (ou
+o rodapé do portal) na mesma página, e por isso carregam ``recorte``.
 
 ``REGISTRO`` (o catálogo efetivo do corpus) é o curado mesclado com três
 registros gerados, todos validados por download + parse:
@@ -37,13 +39,15 @@ from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
+from lex_rag.ingest.planalto_urls import MESES
+
 
 @dataclass(frozen=True)
 class NormaMeta:
     slug: str
     urn_lex: str
     tipo: str  # "constituicao" | "lei_complementar" | "lei" | "codigo" | "decreto"
-    #           | "regimento" | "sumula_vinculante"
+    #           | "regimento" | "resolucao" | "sumula_vinculante"
     numero: str | None
     data: date
     epigrafe: str
@@ -63,6 +67,101 @@ class NormaMeta:
 
 # Cabeçalho do ADCT na página da CF (ocorrência única no HTML).
 _ADCT_MARCADOR = "ATO DAS DISPOSIÇÕES CONSTITUCIONAIS TRANSITÓRIAS"
+
+# Resoluções servidas pelo portal de legislação do Senado (lote 21). Cada norma
+# tem um id e várias publicações; a que serve o texto compilado é a
+# "Compilação Multivigente" (ou a publicação original, quando é a única), e o
+# id dela só se descobre na página da norma — a API de dados abertos
+# (``dadosabertos/legislacao/lista?tipo=RSF&numero=&ano=``) dá o id da norma,
+# a data de assinatura e a ementa. O HTML do documento vem embutido, como um
+# ``<html>`` interno gerado do Word, dentro da página do portal; o fecho da Casa
+# ("Senado Federal, em 9 de abril de 2002") não tem o "Nº da Independência" que
+# o parser usa para cortar assinaturas e notas, então o ``recorte`` termina
+# nele — ou na nota de compilação, quando o fecho não é impresso.
+_CASA = {
+    "RSF": ("senado.federal", "Resolução do Senado Federal"),
+    "RCN": ("congresso.nacional", "Resolução do Congresso Nacional"),
+}
+_RESOLUCOES_SENADO: list[tuple[str, str, str, date, str, str, str, int, int, str]] = [
+    # (slug, sigla, número, data, tipo, apelido, ementa, id da norma, id da publicação, fim)
+    ("rcn_1_1970", "RCN", "1", date(1970, 8, 11), "regimento",
+     "Regimento Comum do Congresso Nacional", "Regimento Comum do Congresso Nacional.",
+     # Corta no traço que separa o articulado da nota de compilação.
+     561098, 16433839, "<span>_______________</span>"),
+    ("rcn_1_2002", "RCN", "1", date(2002, 5, 8), "regimento",
+     "tramitação das medidas provisórias",
+     "Dispõe sobre a apreciação, pelo Congresso Nacional, das Medidas Provisórias a que "
+     "se refere o art. 62 da Constituição Federal.",
+     561120, 27423643, '<span style="font-size:9pt; font-weight:bold">(*)</span>'),
+    ("rcn_1_2006", "RCN", "1", date(2006, 12, 22), "regimento",
+     "Comissão Mista de Orçamento — CMO",
+     "Dispõe sobre a Comissão Mista Permanente a que se refere o § 1º do art. 166 da "
+     "Constituição, bem como a tramitação das matérias a que se refere o mesmo artigo.",
+     561123, 16433888, "Congresso Nacional, em 22 de dezembro de 2006"),
+    ("rsf_20_1993", "RSF", "20", date(1993, 3, 17), "regimento",
+     "Código de Ética e Decoro Parlamentar do Senado Federal",
+     "Institui o Código de Ética e Decoro Parlamentar.",
+     561878, 16433594, "Senado Federal, 17 de março de 1993"),
+    ("rsf_40_2001", "RSF", "40", date(2001, 12, 20), "resolucao",
+     "limites da dívida consolidada e mobiliária dos Estados, do DF e dos Municípios",
+     "Dispõe sobre os limites globais para o montante da dívida pública consolidada e da "
+     "dívida pública mobiliária dos Estados, do Distrito Federal e dos Municípios, em "
+     "atendimento ao disposto no art. 52, VI e IX, da Constituição Federal.",
+     562458, 16433576, "Senado Federal, em 9 de abril de 2002"),
+    ("rsf_43_2001", "RSF", "43", date(2001, 12, 21), "resolucao",
+     "operações de crédito dos Estados, do DF e dos Municípios",
+     "Dispõe sobre as operações de crédito interno e externo dos Estados, do Distrito "
+     "Federal e dos Municípios, inclusive concessão de garantias, seus limites e "
+     "condições de autorização.",
+     582604, 16433616, "Senado Federal, em 9 de abril de 2002"),
+    ("rsf_48_2007", "RSF", "48", date(2007, 12, 21), "resolucao",
+     "operações de crédito e garantias da União",
+     "Dispõe sobre os limites globais para as operações de crédito externo e interno da "
+     "União, de suas autarquias e demais entidades controladas pelo Poder Público "
+     "federal e estabelece limites e condições para a concessão de garantia da União em "
+     "operações de crédito externo e interno.",
+     576233, 16433642, "Senado Federal, em 21 de dezembro de 2007"),
+    ("rsf_13_2012", "RSF", "13", date(2012, 4, 25), "resolucao",
+     "alíquota interestadual do ICMS para bens importados",
+     "Estabelece alíquotas do Imposto sobre Operações Relativas à Circulação de "
+     "Mercadorias e sobre Prestação de Serviços de Transporte Interestadual e "
+     "Intermunicipal e de Comunicação (ICMS), nas operações interestaduais com bens e "
+     "mercadorias importados do exterior.",
+     586999, 15839317, "Senado Federal, em 25 de abril de 2012"),
+    ("rsf_95_1996", "RSF", "95", date(1996, 12, 13), "resolucao",
+     "alíquota do ICMS no transporte aéreo interestadual",
+     "Fixa alíquota para cobrança do ICMS (transporte aéreo interestadual de passageiro, "
+     "carga e mala postal).",
+     564024, 15758402, "Senado Federal, em 13 de dezembro de 1996"),
+    ("rsf_9_1992", "RSF", "9", date(1992, 5, 5), "resolucao",
+     "alíquota máxima do ITCMD",
+     "Estabelece alíquota máxima para o Imposto sobre Transmissão Causa Mortis e Doação, "
+     "de que trata a alínea a, inciso I, e § 1º, inciso IV do art. 155 da Constituição "
+     "Federal.",
+     # O fecho impresso grafa "1991" — erro da fonte; a epígrafe e a API dizem 1992.
+     590017, 15785996, "Senado Federal, 5 de maio de 1991"),
+]
+
+
+def _resolucoes_senado() -> dict[str, NormaMeta]:
+    """Entradas curadas das resoluções servidas pelo portal do Senado."""
+    saida: dict[str, NormaMeta] = {}
+    for slug, sigla, numero, d, tipo, apelido, ementa, norma_id, pub_id, fim in _RESOLUCOES_SENADO:
+        autoridade, rotulo = _CASA[sigla]
+        dia = "1º" if d.day == 1 else str(d.day)
+        saida[slug] = NormaMeta(
+            slug=slug,
+            urn_lex=f"urn:lex:br:{autoridade}:resolucao:{d.isoformat()};{numero}",
+            tipo=tipo,
+            numero=numero,
+            data=d,
+            epigrafe=f"{rotulo} nº {numero}, de {dia} de {MESES[d.month - 1]} de {d.year} "
+                     f"({apelido})",
+            ementa=ementa,
+            url_canonica=f"https://legis.senado.leg.br/norma/{norma_id}/publicacao/{pub_id}",
+            recorte=("", fim),
+        )
+    return saida
 
 REGISTRO_CURADO: dict[str, NormaMeta] = {
     "cf_1988": NormaMeta(
@@ -157,6 +256,27 @@ REGISTRO_CURADO: dict[str, NormaMeta] = {
             "<b>RESOLUÇÃO Nº 25, DE 2001</b>",
         ),
     ),
+    # O terceiro documento da mesma página: o Código de Ética anexo à Resolução
+    # 25/2001. O corte começa no cabeçalho do Código (depois dos 4 artigos de
+    # promulgação, que recomeçam em Art. 1º) e vai até o fim da página.
+    "rcd_25_2001": NormaMeta(
+        slug="rcd_25_2001",
+        urn_lex="urn:lex:br:camara.deputados:resolucao:2001-10-10;25",
+        tipo="regimento",
+        numero="25",
+        data=date(2001, 10, 10),
+        epigrafe=(
+            "Resolução da Câmara dos Deputados nº 25, de 10 de outubro de 2001 "
+            "(Código de Ética e Decoro Parlamentar da Câmara dos Deputados)"
+        ),
+        ementa="Institui o Código de Ética e Decoro Parlamentar da Câmara dos Deputados.",
+        url_canonica=(
+            "https://www2.camara.leg.br/legin/fed/rescad/1989/"
+            "resolucaodacamaradosdeputados-17-21-setembro-1989-320110-normaatualizada-pl.html"
+        ),
+        recorte=("<b>CÓDIGO DE ÉTICA E DECORO PARLAMENTAR DA CÂMARA DOS DEPUTADOS</b>", ""),
+    ),
+    **_resolucoes_senado(),
     "lei_8666_1993": NormaMeta(
         slug="lei_8666_1993",
         urn_lex="urn:lex:br:federal:lei:1993-06-21;8666",

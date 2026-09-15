@@ -38,10 +38,13 @@ def pesquisar_norma(
     consulta sobre nepotismo traz o art. 37 da CF e a Súmula Vinculante 13).
 
     Para perguntas de processo legislativo e de rito das Casas, o corpus tem os
-    dois regimentos internos (RISF e RICD), servidos pelo sítio de cada Casa.
+    regimentos internos (RISF, RICD e Regimento Comum), os Códigos de Ética
+    parlamentar, a resolução de tramitação de MPs e a da CMO (tipo "regimento"),
+    além das resoluções do Senado do art. 52 da CF — limites de dívida e de
+    crédito dos entes, alíquotas de ICMS e ITCMD (tipo "resolucao").
 
     Filtros opcionais: ``tipo_norma`` restringe por espécie ("constituicao",
-    "lei_complementar", "lei", "codigo", "decreto", "regimento",
+    "lei_complementar", "lei", "codigo", "decreto", "regimento", "resolucao",
     "sumula_vinculante");
     ``urn_lex`` restringe a um documento específico (ex.:
     'urn:lex:br:federal:lei:2018-08-14;13709' para buscar só na LGPD).

@@ -50,13 +50,13 @@ item opcional no fim.
 
 Tudo aqui é código testado offline, sem tocar no índice.
 
-- [ ] **Vocabulário do filtro `tipo_norma`**: `resolucao` (a resolução do
-      Senado/CN). Tratado promulgado fica como
+- [x] **Vocabulário do filtro `tipo_norma`**: `resolucao` (a resolução do
+      Senado/CN) *(lote 21)*. Tratado promulgado fica como
       `decreto` — é o que ele é — com o nome do tratado no apelido da
       epígrafe, que entra no texto embedado. Propagar até o docstring da tool
       MCP, como no lote 5.
-- [ ] **`conferir_data` por espécie**: rótulos `RESOLUÇÃO Nº ... DO SENADO
-      FEDERAL`/`DO CONGRESSO NACIONAL` (lote 21).
+- [x] ~~**`conferir_data` por espécie**~~ — não se aplica: a epígrafe do
+      Senado traz só o ano; a data vem do `dataassinatura` da API (lote 21).
 - [x] **CLI do `update` imprime `falhas`** — já fazia (o backlog estava
       desatualizado neste ponto).
 - [ ] **Registrar a tarefa do `update` semanal** (item 6 do plano principal),
@@ -277,7 +277,7 @@ apita anexo grande sem dispositivo.
 
 ---
 
-## Lote 21 — resoluções do Senado e do Congresso *(espécie e fonte novas)*
+## Lote 21 — resoluções do Senado e do Congresso *(executado em 2026-09-15; registro no PLANO_DE_IMPLEMENTACAO.md — a RSF 22/1989 ficou de fora por texto quebrado na fonte)*
 
 - **O que entra:** Regimento Comum (Res. 1/1970-CN), Res. 1/2002-CN
   (tramitação de MPs), Res. 1/2006-CN (CMO), **Res. 25/2001-CD** (Código de

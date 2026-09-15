@@ -402,6 +402,25 @@ def test_registro_tem_os_dois_regimentos_internos():
         assert "planalto.gov.br" not in meta.url_canonica
 
 
+def test_resolucoes_das_casas_vem_do_parlamento_com_recorte():
+    """Lote 21: fonte da Casa, URN pela autoridade da Casa e recorte obrigatório."""
+    from lex_rag.ingest.parlamento_fetcher import TIPOS_PARLAMENTO
+
+    das_casas = {s: m for s, m in REGISTRO.items() if m.tipo in ("regimento", "resolucao")}
+    assert {"rcn_1_1970", "rsf_40_2001", "rcd_25_2001", "rsf_20_1993"} <= das_casas.keys()
+    for meta in das_casas.values():
+        assert meta.tipo in TIPOS_PARLAMENTO
+        assert meta.recorte is not None and any(meta.recorte)
+        assert "planalto.gov.br" not in meta.url_canonica
+    assert REGISTRO["rsf_40_2001"].urn_lex == "urn:lex:br:senado.federal:resolucao:2001-12-20;40"
+    assert REGISTRO["rcn_1_1970"].urn_lex == "urn:lex:br:congresso.nacional:resolucao:1970-08-11;1"
+    assert REGISTRO["rsf_40_2001"].epigrafe.startswith(
+        "Resolução do Senado Federal nº 40, de 20 de dezembro de 2001"
+    )
+    # O Código de Ética da Câmara é o terceiro documento da página do RICD.
+    assert REGISTRO["rcd_25_2001"].url_canonica == REGISTRO["ricd_17_1989"].url_canonica
+
+
 # ------------------------------------------------------------------ anexos (lote 11)
 
 
