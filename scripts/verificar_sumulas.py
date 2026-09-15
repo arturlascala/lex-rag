@@ -1,4 +1,4 @@
-"""Confere o lote de Súmulas Vinculantes antes da carga.
+"""Confere o lote de súmulas (Vinculantes, ou as do STF com ``--stf``) antes da carga.
 
 O gêmeo de ``verificar_parser.py`` para o caminho jurisprudencial. Lá o risco é
 o parser fatiar o texto errado; aqui não há parser — o risco é o **registro**
@@ -13,6 +13,7 @@ o que se degradou depois (edição manual do JSON, merge malfeito).
 Uso::
 
     python scripts/verificar_sumulas.py
+    python scripts/verificar_sumulas.py --stf     # sumulas_stf.json (lote 22-A)
     python scripts/verificar_sumulas.py --json    # despeja o que foi carregado
 """
 
@@ -25,23 +26,32 @@ import sys
 from datetime import date
 
 from lex_rag.ingest.jurisprudencia import montar_norma
-from lex_rag.ingest.urn_mapper import REGISTRO, SUMULAS_VINCULANTES_PATH
+from lex_rag.ingest.urn_mapper import REGISTRO, SUMULAS_STF_PATH, SUMULAS_VINCULANTES_PATH
 
-_SITUACOES = {"vigente", "cancelada", "publicacao_suspensa"}
-_URN = re.compile(
+# As SV têm situação curada; as súmulas simples levam a palavra que o STF marca.
+_SITUACOES = {"vigente", "cancelada", "publicacao_suspensa", "revogada", "superada"}
+_URN_SV = re.compile(
     r"^urn:lex:br:supremo\.tribunal\.federal:sumula\.vinculante:(\d{4}-\d{2}-\d{2});(\d+)$"
 )
+_URN_STF = re.compile(r"^urn:lex:br:supremo\.tribunal\.federal:sumula:(\d{4}-\d{2}-\d{2});(\d+)$")
 # Mojibake de UTF-8 lido como Latin-1/cp1252 — o defeito do bug nº 8, que passou
 # despercebido por 284 normas porque o texto continua "legível".
 _MOJIBAKE = re.compile(r"[ÃÂ][-¿]|�")
 
 
-def conferir(entradas: list[dict]) -> list[str]:
+# Súmulas simples cujo enunciado o STF publica sem ponto final (inspecionadas:
+# o texto está completo; a regra existe para pegar truncamento da coleta).
+_SEM_PONTO_NA_FONTE = {323}
+
+
+def conferir(entradas: list[dict], stf: bool = False) -> list[str]:
     """Devolve a lista de problemas encontrados (vazia = lote íntegro)."""
     problemas: list[str] = []
+    rotulo = "Súmula" if stf else "SV"
+    padrao_urn = _URN_STF if stf else _URN_SV
 
     def erro(numero: object, msg: str) -> None:
-        problemas.append(f"SV {numero}: {msg}")
+        problemas.append(f"{rotulo} {numero}: {msg}")
 
     numeros = [e.get("numero") for e in entradas]
     if len(numeros) != len(set(numeros)):
@@ -51,8 +61,13 @@ def conferir(entradas: list[dict]) -> list[str]:
     # coleta, não súmula inexistente. A 30 é caso conhecido e entra como
     # publicação suspensa, então nem ela abre buraco.
     faltando = sorted(set(range(1, max(numeros) + 1)) - set(numeros)) if numeros else []
-    if faltando:
+    # Nas súmulas simples o buraco é conhecido e medido: as páginas sem data
+    # nenhuma que o coletor rejeita (72, quase todas entre 371 e 497). Fica no
+    # relatório como aviso, não como erro.
+    if faltando and not stf:
         problemas.append(f"buraco na numeração: {faltando}")
+    elif faltando:
+        print(f"[súmulas] aviso: {len(faltando)} números ausentes (rejeitados na coleta)")
 
     urns = [e.get("urn_lex") for e in entradas]
     if len(urns) != len(set(urns)):
@@ -62,15 +77,17 @@ def conferir(entradas: list[dict]) -> list[str]:
         numero = e.get("numero")
         enunciado = (e.get("enunciado") or "").strip()
 
-        casa = _URN.match(e.get("urn_lex", ""))
+        casa = padrao_urn.match(e.get("urn_lex", ""))
         if not casa:
             erro(numero, f"URN fora do padrão: {e.get('urn_lex')!r}")
         else:
             data_urn, numero_urn = casa.groups()
-            # A data de aprovação é parte do URN, e o URN é a chave do corpus:
+            # A data de aprovação (ou, nas súmulas simples que só a têm, a de
+            # publicação) é parte do URN, e o URN é a chave do corpus:
             # divergência aqui é erro de identidade, não de metadado.
-            if data_urn != e.get("data_aprovacao"):
-                erro(numero, f"URN tem data {data_urn}, registro tem {e.get('data_aprovacao')}")
+            data_registro = e.get("data_aprovacao") or (stf and e.get("data_publicacao"))
+            if data_urn != data_registro:
+                erro(numero, f"URN tem data {data_urn}, registro tem {data_registro}")
             if int(numero_urn) != numero:
                 erro(numero, f"URN tem número {numero_urn}")
 
@@ -90,7 +107,8 @@ def conferir(entradas: list[dict]) -> list[str]:
             erro(numero, f"situação {situacao!r} sem motivo em cancelada_por")
         if situacao == "vigente" and e.get("cancelada_por"):
             erro(numero, "vigente, mas com cancelada_por preenchido")
-        if situacao == "vigente" and not e.get("data_publicacao"):
+        # A página das súmulas simples não imprime o DJ; só as SV têm a data.
+        if situacao == "vigente" and not e.get("data_publicacao") and not stf:
             erro(numero, "vigente sem data de publicação")
 
         if not enunciado:
@@ -100,7 +118,7 @@ def conferir(entradas: list[dict]) -> list[str]:
             erro(numero, "enunciado com mojibake (encoding errado na coleta)")
         if not enunciado[0].isupper():
             erro(numero, f"enunciado não começa com maiúscula: {enunciado[:40]!r}")
-        if enunciado[-1] not in ".?!":
+        if enunciado[-1] not in ".?!" and numero not in _SEM_PONTO_NA_FONTE:
             erro(numero, f"enunciado sem pontuação final: {enunciado[-40:]!r}")
         # Enunciado é texto curto por natureza; o maior hoje tem ~540 chars.
         # Muito acima disso é sinal de que a coleta pegou os precedentes junto.
@@ -113,11 +131,11 @@ def conferir(entradas: list[dict]) -> list[str]:
     return problemas
 
 
-def conferir_registro(entradas: list[dict]) -> list[str]:
+def conferir_registro(entradas: list[dict], stf: bool = False) -> list[str]:
     """Confere que cada súmula chega ao catálogo e produz um dispositivo."""
     problemas: list[str] = []
     for e in entradas:
-        slug = f"sv_{e['numero']}"
+        slug = f"{'sumula_stf' if stf else 'sv'}_{e['numero']}"
         meta = REGISTRO.get(slug)
         if meta is None:
             problemas.append(f"{slug}: ausente do REGISTRO")
@@ -133,16 +151,19 @@ def conferir_registro(entradas: list[dict]) -> list[str]:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--json", action="store_true", help="despeja as entradas carregadas")
+    ap.add_argument("--stf", action="store_true",
+                    help="confere sumulas_stf.json (súmulas simples) em vez das Vinculantes")
     args = ap.parse_args()
 
-    if not SUMULAS_VINCULANTES_PATH.exists():
-        print(f"[súmulas] {SUMULAS_VINCULANTES_PATH} não existe — rode descobrir_sumulas.py")
+    caminho = SUMULAS_STF_PATH if args.stf else SUMULAS_VINCULANTES_PATH
+    if not caminho.exists():
+        print(f"[súmulas] {caminho} não existe — rode o descobrir_sumulas correspondente")
         return 1
-    entradas = json.loads(SUMULAS_VINCULANTES_PATH.read_text(encoding="utf-8"))
+    entradas = json.loads(caminho.read_text(encoding="utf-8"))
     if args.json:
         print(json.dumps(entradas, ensure_ascii=False, indent=1))
 
-    problemas = conferir(entradas) + conferir_registro(entradas)
+    problemas = conferir(entradas, args.stf) + conferir_registro(entradas, args.stf)
     situacoes: dict[str, int] = {}
     for e in entradas:
         situacoes[e.get("situacao", "?")] = situacoes.get(e.get("situacao", "?"), 0) + 1

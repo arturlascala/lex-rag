@@ -36,6 +36,8 @@ from lex_rag.config import settings
 from lex_rag.index.collection_schema import ensure_collection
 from lex_rag.index.embedder import Embedder
 from lex_rag.ingest import raw_cache
+from lex_rag.ingest.jurisprudencia import TIPOS_JURISPRUDENCIA
+from lex_rag.ingest.source import obter_html
 from lex_rag.ingest.urn_mapper import REGISTRO
 from lex_rag.storage import state
 from lex_rag.update.pipeline import reindex_norma
@@ -69,7 +71,12 @@ def main() -> int:
         print("[reindex] nenhuma norma nova no catálogo.")
         return 0
 
-    sem_cache = [slug for slug in alvo if not raw_cache.get(slug)]
+    # Súmula não tem HTML a reparsear: o documento é o JSON versionado, e
+    # ``obter_html`` o serve local — sem rede, como o resto deste script.
+    sem_cache = [
+        slug for slug, m in alvo.items()
+        if m.tipo not in TIPOS_JURISPRUDENCIA and not raw_cache.get(slug)
+    ]
     if sem_cache:
         # Recriar a coleção sem ter o HTML de todas seria trocar o índice
         # completo por um índice furado — melhor parar antes de apagar.
@@ -93,7 +100,10 @@ def main() -> int:
         try:
             # Mesmo caminho do ``update``: apaga os pontos da norma, reparseia,
             # reinsere e registra hash + versão do pipeline.
-            n = reindex_norma(client, embedder, meta, raw_cache.get(slug))
+            conteudo = (
+                obter_html(meta) if meta.tipo in TIPOS_JURISPRUDENCIA else raw_cache.get(slug)
+            )
+            n = reindex_norma(client, embedder, meta, conteudo)
             total += n
             print(f"  [{i:3}/{len(alvo)}] {slug:34} {n:5} chunks", flush=True)
         except Exception as exc:

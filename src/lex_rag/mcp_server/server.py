@@ -36,6 +36,8 @@ def pesquisar_norma(
     complementares, leis ordinárias e decretos federais — e sobre as Súmulas
     Vinculantes do STF, que entram no mesmo resultado que a legislação (uma
     consulta sobre nepotismo traz o art. 37 da CF e a Súmula Vinculante 13).
+    As 736 súmulas simples do STF (não vinculantes) também estão no corpus,
+    com a situação que o próprio STF publica (cancelada, revogada, superada).
 
     Para perguntas de processo legislativo e de rito das Casas, o corpus tem os
     regimentos internos (RISF, RICD e Regimento Comum), os Códigos de Ética
@@ -45,7 +47,7 @@ def pesquisar_norma(
 
     Filtros opcionais: ``tipo_norma`` restringe por espécie ("constituicao",
     "lei_complementar", "lei", "codigo", "decreto", "regimento", "resolucao",
-    "sumula_vinculante");
+    "sumula_vinculante", "sumula_stf");
     ``urn_lex`` restringe a um documento específico (ex.:
     'urn:lex:br:federal:lei:2018-08-14;13709' para buscar só na LGPD).
 
@@ -76,7 +78,8 @@ def obter_dispositivo(urn_lex: str, dispositivo_path: str) -> str:
     do anexo ('anexo_art_1', 'anexo_ii_art_3'); anexo sem articulação (tabela,
     quadro) é dispositivo de texto ('anexo_i', 'anexo_i_p2'...). O ADCT é
     documento próprio ('urn:lex:br:federal:constituicao:1988-10-05;1988!adct').
-    Súmula Vinculante tem dispositivo único, de path 'enunciado'.
+    Súmula (vinculante ou não) tem dispositivo único, de path 'enunciado'
+    ('urn:lex:br:supremo.tribunal.federal:sumula:1963-12-13;1' é a Súmula 1).
     """
     return client.dispositivo(urn_lex, dispositivo_path)
 

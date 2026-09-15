@@ -1,13 +1,14 @@
 # Plano de implementação — lex-rag
 
-> Estado em 2026-09-15, **após os lotes 11 a 21 da onda de expansão**
-> ([PLANO_EXPANSAO_CORPUS.md](PLANO_EXPANSAO_CORPUS.md)). Corpus de **969
-> documentos** e **48.818 pontos**: 893 normas do Planalto (38 curadas, com o
+> Estado em 2026-09-15, **após os lotes 11 a 22-A da onda de expansão**
+> ([PLANO_EXPANSAO_CORPUS.md](PLANO_EXPANSAO_CORPUS.md)). Corpus de **1.633
+> documentos** e **49.482 pontos**: 893 normas do Planalto (38 curadas, com o
 > ADCT em documento próprio + 235 LCs + 541 ordinárias + 84 decretos, entre
-> eles 19 tratados promulgados), **63 enunciados de Súmula Vinculante** e **13
-> documentos das Casas** (RISF, RICD, Regimento Comum, resolução das MPs, CMO,
-> dois Códigos de Ética e 6 resoluções do Senado do art. 52 da CF). Pendentes
-> da onda: lote 22 (súmulas STJ/STF, opcional) e a Release do snapshot.
+> eles 19 tratados promulgados), **63 Súmulas Vinculantes + 664 súmulas do
+> STF** e **13 documentos das Casas** (RISF, RICD, Regimento Comum, resolução
+> das MPs, CMO, dois Códigos de Ética e 6 resoluções do Senado do art. 52 da
+> CF). Pendentes: lote 22-B (súmulas do STJ — sem fonte estruturada) e a
+> Release do snapshot.
 >
 > Estado anterior, em 2026-08-31, após o 10º lote: 761 documentos / 39.393
 > pontos (696 normas do Planalto, 63 SVs, 2 regimentos).
@@ -46,7 +47,8 @@
 > 2026-08-21); 762 / 41.552 após o 11º lote (ADCT + anexos, reindexação do
 > cache, 2026-09-14); 856 / 44.631 após os lotes 13-15 (bug nº 11, 2026-09-14);
 > 958 / 48.314 após os lotes 16, 17, 19 e 20 (tratados, 2026-09-14); 969 /
-> 48.818 após o lote 21 (resoluções das Casas, 2026-09-15).
+> 48.818 após o lote 21 (resoluções das Casas, 2026-09-15); 1.633 / 49.482
+> após o lote 22-A (súmulas do STF, 2026-09-15).
 
 ---
 
@@ -1268,6 +1270,44 @@ Planalto numa madrugada regride o índice sem ninguém perceber.
   da CMO com duas redações (`__1`, padrão conhecido). Verificação por tools:
   RSF 40 art. 3º (limites de 2 e 1,2 RCL), Res. 1/2002-CN arts. 2º e 3º
   (comissão mista), Código de Ética da Câmara art. 4º.
+
+- [x] **22-A — súmulas simples do STF, 664 enunciados, tipo `sumula_stf`**
+  *(executado em 2026-09-15)*: 969 → **1.633 documentos**, 48.818 → **49.482
+  pontos**. Reabre a decisão do lote 7 só para o STF: mesma fonte das SV
+  (`sumariosumulas.asp`, base 30 em vez de 26), mesmo caminho local de
+  jurisprudência (`sumulas_stf.json`, dispositivo único `enunciado`), coletor
+  `descobrir_sumulas_stf.py` reaproveitando o das SV (`ids_do_indice` e
+  `extrair_enunciado` ganharam o rótulo como parâmetro) e gate
+  `verificar_sumulas.py --stf`. As páginas ficam em `data/raw/pagina_sumula_stf_N`
+  (prefixo próprio: sob o slug o pipeline grava o JSON canônico), e
+  `reindexar_do_cache --novos` aprendeu a servir tipo jurisprudencial do JSON.
+- **Situação é a do STF, sem juízo próprio:** cancelada (6), revogada (3),
+  superada (1) entram não vigentes com a palavra do Tribunal; "alterada" (359)
+  é vigente com o texto atual. Súmula materialmente superada mas não
+  cancelada segue como o STF a mantém. A marca vem repetida no fim do
+  enunciado ("...Ministro de Estado. (cancelada)") e é removida — é
+  sinalização do portal, não texto do Tribunal.
+- **A data foi o problema — e a suposição da sondagem estava errada.** A
+  página imprime a data em só 502 das 736: "Data de aprovação do enunciado:
+  Sessão Plenária de D-M-AAAA" (157) ou "Data de publicação do enunciado: DJ
+  de D-M-AAAA" (o resto), com variações de forma ("13.12.1963", "1º-6-1964",
+  rótulo trocado na Súmula 359) — o regex casa pelo que vem depois dos
+  dois-pontos, não pelo rótulo. Regra do URN: aprovação quando impressa, senão
+  publicação (as duas são datas do STF; `_referencia` rotula cada uma). Para as
+  **234 páginas sem data nenhuma**: os enunciados 1 a 370 são a Súmula original,
+  aprovada na Sessão Plenária de 13/12/1963 (única data de aprovação que o
+  portal imprime nessa faixa, em 187 páginas), e essa data vale para as 162
+  irmãs sem data, com `observacao` dizendo isso — toda a faixa 1–370 tem URN
+  em 1963-12-13. **Ficaram de fora 72** (371–497, quase todas, e a 679): acima
+  de 370 os lotes de aprovação têm datas variadas e não há como saber a de
+  cada uma sem inventar. A pesquisa de jurisprudência do STF, que as teria,
+  está atrás de desafio JavaScript do WAF da AWS (`x-amzn-waf-action:
+  challenge`) e a antiga `listarJurisprudencia.asp` responde 404. Backlog: as
+  72 entram se o portal imprimir a data ou se surgir fonte estruturada.
+  A Súmula 323 é publicada sem ponto final (exceção explícita no verificador).
+- **Verificação por tools:** "apreensão de mercadorias como meio coercitivo"
+  traz a Súmula 323 em 1º, antes do RIPI; a Súmula 4 (cancelada) só aparece
+  com `somente_vigente=false`, marcada.
 
 ### 6. Operação
 

@@ -153,7 +153,7 @@ def test_epigrafe_canonica():
 def test_registro_ordinarias_entra_no_corpus_sem_poluir_o_tipo():
     vocabulario = {
         "lei", "codigo", "lei_complementar", "constituicao", "decreto", "regimento",
-        "resolucao", "sumula_vinculante",
+        "resolucao", "sumula_vinculante", "sumula_stf",
     }
     assert {m.tipo for m in REGISTRO.values()} <= vocabulario  # nunca "decreto.lei"
     # o curado continua vencendo em conflito de URN

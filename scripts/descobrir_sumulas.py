@@ -174,25 +174,38 @@ def _fetch(url: str, client: httpx.Client) -> str:
     return resp.content.decode("utf-8", errors="replace")
 
 
-def ids_do_indice(html: str) -> dict[int, int]:
-    """numero da súmula -> id opaco que o portal usa na querystring."""
+def ids_do_indice(html: str, rotulo: str = "Súmula Vinculante") -> dict[int, int]:
+    """numero da súmula -> id opaco que o portal usa na querystring.
+
+    ``rotulo`` é o que o índice imprime antes do número: "Súmula Vinculante"
+    (base 26) ou "Súmula" (base 30, as súmulas simples — lote 22-A).
+    """
     flat = re.sub(r"\s+", " ", html_mod.unescape(html).replace("\xa0", " "))
-    pares = re.findall(r"sumula=(\d+)[^>]*>\s*S[úu]mula Vinculante\s*(\d+)", flat, re.IGNORECASE)
+    padrao = rf"sumula=(\d+)[^>]*>\s*{_regex_rotulo(rotulo)}\s*(\d+)\s*<"
+    pares = re.findall(padrao, flat, re.IGNORECASE)
     return {int(numero): int(sid) for sid, numero in pares}
 
 
-def extrair_enunciado(html: str, numero: int) -> tuple[str, str]:
+def _regex_rotulo(rotulo: str) -> str:
+    return r"\s+".join(re.escape(p).replace("ú", "[úu]") for p in rotulo.split())
+
+
+def extrair_enunciado(
+    html: str, numero: int, rotulo: str = "Súmula Vinculante"
+) -> tuple[str, str]:
     """Devolve (enunciado, marca de situação impressa no título).
 
     A página põe o enunciado no primeiro ``div.parCOM`` depois do
     ``div.titulo`` da súmula, e sinaliza a que saiu de vigor entre parênteses no
     próprio título — às vezes com um zero-width space no meio da palavra, que
-    ``_limpar`` remove.
+    ``_limpar`` remove. Nas súmulas simples a mesma marca vem repetida no fim do
+    enunciado ("...Ministro de Estado. (cancelada)"), e sai daqui: não é texto
+    do STF, é sinalização do portal.
     """
     soup = BeautifulSoup(html, "html.parser")
     for div in soup.find_all("div", class_="titulo"):
         casa = re.fullmatch(
-            rf"S[úu]mula Vinculante\s*{numero}\s*(?:\((.*)\))?",
+            rf"{_regex_rotulo(rotulo)}\s*{numero}\s*(?:\((.*)\))?",
             _limpar(div.get_text(" ", strip=True)),
         )
         if not casa:
@@ -200,9 +213,12 @@ def extrair_enunciado(html: str, numero: int) -> tuple[str, str]:
         marca = (casa.group(1) or "").strip().lower()
         corpo = div.find_next_sibling("div")
         if corpo is None or "parCOM" not in (corpo.get("class") or []):
-            raise RuntimeError(f"SV {numero}: div.parCOM ausente depois do título")
-        return _limpar(corpo.get_text(" ", strip=True)), marca
-    raise RuntimeError(f"SV {numero}: título não encontrado na página")
+            raise RuntimeError(f"{rotulo} {numero}: div.parCOM ausente depois do título")
+        enunciado = _limpar(corpo.get_text(" ", strip=True))
+        if marca:
+            enunciado = re.sub(rf"\s*\({re.escape(marca)}\)\s*$", "", enunciado, flags=re.I)
+        return enunciado, marca
+    raise RuntimeError(f"{rotulo} {numero}: título não encontrado na página")
 
 
 def _limpar(texto: str) -> str:

@@ -1,4 +1,4 @@
-"""Ingestão dos enunciados jurisprudenciais (hoje, as Súmulas Vinculantes do STF).
+"""Ingestão dos enunciados jurisprudenciais (Súmulas Vinculantes e súmulas do STF).
 
 É o segundo caminho de ingestão do projeto, paralelo ao do Planalto e sem
 cruzar com ele. A diferença que justifica o caminho separado não é a fonte, é a
@@ -11,7 +11,8 @@ nenhum ponto entra no índice, nada acusa erro).
 Aqui o "parse" é trivial por construção: uma súmula é uma ``Norma`` de um único
 ``Dispositivo`` de path ``enunciado``. O que exige cuidado é o resto —
 identidade, vigência e proveniência —, e isso vem do ``sumulas_vinculantes.json``
-curado por ``scripts/descobrir_sumulas.py``.
+curado por ``scripts/descobrir_sumulas.py`` e do ``sumulas_stf.json`` (as 736
+súmulas simples, lote 22-A) gerado por ``scripts/descobrir_sumulas_stf.py``.
 
 Ao contrário da legislação, cujo texto é rebaixado do Planalto a cada update, o
 enunciado é servido do próprio JSON versionado: são 63 textos curtos que o STF
@@ -26,46 +27,57 @@ from __future__ import annotations
 import json
 from datetime import date
 from functools import lru_cache
+from pathlib import Path
 
+from lex_rag.ingest import urn_mapper
 from lex_rag.ingest.models import Dispositivo, Norma, TipoDispositivo
-from lex_rag.ingest.urn_mapper import SUMULAS_VINCULANTES_PATH, NormaMeta
+from lex_rag.ingest.urn_mapper import NormaMeta
 
 # Tipos do corpus servidos por este módulo, e não pelo caminho do Planalto.
-# Espécie jurisprudencial nova (súmula simples do STF/STJ, tese de repercussão
-# geral) entra acrescentando o tipo aqui e um builder análogo — sem tocar no
-# parser, no chunker nem no schema da coleção.
-TIPOS_JURISPRUDENCIA = frozenset({"sumula_vinculante"})
+# Espécie jurisprudencial nova (súmula do STJ, tese de repercussão geral) entra
+# acrescentando o tipo aqui e o seu JSON em ``_caminho`` — sem tocar no parser,
+# no chunker nem no schema da coleção.
+TIPOS_JURISPRUDENCIA = frozenset({"sumula_vinculante", "sumula_stf"})
 
 PATH_ENUNCIADO = "enunciado"
 LABEL_ENUNCIADO = "Enunciado"
 
 
-@lru_cache(maxsize=1)
-def _sumulas_por_numero() -> dict[int, dict]:
-    if not SUMULAS_VINCULANTES_PATH.exists():
+def _caminho(tipo: str) -> Path:
+    # Resolvido a cada chamada, e não num dicionário de import: os testes de
+    # recarga trocam o caminho no módulo ``urn_mapper`` e esperam efeito aqui.
+    if tipo == "sumula_vinculante":
+        return urn_mapper.SUMULAS_VINCULANTES_PATH
+    return urn_mapper.SUMULAS_STF_PATH
+
+
+@lru_cache(maxsize=4)
+def _sumulas_por_numero(tipo: str) -> dict[int, dict]:
+    caminho = _caminho(tipo)
+    if not caminho.exists():
         return {}
-    entradas = json.loads(SUMULAS_VINCULANTES_PATH.read_text(encoding="utf-8"))
+    entradas = json.loads(caminho.read_text(encoding="utf-8"))
     return {int(e["numero"]): e for e in entradas}
 
 
 def recarregar() -> int:
-    """Relê o JSON, devolvendo quantas súmulas foram carregadas.
+    """Relê os JSONs, devolvendo quantas súmulas foram carregadas.
 
     O gêmeo de ``urn_mapper.recarregar_registro`` para este módulo: o daemon lê
-    o arquivo uma vez, no import, e sem isto um lote novo descoberto com ele no
-    ar não existiria para o ``POST /update``.
+    os arquivos uma vez, no import, e sem isto um lote novo descoberto com ele
+    no ar não existiria para o ``POST /update``.
     """
     _sumulas_por_numero.cache_clear()
-    return len(_sumulas_por_numero())
+    return sum(len(_sumulas_por_numero(t)) for t in TIPOS_JURISPRUDENCIA)
 
 
 def entrada_de(meta: NormaMeta) -> dict:
     """A entrada curada correspondente à norma, pelo número da súmula."""
     if meta.tipo not in TIPOS_JURISPRUDENCIA:
         raise ValueError(f"{meta.slug}: tipo {meta.tipo!r} não é jurisprudencial")
-    entrada = _sumulas_por_numero().get(int(meta.numero or 0))
+    entrada = _sumulas_por_numero(meta.tipo).get(int(meta.numero or 0))
     if entrada is None:
-        raise KeyError(f"{meta.slug}: súmula ausente de {SUMULAS_VINCULANTES_PATH.name}")
+        raise KeyError(f"{meta.slug}: súmula ausente de {_caminho(meta.tipo).name}")
     return entrada
 
 
@@ -79,7 +91,7 @@ def conteudo_canonico(entrada: dict) -> str:
     return json.dumps(entrada, ensure_ascii=False, sort_keys=True)
 
 
-def _referencia(entrada: dict) -> str:
+def _referencia(entrada: dict, tipo: str = "sumula_vinculante") -> str:
     """Sessão de aprovação e publicação, no formato que vai ao ``parent_label``.
 
     Cabe aqui, e não no texto do dispositivo, porque o texto é citado
@@ -87,9 +99,13 @@ def _referencia(entrada: dict) -> str:
     que ele não escreveu. O ``parent_label`` já é impresso entre parênteses pelo
     formatador de citação, no lugar onde a legislação mostra a hierarquia.
     """
-    partes = [f"Sessão Plenária de {_br(entrada['data_aprovacao'])}"]
+    partes = []
+    if entrada.get("data_aprovacao"):
+        partes.append(f"Sessão Plenária de {_br(entrada['data_aprovacao'])}")
     if entrada.get("data_publicacao"):
-        partes.append(f"DJe de {_br(entrada['data_publicacao'])}")
+        # As SV saem no DJe; as súmulas simples antigas, no DJ — o rótulo é o do portal.
+        diario = "DJe" if tipo == "sumula_vinculante" else "DJ"
+        partes.append(f"{diario} de {_br(entrada['data_publicacao'])}")
     return " — ".join(partes)
 
 
@@ -121,7 +137,7 @@ def montar_norma(meta: NormaMeta, conteudo: str) -> Norma:
                 label=LABEL_ENUNCIADO,
                 tipo=TipoDispositivo.enunciado,
                 texto=entrada["enunciado"],
-                parent_label=_referencia(entrada),
+                parent_label=_referencia(entrada, meta.tipo),
                 vigente=vigente,
                 revogado_por=None if vigente else entrada.get("cancelada_por"),
             )

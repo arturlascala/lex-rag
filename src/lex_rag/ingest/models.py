@@ -40,7 +40,7 @@ class Norma(BaseModel):
 
     urn_lex: str
     tipo: str  # "constituicao" | "lei_complementar" | "lei" | "codigo" | "decreto"
-    #           | "regimento" | "resolucao" | "sumula_vinculante"
+    #           | "regimento" | "resolucao" | "sumula_vinculante" | "sumula_stf"
     numero: str | None = None
     data: date | None = None
     epigrafe: str  # ex.: "Constituição Federal de 1988"

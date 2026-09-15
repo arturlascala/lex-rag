@@ -70,7 +70,10 @@ def test_sumula_sem_publicacao_omite_o_dje_do_rotulo():
 @pytest.mark.parametrize(
     "situacao,motivo",
     [("cancelada", "Cancelada em 26/09/2025 (PSV 60)"),
-     ("publicacao_suspensa", "Publicação suspensa em 04/02/2010")],
+     ("publicacao_suspensa", "Publicação suspensa em 04/02/2010"),
+     # marcas que o STF usa nas súmulas simples (lote 22-A)
+     ("revogada", "Marcada pelo STF como revogada"),
+     ("superada", "Marcada pelo STF como superada")],
 )
 def test_sumula_fora_de_vigor_entra_marcada_em_vez_de_sumir(situacao, motivo):
     # Omiti-la devolveria silêncio a quem a procura; entrando como não vigente,
@@ -111,10 +114,17 @@ def test_chunk_carrega_a_especie_e_id_estavel():
 
 def test_registro_traz_as_sumulas_com_metadados_coerentes():
     sumulas = {s: m for s, m in REGISTRO.items() if m.tipo in TIPOS_JURISPRUDENCIA}
-    assert len(sumulas) >= 63
+    assert len([m for m in sumulas.values() if m.tipo == "sumula_vinculante"]) >= 63
+    assert len([m for m in sumulas.values() if m.tipo == "sumula_stf"]) >= 660  # lote 22-A: 664
     for slug, meta in sumulas.items():
-        assert slug == f"sv_{meta.numero}"
-        assert meta.epigrafe == f"Súmula Vinculante {meta.numero} do STF"
+        if meta.tipo == "sumula_vinculante":
+            assert slug == f"sv_{meta.numero}"
+            assert meta.epigrafe == f"Súmula Vinculante {meta.numero} do STF"
+            assert ":sumula.vinculante:" in meta.urn_lex
+        else:
+            assert slug == f"sumula_stf_{meta.numero}"
+            assert meta.epigrafe == f"Súmula {meta.numero} do STF"
+            assert ":sumula:" in meta.urn_lex
         assert meta.urn_lex.endswith(f";{meta.numero}")
         # a data de aprovação é parte do URN: divergir é errar a chave do corpus
         assert meta.data.isoformat() in meta.urn_lex
@@ -130,7 +140,6 @@ def test_recarregar_registro_atualiza_tambem_os_enunciados(monkeypatch, tmp_path
     # O daemon lê o catálogo uma vez, no import. Recarregar só os metadados e
     # deixar o texto no cache serviria enunciado velho com cara de sucesso —
     # a armadilha que custou o lote 5.
-    import lex_rag.ingest.jurisprudencia as jur
     import lex_rag.ingest.urn_mapper as um
 
     entrada = {**_ENTRADA, "enunciado": "Texto novo, recém-editado."}
@@ -138,7 +147,7 @@ def test_recarregar_registro_atualiza_tambem_os_enunciados(monkeypatch, tmp_path
     arquivo.write_text(json.dumps([entrada], ensure_ascii=False), encoding="utf-8")
 
     assert entrada_de(REGISTRO["sv_13"])["enunciado"] != entrada["enunciado"]  # cache quente
-    monkeypatch.setattr(jur, "SUMULAS_VINCULANTES_PATH", arquivo)
+    # jurisprudencia resolve o caminho em urn_mapper a cada chamada: um só patch basta.
     monkeypatch.setattr(um, "SUMULAS_VINCULANTES_PATH", arquivo)
     try:
         um.recarregar_registro()

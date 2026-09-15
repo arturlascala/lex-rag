@@ -303,7 +303,7 @@ apita anexo grande sem dispositivo.
 
 ---
 
-## Lote 22 — súmulas do STJ e do STF *(opcional, caminho local de jurisprudência)*
+## Lote 22 — súmulas do STJ e do STF *(22-A, STF, executado em 2026-09-15 com 664 de 736 — registro no PLANO_DE_IMPLEMENTACAO.md; 22-B, STJ, adiado: SCON atrás de desafio JavaScript, sem dataset nos dados abertos, só PDF)*
 
 - Reabre a decisão do lote 7 de propósito: as súmulas do STJ (~680) e as do
   STF (736) não vinculam, mas são o conhecimento jurisprudencial sintético

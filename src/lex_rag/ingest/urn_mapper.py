@@ -25,9 +25,11 @@ registros gerados, todos validados por download + parse:
   grandes regulamentos consolidados, produzido por
   ``scripts/descobrir_decretos.py`` pela mesma mecânica;
 - ``sumulas_vinculantes.json`` — os enunciados de Súmula Vinculante do STF,
-  produzido por ``scripts/descobrir_sumulas.py``. É a única entrada do catálogo
-  que **não** aponta para uma página a rebaixar: o texto do enunciado mora no
-  próprio JSON (ver ``ingest/jurisprudencia.py``).
+  produzido por ``scripts/descobrir_sumulas.py``, e ``sumulas_stf.json`` — as
+  súmulas simples do STF (lote 22-A), por ``scripts/descobrir_sumulas_stf.py``.
+  São as únicas entradas do catálogo que **não** apontam para uma página a
+  rebaixar: o texto do enunciado mora no próprio JSON (ver
+  ``ingest/jurisprudencia.py``).
 
 Em conflito de URN, a entrada curada vence.
 """
@@ -47,7 +49,7 @@ class NormaMeta:
     slug: str
     urn_lex: str
     tipo: str  # "constituicao" | "lei_complementar" | "lei" | "codigo" | "decreto"
-    #           | "regimento" | "resolucao" | "sumula_vinculante"
+    #           | "regimento" | "resolucao" | "sumula_vinculante" | "sumula_stf"
     numero: str | None
     data: date
     epigrafe: str
@@ -625,6 +627,7 @@ REGISTRO_LCP_PATH = Path(__file__).with_name("registro_lcp.json")
 REGISTRO_ORDINARIAS_PATH = Path(__file__).with_name("registro_ordinarias.json")
 REGISTRO_DECRETOS_PATH = Path(__file__).with_name("registro_decretos.json")
 SUMULAS_VINCULANTES_PATH = Path(__file__).with_name("sumulas_vinculantes.json")
+SUMULAS_STF_PATH = Path(__file__).with_name("sumulas_stf.json")
 
 
 def _carregar_json(caminho: Path, tipo_padrao: str) -> dict[str, NormaMeta]:
@@ -650,8 +653,13 @@ def _carregar_json(caminho: Path, tipo_padrao: str) -> dict[str, NormaMeta]:
     }
 
 
-def _carregar_sumulas() -> dict[str, NormaMeta]:
-    """Metadados das Súmulas Vinculantes a partir do JSON curado.
+def _carregar_sumulas(
+    caminho: Path | None = None,
+    tipo: str = "sumula_vinculante",
+    prefixo: str = "sv",
+    rotulo: str = "Súmula Vinculante",
+) -> dict[str, NormaMeta]:
+    """Metadados das súmulas a partir do JSON curado (SV por padrão; STF, lote 22-A).
 
     O arquivo tem esquema próprio (número, enunciado, situação) em vez do
     ``slug``/``epigrafe``/``ementa`` dos registros de legislação, então não passa
@@ -664,17 +672,19 @@ def _carregar_sumulas() -> dict[str, NormaMeta]:
     indexa súmula vinculante, e citar URL que não resolve seria pior do que
     citar a fonte real.
     """
-    if not SUMULAS_VINCULANTES_PATH.exists():
+    caminho = caminho or SUMULAS_VINCULANTES_PATH  # resolvido na chamada (testes trocam)
+    if not caminho.exists():
         return {}
-    entradas = json.loads(SUMULAS_VINCULANTES_PATH.read_text(encoding="utf-8"))
+    entradas = json.loads(caminho.read_text(encoding="utf-8"))
     return {
-        f"sv_{e['numero']}": NormaMeta(
-            slug=f"sv_{e['numero']}",
+        f"{prefixo}_{e['numero']}": NormaMeta(
+            slug=f"{prefixo}_{e['numero']}",
             urn_lex=e["urn_lex"],
-            tipo="sumula_vinculante",
+            tipo=tipo,
             numero=str(e["numero"]),
-            data=date.fromisoformat(e["data_aprovacao"]),
-            epigrafe=f"Súmula Vinculante {e['numero']} do STF",
+            # A data do URN: aprovação, ou publicação quando o STF só imprime esta.
+            data=date.fromisoformat(e.get("data_aprovacao") or e["data_publicacao"]),
+            epigrafe=f"{rotulo} {e['numero']} do STF",
             ementa="",
             url_canonica=e["fonte_stf"],
         )
@@ -688,6 +698,7 @@ REGISTRO: dict[str, NormaMeta] = {
     **_carregar_json(REGISTRO_ORDINARIAS_PATH, "lei"),
     **_carregar_json(REGISTRO_DECRETOS_PATH, "decreto"),
     **_carregar_sumulas(),
+    **_carregar_sumulas(SUMULAS_STF_PATH, "sumula_stf", "sumula_stf", "Súmula"),
 }
 
 
@@ -715,6 +726,7 @@ def recarregar_registro() -> int:
     REGISTRO.update(_carregar_json(REGISTRO_ORDINARIAS_PATH, "lei"))
     REGISTRO.update(_carregar_json(REGISTRO_DECRETOS_PATH, "decreto"))
     REGISTRO.update(_carregar_sumulas())
+    REGISTRO.update(_carregar_sumulas(SUMULAS_STF_PATH, "sumula_stf", "sumula_stf", "Súmula"))
     return len(REGISTRO)
 
 
