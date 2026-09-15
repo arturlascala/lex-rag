@@ -1,6 +1,6 @@
 [project]
 name = "lex-rag"
-version = "0.1.0"
+version = "0.2.0"
 description = "MCP server de RAG sobre a base normativa federal brasileira (CF + LC + LO), anti-alucinação."
 requires-python = ">=3.12,<3.13"
 readme = "README.md"
