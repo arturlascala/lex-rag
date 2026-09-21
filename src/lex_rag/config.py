@@ -39,6 +39,9 @@ class Settings(BaseSettings):
     # O MCP server é um cliente fino que fala com ele por HTTP no loopback.
     service_host: str = "127.0.0.1"
     service_port: int = 8765
+    # Timeout (s) de uma consulta do cliente MCP ao daemon. Em CPU sem GPU a
+    # busca (BGE-M3 + reranker) leva minutos; ajuste via LEX_RAG_SERVICE_TIMEOUT.
+    service_timeout: float = 300.0
 
     collection_name: str = "legislacao_federal"
     # Versão do pipeline de ingestão (parser + chunker + embedding). Bump após

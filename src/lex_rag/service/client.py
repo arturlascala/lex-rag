@@ -11,9 +11,10 @@ import httpx
 
 from lex_rag.config import settings
 
-# Timeout generoso no total para cobrir o 1º aquecimento; connect curto para
-# detectar rápido que o daemon está fora do ar.
-_TIMEOUT = httpx.Timeout(60.0, connect=5.0)
+# Timeout total configurável (settings.service_timeout) para cobrir o 1º
+# aquecimento e a busca em CPU; connect curto para detectar rápido que o
+# daemon está fora do ar.
+_TIMEOUT = httpx.Timeout(settings.service_timeout, connect=5.0)
 
 _OFFLINE = (
     "Serviço lex-rag não está no ar. Inicie o daemon com `.\\tasks.ps1 serve` "

@@ -7,9 +7,6 @@ readme = "README.md"
 license = { text = "MIT" }
 authors = [{ name = "Artur Lascala" }]
 
-[project.urls]
-Repository = "https://github.com/arturlascala/lex-rag"
-
 dependencies = [
     "httpx>=0.27",
     "beautifulsoup4>=4.12",
@@ -25,7 +22,7 @@ dependencies = [
     "torch>=2.2,<2.3",
     "transformers>=4.40,<4.50",
     "sentence-transformers<3.4",
-    "mcp>=1.0",
+    "mcp>=1.0,<2",
     "structlog>=24.1",
     "tenacity>=8.2",
     # O portal do STF serve cadeia TLS incompleta (só a folha, sem o
@@ -35,6 +32,9 @@ dependencies = [
     "fastapi>=0.110",
     "uvicorn>=0.29",
 ]
+
+[project.urls]
+Repository = "https://github.com/arturlascala/lex-rag"
 
 [project.optional-dependencies]
 eval = ["ragas>=0.2", "datasets>=2.20"]
