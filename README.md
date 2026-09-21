@@ -2,6 +2,15 @@
 
 MCP server de RAG sobre a base normativa federal brasileira (Constituição, Leis Complementares, Leis Ordinárias, Decretos). Foco em anti-alucinação: o MCP devolve **sempre texto literal** do dispositivo + URN-LEX + URL canônica do Planalto, e nunca paráfrase.
 
+> ⚠️ **Projeto em desenvolvimento — use por sua conta e risco.**
+>
+> Este é um projeto pessoal e experimental, sem vínculo com o Planalto, o STF, o Congresso Nacional ou qualquer órgão público. Não é fonte oficial de legislação e não substitui a consulta ao texto publicado no Diário Oficial da União ou nos portais oficiais.
+>
+> - O corpus é **parcial** (uma seleção curada, não a legislação inteira) e pode estar **desatualizado** em relação ao texto vigente.
+> - O texto é extraído automaticamente das páginas do Planalto e do STF; o parser já teve bugs e pode ter outros. Confira sempre o dispositivo na URL canônica que acompanha cada resposta.
+> - As respostas **não constituem aconselhamento jurídico**.
+> - O software é distribuído "como está", **sem garantia de qualquer tipo**, nos termos da [licença MIT](LICENSE). O autor não se responsabiliza por decisões tomadas com base nos resultados nem por danos decorrentes do uso.
+
 ## Stack
 
 - **Python 3.12**
