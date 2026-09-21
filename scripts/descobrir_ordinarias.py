@@ -1946,6 +1946,23 @@ CANDIDATAS: list[tuple[str, str, str, date, str, str]] = [
      "divulgada, publicada ou transmitida por veículo de comunicação social."),
     ("apostas_14790_2023", "lei", "14790", date(2023, 12, 29), "Apostas de quota fixa",
      "Dispõe sobre a modalidade lotérica denominada apostas de quota fixa."),
+
+    # =================================================================
+    # Lote 23 (2026-09-21) — "mães" apontadas pela primeira varredura do
+    # ``descobrir_novas``: leis novas que só alteram estas, e a norma que vale
+    # indexar é a alterada (o consolidado traz a alteração), não a alteradora.
+    # =================================================================
+    ("ecadigital_15211_2025", "lei", "15211", date(2025, 9, 17),
+     "Estatuto Digital da Criança e do Adolescente",
+     "Dispõe sobre a proteção de crianças e adolescentes em ambientes digitais (Estatuto "
+     "Digital da Criança e do Adolescente)."),
+    ("custasjf_9289_1996", "lei", "9289", date(1996, 7, 4), "Custas na Justiça Federal",
+     "Dispõe sobre as custas devidas à União, na Justiça Federal de primeiro e segundo graus."),
+    ("custasstj_11636_2007", "lei", "11636", date(2007, 12, 28), "Custas no STJ",
+     "Dispõe sobre as custas judiciais devidas no âmbito do Superior Tribunal de Justiça."),
+    ("remessaspostais_1804_1980", "decreto.lei", "1804", date(1980, 9, 3),
+     "Tributação de remessas postais internacionais",
+     "Dispõe sobre tributação simplificada das remessas postais internacionais."),
 ]
 
 # Espécie do URN → tipo do corpus (vocabulário próprio, que alimenta o filtro

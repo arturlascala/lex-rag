@@ -1,7 +1,7 @@
 #requires -Version 5.1
 # Task runner do lex-rag para Windows (equivalente ao Makefile).
 # Uso:  .\tasks.ps1 <alvo>
-#   setup | smoke | bootstrap | update
+#   setup | smoke | bootstrap | update | descobrir-novas
 #   serve | daemon-start | daemon-stop | daemon-status   (daemon de inferencia)
 #   snapshot-criar | snapshot-restaurar <zip|URL> [-Forcar]   (corpus pre-montado)
 #   mcp | test | lint | clean
@@ -44,6 +44,13 @@ switch ($Target.ToLower()) {
     "smoke"     { Assert-Venv; & $py (Join-Path $root "scripts\smoke_test.py") }
     "bootstrap" { Assert-Venv; & $py (Join-Path $root "scripts\bootstrap_full_index.py") }
     "update"    { Assert-Venv; & $py -m lex_rag.update.cli --mode delta }
+    "descobrir-novas" {
+        # Leis novas desde o ultimo ponto (LexML + Planalto; nao toca o Qdrant,
+        # pode rodar com o daemon no ar) e a verificacao do parser sobre elas.
+        Assert-Venv
+        & $py (Join-Path $root "scripts\descobrir_novas.py")
+        & $py (Join-Path $root "scripts\verificar_parser.py") --novos --baixar
+    }
     "serve"     { Assert-Venv; & $py -m lex_rag.service }
     "daemon-start" {
         Assert-Venv
@@ -104,7 +111,7 @@ switch ($Target.ToLower()) {
     }
     default {
         Write-Host "Alvos:"
-        Write-Host "  setup | smoke | bootstrap | update"
+        Write-Host "  setup | smoke | bootstrap | update | descobrir-novas"
         Write-Host "  serve | daemon-start | daemon-stop | daemon-status   (daemon de inferencia)"
         Write-Host "  snapshot-criar | snapshot-restaurar <zip|URL> [-Forcar]   (corpus pre-montado)"
         Write-Host "  mcp | test | lint | clean"

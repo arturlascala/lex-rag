@@ -29,7 +29,13 @@ registros gerados, todos validados por download + parse:
   súmulas simples do STF (lote 22-A), por ``scripts/descobrir_sumulas_stf.py``.
   São as únicas entradas do catálogo que **não** apontam para uma página a
   rebaixar: o texto do enunciado mora no próprio JSON (ver
-  ``ingest/jurisprudencia.py``).
+  ``ingest/jurisprudencia.py``);
+- ``registro_novas.json`` — as leis ordinárias sancionadas depois do último
+  lote que a triagem por ementa julgou de consulta (leis autônomas, não as que
+  só alteram norma já presente), produzido por ``scripts/descobrir_novas.py``
+  varrendo a numeração na API de metadados do LexML. Perde para qualquer outro
+  registro em conflito de URN: promover uma lei daqui para a lista curada não a
+  duplica.
 
 Em conflito de URN, a entrada curada vence.
 """
@@ -628,6 +634,7 @@ REGISTRO_ORDINARIAS_PATH = Path(__file__).with_name("registro_ordinarias.json")
 REGISTRO_DECRETOS_PATH = Path(__file__).with_name("registro_decretos.json")
 SUMULAS_VINCULANTES_PATH = Path(__file__).with_name("sumulas_vinculantes.json")
 SUMULAS_STF_PATH = Path(__file__).with_name("sumulas_stf.json")
+REGISTRO_NOVAS_PATH = Path(__file__).with_name("registro_novas.json")
 
 
 def _carregar_json(caminho: Path, tipo_padrao: str) -> dict[str, NormaMeta]:
@@ -692,14 +699,28 @@ def _carregar_sumulas(
     }
 
 
-REGISTRO: dict[str, NormaMeta] = {
-    **REGISTRO_CURADO,
-    **_carregar_json(REGISTRO_LCP_PATH, "lei_complementar"),
-    **_carregar_json(REGISTRO_ORDINARIAS_PATH, "lei"),
-    **_carregar_json(REGISTRO_DECRETOS_PATH, "decreto"),
-    **_carregar_sumulas(),
-    **_carregar_sumulas(SUMULAS_STF_PATH, "sumula_stf", "sumula_stf", "Súmula"),
-}
+def _montar_registro() -> dict[str, NormaMeta]:
+    registro = {
+        **REGISTRO_CURADO,
+        **_carregar_json(REGISTRO_LCP_PATH, "lei_complementar"),
+        **_carregar_json(REGISTRO_ORDINARIAS_PATH, "lei"),
+        **_carregar_json(REGISTRO_DECRETOS_PATH, "decreto"),
+        **_carregar_sumulas(),
+        **_carregar_sumulas(SUMULAS_STF_PATH, "sumula_stf", "sumula_stf", "Súmula"),
+    }
+    # As leis descobertas entram por último e só onde o URN ainda não existe:
+    # uma lei promovida daqui para a lista curada (slug e apelido à mão) teria
+    # dois slugs para o mesmo URN, e o índice a serviria em dobro.
+    urns = {m.urn_lex for m in registro.values()}
+    registro.update({
+        slug: meta
+        for slug, meta in _carregar_json(REGISTRO_NOVAS_PATH, "lei").items()
+        if meta.urn_lex not in urns
+    })
+    return registro
+
+
+REGISTRO: dict[str, NormaMeta] = _montar_registro()
 
 
 def recarregar_registro() -> int:
@@ -721,12 +742,7 @@ def recarregar_registro() -> int:
 
     jurisprudencia.recarregar()
     REGISTRO.clear()
-    REGISTRO.update(REGISTRO_CURADO)
-    REGISTRO.update(_carregar_json(REGISTRO_LCP_PATH, "lei_complementar"))
-    REGISTRO.update(_carregar_json(REGISTRO_ORDINARIAS_PATH, "lei"))
-    REGISTRO.update(_carregar_json(REGISTRO_DECRETOS_PATH, "decreto"))
-    REGISTRO.update(_carregar_sumulas())
-    REGISTRO.update(_carregar_sumulas(SUMULAS_STF_PATH, "sumula_stf", "sumula_stf", "Súmula"))
+    REGISTRO.update(_montar_registro())
     return len(REGISTRO)
 
 

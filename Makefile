@@ -2,7 +2,7 @@ PYTHON ?= python3.12
 VENV   ?= .venv
 UV     ?= $(HOME)/.local/bin/uv
 
-.PHONY: help venv install install-dev install-cpu smoke bootstrap update serve mcp         snapshot-criar snapshot-restaurar eval test lint clean
+.PHONY: help venv install install-dev install-cpu smoke bootstrap update descobrir-novas serve mcp         snapshot-criar snapshot-restaurar eval test lint clean
 
 help:
 	@echo "Alvos disponíveis:"
@@ -13,6 +13,7 @@ help:
 	@echo "  smoke        roda smoke test (3 artigos da CF, busca híbrida)"
 	@echo "  bootstrap    indexa o corpus do zero (761 documentos; horas sem GPU — prefira o snapshot)"
 	@echo "  update       roda update incremental (delta semanal)"
+	@echo "  descobrir-novas  leis novas desde o último ponto (LexML + Planalto) + verificar_parser"
 	@echo "  serve        sobe o daemon de inferência (foreground)"
 	@echo "  mcp          inicia o MCP server (stdio) — exige o daemon no ar"
 	@echo "  snapshot-criar               empacota data/ em dist/lex-rag-snapshot.zip"
@@ -44,6 +45,10 @@ bootstrap:
 
 update:
 	$(VENV)/bin/python -m lex_rag.update.cli --mode delta
+
+descobrir-novas:
+	$(VENV)/bin/python scripts/descobrir_novas.py
+	$(VENV)/bin/python scripts/verificar_parser.py --novos --baixar
 
 serve:
 	$(VENV)/bin/python -m lex_rag.service

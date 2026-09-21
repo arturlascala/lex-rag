@@ -72,13 +72,13 @@ o link de cada norma é a sua URL canônica (a mesma que as ferramentas citam).
 | Constituição e ADCT | 2 |
 | Códigos | 14 |
 | Leis Complementares | 235 |
-| Leis ordinárias e decretos-leis | 558 |
+| Leis ordinárias e decretos-leis | 583 |
 | Decretos | 84 |
 | Regimentos e resoluções de rito das Casas | 7 |
 | Resoluções do Senado (CF, art. 52) | 6 |
 | Súmulas Vinculantes do STF | 63 |
 | Súmulas do STF | 664 |
-| **Total** | **1633** |
+| **Total** | **1658** |
 
 <details>
 <summary><b>Constituição e ADCT</b> — 2</summary>
@@ -356,7 +356,7 @@ o link de cada norma é a sua URL canônica (a mesma que as ferramentas citam).
 </details>
 
 <details>
-<summary><b>Leis ordinárias e decretos-leis</b> — 558</summary>
+<summary><b>Leis ordinárias e decretos-leis</b> — 583</summary>
 
 | Norma | Apelido | Ementa |
 |---|---|---|
@@ -441,6 +441,7 @@ o link de cada norma é a sua URL canônica (a mesma que as ferramentas citam).
 | [Lei nº 6.729, de 28 de novembro de 1979](https://www.planalto.gov.br/ccivil_03/leis/l6729.htm) | Lei Ferrari | Dispõe sobre a concessão comercial entre produtores e distribuidores de veículos automotores de via terrestre. |
 | [Lei nº 6.766, de 19 de dezembro de 1979](https://www.planalto.gov.br/ccivil_03/leis/l6766compilado.htm) | Parcelamento do solo urbano | Dispõe sobre o parcelamento do solo urbano. |
 | [Lei nº 6.803, de 2 de julho de 1980](https://www.planalto.gov.br/ccivil_03/leis/l6803.htm) | Zoneamento industrial | Dispõe sobre as diretrizes básicas para o zoneamento industrial nas áreas críticas de poluição. |
+| [Decreto-Lei nº 1.804, de 3 de setembro de 1980](https://www.planalto.gov.br/ccivil_03/decreto-lei/1965-1988/del1804.htm) | Tributação de remessas postais internacionais | Dispõe sobre tributação simplificada das remessas postais internacionais. |
 | [Lei nº 6.830, de 22 de setembro de 1980](https://www.planalto.gov.br/ccivil_03/leis/l6830.htm) | Execução fiscal | Dispõe sobre a cobrança judicial da Dívida Ativa da Fazenda Pública. |
 | [Lei nº 6.880, de 9 de dezembro de 1980](https://www.planalto.gov.br/ccivil_03/leis/l6880compilada.htm) | Estatuto dos Militares | Dispõe sobre o Estatuto dos Militares. |
 | [Lei nº 6.899, de 8 de abril de 1981](https://www.planalto.gov.br/ccivil_03/leis/l6899.htm) | Correção monetária judicial | Determina a aplicação da correção monetária nos débitos oriundos de decisão judicial. |
@@ -529,6 +530,7 @@ o link de cada norma é a sua URL canônica (a mesma que as ferramentas citam).
 | [Lei nº 9.249, de 26 de dezembro de 1995](https://www.planalto.gov.br/ccivil_03/leis/l9249.htm) | IRPJ e CSLL | Altera a legislação do imposto de renda das pessoas jurídicas e da contribuição social sobre o lucro líquido. |
 | [Lei nº 9.263, de 12 de janeiro de 1996](https://www.planalto.gov.br/ccivil_03/leis/l9263.htm) | Planejamento familiar | Regula o § 7º do art. 226 da Constituição Federal, que trata do planejamento familiar. |
 | [Lei nº 9.279, de 14 de maio de 1996](https://www.planalto.gov.br/ccivil_03/leis/l9279.htm) | Propriedade industrial | Regula direitos e obrigações relativos à propriedade industrial. |
+| [Lei nº 9.289, de 4 de julho de 1996](https://www.planalto.gov.br/ccivil_03/leis/l9289.htm) | Custas na Justiça Federal | Dispõe sobre as custas devidas à União, na Justiça Federal de primeiro e segundo graus. |
 | [Lei nº 9.294, de 15 de julho de 1996](https://www.planalto.gov.br/ccivil_03/leis/l9294.htm) | Propaganda de fumo, bebidas e medicamentos | Dispõe sobre as restrições ao uso e à propaganda de produtos fumígeros, bebidas alcoólicas, medicamentos, terapias e defensivos agrícolas. |
 | [Lei nº 9.296, de 24 de julho de 1996](https://www.planalto.gov.br/ccivil_03/leis/l9296.htm) | Interceptação telefônica | Regulamenta o inciso XII, parte final, do art. 5º da Constituição Federal. |
 | [Lei nº 9.307, de 23 de setembro de 1996](https://www.planalto.gov.br/ccivil_03/leis/l9307.htm) | Arbitragem | Dispõe sobre a arbitragem. |
@@ -676,6 +678,7 @@ o link de cada norma é a sua URL canônica (a mesma que as ferramentas citam).
 | [Lei nº 11.540, de 12 de novembro de 2007](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11540.htm) | Fundo Nacional de Desenvolvimento Científico e Tecnológico (FNDCT) | Dispõe sobre o Fundo Nacional de Desenvolvimento Científico e Tecnológico (FNDCT) e sobre o incentivo à inovação e à pesquisa científica e… |
 | [Lei nº 11.598, de 3 de dezembro de 2007](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11598.htm) | Redesim | Estabelece diretrizes e procedimentos para a simplificação do registro e da legalização de empresários e pessoas jurídicas. |
 | [Lei nº 11.631, de 27 de dezembro de 2007](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11631.htm) | Mobilização Nacional (Sinamob) | Dispõe sobre a Mobilização Nacional e cria o Sistema Nacional de Mobilização - SINAMOB. |
+| [Lei nº 11.636, de 28 de dezembro de 2007](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11636.htm) | Custas no STJ | Dispõe sobre as custas judiciais devidas no âmbito do Superior Tribunal de Justiça. |
 | [Lei nº 11.652, de 7 de abril de 2008](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11652.htm) | Radiodifusão pública e EBC | Institui os princípios e objetivos dos serviços de radiodifusão pública e autoriza o Poder Executivo a constituir a Empresa Brasil de… |
 | [Lei nº 11.671, de 8 de maio de 2008](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11671.htm) | Presos em estabelecimentos federais | Dispõe sobre a transferência e a inclusão de presos em estabelecimentos penais federais de segurança máxima. |
 | [Lei nº 11.738, de 16 de julho de 2008](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11738.htm) | Piso salarial do magistério | Institui o piso salarial profissional nacional para os profissionais do magistério público da educação básica. |
@@ -910,6 +913,7 @@ o link de cada norma é a sua URL canônica (a mesma que as ferramentas citam).
 | [Lei nº 15.174, de 22 de julho de 2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15174.htm) | Política Nacional de Enfrentamento ao HPV | Institui a Política Nacional de Enfrentamento da Infecção por Papilomavírus Humano. |
 | [Lei nº 15.178, de 23 de julho de 2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15178.htm) | Política Nacional de Juventude e Sucessão Rural | Institui a Política Nacional de Juventude e Sucessão Rural e o Plano Nacional de Juventude e Sucessão Rural. |
 | [Lei nº 15.180, de 25 de julho de 2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15180.htm) | Política Nacional de Visitação a Unidades de Conservação | Institui a Política Nacional de Incentivo à Visitação a Unidades de Conservação e autoriza o Instituto Chico Mendes de Conservação da… |
+| [Lei nº 15.211, de 17 de setembro de 2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm) | Estatuto Digital da Criança e do Adolescente | Dispõe sobre a proteção de crianças e adolescentes em ambientes digitais (Estatuto Digital da Criança e do Adolescente). |
 | [Lei nº 15.224, de 30 de setembro de 2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15224.htm) | Política Nacional de Combate ao Desperdício de Alimentos | Institui a Política Nacional de Combate à Perda e ao Desperdício de Alimentos (PNCPDA); cria o Selo Doador de Alimentos. |
 | [Lei nº 15.263, de 14 de novembro de 2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15263.htm) | Política Nacional de Linguagem Simples | Institui a Política Nacional de Linguagem Simples nos órgãos e entidades da administração pública direta e indireta de todos os Poderes da… |
 | [Lei nº 15.321, de 31 de dezembro de 2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15321.htm) | LDO 2026 | Dispõe sobre as diretrizes para a elaboração e a execução da Lei Orçamentária de 2026 e dá outras providências. |
@@ -918,6 +922,27 @@ o link de cada norma é a sua URL canônica (a mesma que as ferramentas citam).
 | [Lei nº 15.388, de 14 de abril de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15388.htm) | Plano Nacional de Educação (PNE) | Aprova o Plano Nacional de Educação (PNE). |
 | [Lei nº 15.430, de 10 de junho de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15430.htm) | Política Nacional de Recuperação da Vegetação da Caatinga | Institui a Política Nacional para Recuperação da Vegetação da Caatinga e cria o Programa Nacional para a Recuperação da Vegetação da… |
 | [Lei nº 15.436, de 17 de junho de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15436.htm) | Política Nacional para Estudantes com Altas Habilidades ou Superdotação | Institui a Política Nacional para Estudantes com Altas Habilidades ou Superdotação; cria o Cadastro Nacional de Estudantes com Altas… |
+| [Lei nº 15.439, de 26 de junho de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15439.htm) |  | Dispõe sobre os direitos de pessoas com diabetes mellitus tipo 1 e sobre ações voltadas à promoção de sua participação plena e efetiva na… |
+| [Lei nº 15.441, de 26 de junho de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15441.htm) |  | Fixa o limite máximo permitido de chumbo em tintas e em materiais similares de revestimento de superfícies; e revoga a Lei nº 11.762, de 1º… |
+| [Lei nº 15.454, de 1º de julho de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15454.htm) |  | Dispõe sobre a transferência simbólica da sede do governo federal para o Município de Salvador, no Estado da Bahia, na data de 2 de julho… |
+| [Lei nº 15.455, de 1º de julho de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15455.htm) |  | Estabelece medidas de proteção e acolhimento de trabalhadoras e trabalhadores resgatados de condição análoga à de escravo; vincula o poder… |
+| [Lei nº 15.456, de 3 de julho de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15456.htm) |  | Regulamenta a profissão de protesista/ortesista ortopédico. |
+| [Lei nº 15.457, de 3 de julho de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15457.htm) |  | Cria a Universidade Federal do Esporte. |
+| [Lei nº 15.466, de 9 de julho de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15466.htm) |  | Cria o Banco Nacional de Boas Práticas na Prevenção e no Combate à Violência contra a Mulher. |
+| [Lei nº 15.471, de 20 de julho de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15471.htm) |  | Institui a Estratégia Nacional de Saúde do Complexo Econômico-Industrial da Saúde (Ensceis); e altera a Lei nº 6.360, de 23 de setembro de… |
+| [Lei nº 15.474, de 23 de julho de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15474.htm) |  | Dispõe sobre a comercialização, a aquisição e a posse de aerossol de extratos vegetais para fins de defesa pessoal da mulher; estabelece… |
+| [Lei nº 15.475, de 23 de julho de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15475.htm) |  | Proíbe a produção e a comercialização de qualquer produto alimentício obtido por meio de método de alimentação forçada de animais. |
+| [Lei nº 15.484, de 4 de agosto de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15484.htm) |  | Regulamenta o regime de relevância das questões de direito federal infraconstitucional para admissão dos recursos especiais no Superior… |
+| [Lei nº 15.487, de 6 de agosto de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15487.htm) |  | Institui medidas de enfrentamento e repressão ao crime de violência sexual contra criança ou adolescente, inclusive no ambiente digital e… |
+| [Lei nº 15.492, de 2 de setembro de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15492.htm) |  | Institui a Política Nacional de Proteção dos Direitos da Pessoa com Síndrome de Tourette. |
+| [Lei nº 15.493, de 2 de setembro de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15493.htm) |  | Dispõe sobre ações para avaliação médica completa e periódica da saúde da mulher no âmbito do Sistema Único de Saúde (SUS) e sobre a… |
+| [Lei nº 15.496, de 3 de setembro de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15496.htm) |  | Institui o Programa de Desenvolvimento da Indústria de Fertilizantes (Profert); e dá outras providências. |
+| [Lei nº 15.499, de 4 de setembro de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15499.htm) |  | Cria e estrutura o Fundo de Fortalecimento da Cidadania e Aperfeiçoamento do Ministério Público da União (FMPU). |
+| [Lei nº 15.500, de 4 de setembro de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15500.htm) |  | Cria e estrutura o Fundo de Fortalecimento do Acesso à Justiça, Promoção dos Direitos Fundamentais e Estruturação da Defensoria Pública da… |
+| [Lei nº 15.501, de 9 de setembro de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15501.htm) |  | Autoriza a criação do Fundo de Crédito à Exportação (FCE), e altera a Lei nº 5.662, de 21 de junho de 1971, para autorizar a constituição… |
+| [Lei nº 15.503, de 14 de setembro de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15503.htm) |  | Destina recursos para disponibilizar linhas de financiamento reembolsável a profissionais de transporte escolar, profissionais de… |
+| [Lei nº 15.505, de 15 de setembro de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15505.htm) |  | Institui a Política Nacional de Conscientização e Orientação sobre a Linfangioleiomiomatose. |
+| [Lei nº 15.506, de 16 de setembro de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15506.htm) |  | Institui a Política Nacional de Minerais Críticos e Estratégicos (PNMCE) e o Conselho Nacional para Industrialização de Minerais Críticos e… |
 
 </details>
 

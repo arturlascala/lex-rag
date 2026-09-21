@@ -1324,6 +1324,30 @@ Planalto numa madrugada regride o índice sem ninguém perceber.
 - [x] `/update` no daemon serializado com `threading.Lock` (retorna "update já
       em andamento" se concorrente) e cliente com timeout próprio de 30 min.
       *(Evolução possível: disparo em background com endpoint de status.)*
+- [x] **Descoberta de leis novas** *(2026-09-21)* —
+      [descobrir_novas.py](scripts/descobrir_novas.py) +
+      [descoberta_novas.py](src/lex_rag/ingest/descoberta_novas.py), alvo
+      `descobrir-novas`. Motivo: o `update` só reprocessa o catálogo, e a Lei
+      15.504/2026 (Redata) não estava — a maior lei do corpus era a 15.436.
+      Fica **fora** do `update` de propósito: o delta roda sem supervisão e só
+      toca o que já é conhecido; incluir desconhecidos exige o portão do
+      `verificar_parser` (quatro lotes em nove revelaram bug de parser).
+      Mecânica: varre a numeração na API de metadados do LexML a partir do
+      último ponto (`triagem_novas.json` guarda onde parou e o motivo de cada
+      descarte), conferindo o `name` contra o número (armadilha do sufixo,
+      lote 4); classifica pela ementa; valida as candidatas como o lote curado
+      (URL + parse + data pela epígrafe) e grava em `registro_novas.json`, que
+      perde para os demais registros em conflito de URN. **O achado que muda a
+      conta:** lei que só *altera* norma do corpus já chega pelo consolidado
+      que o `update` rebaixa — indexar a alteradora serviria o mesmo artigo
+      duas vezes. Então a triagem só inclui lei **autônoma**; alteradora de
+      norma ausente vira "mãe ausente" para decisão humana (o certo é incluir
+      a mãe na lista curada). Primeira varredura, 15.437→15.506 (70 leis):
+      21 incluídas, 16 cobertas, 10 mãe ausente, 23 ruído, 0 pendentes,
+      246 dispositivos, **0 suspeitos** no `verificar_parser`. A primeira
+      passada deixou passar "Rota Turística", "título Cidade Amiga do Idoso" e
+      "campanha Junho Vermelho" (27 incluídas); os padrões foram apertados e
+      viraram teste de regressão.
 
 ### 7. Onda de expansão do corpus *(planejada em 2026-09-14)*
 

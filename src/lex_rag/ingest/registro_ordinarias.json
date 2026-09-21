@@ -840,6 +840,16 @@
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l6803.htm"
  },
  {
+  "slug": "remessaspostais_1804_1980",
+  "urn_lex": "urn:lex:br:federal:decreto.lei:1980-09-03;1804",
+  "tipo": "lei",
+  "numero": "1804",
+  "data": "1980-09-03",
+  "epigrafe": "Decreto-Lei nº 1.804, de 3 de setembro de 1980 (Tributação de remessas postais internacionais)",
+  "ementa": "Dispõe sobre tributação simplificada das remessas postais internacionais.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/decreto-lei/1965-1988/del1804.htm"
+ },
+ {
   "slug": "execfiscal_6830_1980",
   "urn_lex": "urn:lex:br:federal:lei:1980-09-22;6830",
   "tipo": "lei",
@@ -1658,6 +1668,16 @@
   "epigrafe": "Lei nº 9.279, de 14 de maio de 1996 (Propriedade industrial)",
   "ementa": "Regula direitos e obrigações relativos à propriedade industrial.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9279.htm"
+ },
+ {
+  "slug": "custasjf_9289_1996",
+  "urn_lex": "urn:lex:br:federal:lei:1996-07-04;9289",
+  "tipo": "lei",
+  "numero": "9289",
+  "data": "1996-07-04",
+  "epigrafe": "Lei nº 9.289, de 4 de julho de 1996 (Custas na Justiça Federal)",
+  "ementa": "Dispõe sobre as custas devidas à União, na Justiça Federal de primeiro e segundo graus.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/leis/l9289.htm"
  },
  {
   "slug": "propagandafumo_9294_1996",
@@ -3068,6 +3088,16 @@
   "epigrafe": "Lei nº 11.631, de 27 de dezembro de 2007 (Mobilização Nacional (Sinamob))",
   "ementa": "Dispõe sobre a Mobilização Nacional e cria o Sistema Nacional de Mobilização - SINAMOB.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11631.htm"
+ },
+ {
+  "slug": "custasstj_11636_2007",
+  "urn_lex": "urn:lex:br:federal:lei:2007-12-28;11636",
+  "tipo": "lei",
+  "numero": "11636",
+  "data": "2007-12-28",
+  "epigrafe": "Lei nº 11.636, de 28 de dezembro de 2007 (Custas no STJ)",
+  "ementa": "Dispõe sobre as custas judiciais devidas no âmbito do Superior Tribunal de Justiça.",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11636.htm"
  },
  {
   "slug": "ebc_11652_2008",
@@ -5338,6 +5368,16 @@
   "epigrafe": "Lei nº 15.180, de 25 de julho de 2025 (Política Nacional de Visitação a Unidades de Conservação)",
   "ementa": "Institui a Política Nacional de Incentivo à Visitação a Unidades de Conservação e autoriza o Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio) e os órgãos estaduais e municipais executores do Sistema Nacional de Unidades de Conservação da Natureza (SNUC) a contratar instituição financeira oficial para criar e gerir fundo privado com os objetivos de financiar e de apoiar a visitação a unidades de conservação.",
   "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15180.htm"
+ },
+ {
+  "slug": "ecadigital_15211_2025",
+  "urn_lex": "urn:lex:br:federal:lei:2025-09-17;15211",
+  "tipo": "lei",
+  "numero": "15211",
+  "data": "2025-09-17",
+  "epigrafe": "Lei nº 15.211, de 17 de setembro de 2025 (Estatuto Digital da Criança e do Adolescente)",
+  "ementa": "Dispõe sobre a proteção de crianças e adolescentes em ambientes digitais (Estatuto Digital da Criança e do Adolescente).",
+  "url_canonica": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm"
  },
  {
   "slug": "desperdicioalimentos_15224_2025",
